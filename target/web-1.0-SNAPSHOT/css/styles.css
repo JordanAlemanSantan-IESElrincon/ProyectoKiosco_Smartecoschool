@@ -76,9 +76,9 @@ body {
 }
 
 #vistaGeneral {
-    display: none;
+    display: inherit;
 }
 
 #vistaMensual {
-    display: inherit;
+    display: none;
 }
