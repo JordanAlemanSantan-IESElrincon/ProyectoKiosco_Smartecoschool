@@ -32,23 +32,18 @@
     </header>
 
     <main class="contenido-main" id="contenido-main">
-        <div id="vistaGeneral">
-            <h1 class="tituloPrincipalVista" id="tituloPrincipalVistaGeneral"></h1>
-            <div class="container">
-                <div class="row">
-                    <div id="diario" class="col-8 diarioChart"></div>
-
-                </div>
+        <h1 class="tituloPrincipalVista" id="tituloPrincipalVista">
+            <span id="textoTituloPrincipalVista"></span>
+        </h1>
+        <div class="container-fluid" id="vistaGeneral">
+            <div class="row">
+                <div id="diario" class="col-8 diarioChart"></div>
             </div>
         </div>
 
-        <div id="vistaMensual">
-            <h1 class="tituloPrincipalVista" id="tituloPrincipalVistaMensual"></h1>
-            <div class="container">
-                <div class="row">
-                    <div id="mensual" class="col-8 mensualChart"></div>
-
-                </div>
+        <div class="container-fluid" id="vistaMensual">
+            <div class="row">
+                <div id="mensual" class="col-8 mensualChart"></div>
             </div>
         </div>
     </main>
