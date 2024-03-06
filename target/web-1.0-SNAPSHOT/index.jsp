@@ -25,19 +25,29 @@
 <body>
 
 <div id="main">
-    <header class="container-fluid contenido-header">
+    <header class="container-fluid contenidoHeader">
         <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" class="logo-img-header">
         <h1>Estadísticas consumo de agua y luz</h1>
     </header>
 
     <main class="contenido-main" id="contenido-main">
-        <div class="container">
-            <div class="row">
-                <div id="diario" class="col-8 diarioChart"></div>
-                <%--            <div class="col-4" style="height:400px;">--%>
-                <%--                <div class="col-6 bg-primary" height:400px;>hola</div>--%>
-                <%--                <div class="col-6 bg-warning" height:400px;></div>--%>
-                <%--            </div>--%>
+        <div id="vistaGeneral">
+            <h1 class="tituloPrincipalVista" id="tituloPrincipalVistaGeneral"></h1>
+            <div class="container">
+                <div class="row">
+                    <div id="diario" class="col-8 diarioChart"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="vistaMensual">
+            <h1 class="tituloPrincipalVista" id="tituloPrincipalVistaMensual"></h1>
+            <div class="container">
+                <div class="row">
+                    <div id="mensual" class="col-8 mensualChart"></div>
+
+                </div>
             </div>
         </div>
     </main>
@@ -47,6 +57,7 @@
 <%--<div id="semanal" style="width: 1000px;height:400px;"></div>--%>
 <%--<div id="mensual" style="width: 600px;height:600px;"></div>--%>
 
+<script src="js/controlVistasGráficas.js"></script>
 <script src="js/semanal.js"></script>
 <script src="js/mensual.js"></script>
 <script src="js/diario.js"></script>
