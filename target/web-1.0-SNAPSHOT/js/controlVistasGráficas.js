@@ -32,6 +32,6 @@ function cambiarVisibilidad() {
         : aplicarAnimationCambioVisibilidad(vistaGeneral, vistaMensual, 'Vista mensual');
 }
 
-setInterval(cambiarVisibilidad, 8000);  // 8,000 milisegundos = 8 segundos
+// setInterval(cambiarVisibilidad, 8000);  // 8,000 milisegundos = 8 segundos
 
 

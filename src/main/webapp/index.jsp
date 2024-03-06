@@ -28,7 +28,7 @@
 <div id="main">
     <header class="container-fluid contenidoHeader">
         <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" class="logo-img-header">
-        <h1>Estadísticas consumo de agua y luz</h1>
+        <h1>Estadísticas de consumo de agua y luz</h1>
     </header>
 
     <main class="contenido-main" id="contenido-main">
