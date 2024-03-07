@@ -10,16 +10,26 @@ body {
     /* border-radius: 10px; */
     /* border: 12px black solid; */
     /* box-shadow: 0px 0px 15px 5px rgba(83,80,133,1); */
-    background-color: #082C36;
+    /*background-color: #082C36;*/
 }
 
 :root {
-    --purple-dark: #170312;
-    --purple-medium: #33032d;
-    --purple-light: #531253;
-    --gray-light: #eaeaea;
-    --white: #f4fffd;
-    --green: #297F4C;
+    --color-text: #4A4A4A;
+
+    --yellow-view: #F5F7A8;
+    --blue-view: #A8D1F7;
+    --green-view: #BAF6DD;
+
+    --background-content-main: whitesmoke;
+
+    --yellow-chart: #5470c6;
+    --blue-chart: #fac858;
+
+    --tam-column: 48%;
+}
+
+.mainBody {
+    height: 100vh;
 }
 
 
@@ -28,18 +38,94 @@ body {
 /* ---------------------------------------- */
 .contenidoHeader {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
 
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: var(--green);
-    color: white;
+    background-color: var(--green-view);
 }
 
 .logo-img-header {
-    width: 120px;
-    margin-right: 2rem;
+    width: 150px;
+    padding-left: 1rem;
+}
+
+.contenidoHeaderTitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 9rem;
+
+    width: 100%;
+    color: var(--color-text);
+
+}
+
+.contenidoHeaderTitulo > h1 {
+    text-shadow: 0 4px 4px 0 #00000040;
+    font-size: 80px;
+}
+
+.contenidoHeaderVistas {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 2rem;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                  Contenido de las vistas de energía y agua                 */
+/* -------------------------------------------------------------------------- */
+/* Energía */
+.contenidoHeaderVistas > .contenidoHeaderEnergy {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    background-color: var(--yellow-view);
+
+    padding: 1rem 2rem 1rem 2rem;
+    width: var(--tam-column);
+
+    /*border-radius: 20px;*/
+    /*border: 1px black solid;*/
+    box-shadow: 0 4px 4px 0 #00000040;
+}
+
+.contenidoHeaderVistas > .contenidoHeaderEnergy > img {
+    margin-right: 1rem;
+}
+
+.contenidoHeaderVistas > .contenidoHeaderEnergy > h2 {
+    font-size: 40px;
+    color: var(--color-text);
+}
+
+ /* Agua */
+.contenidoHeaderVistas > .contenidoHeaderAgua {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    background-color: var(--blue-view);
+
+    padding: 1rem 2rem 1rem 2rem;
+    width: var(--tam-column);
+
+    /*border-radius: 20px;*/
+    /*border: 1px black solid;*/
+    box-shadow: 0 4px 4px 0 #00000040;
+}
+
+.contenidoHeaderVistas > .contenidoHeaderAgua > img {
+    margin-right: 1rem;
+}
+
+.contenidoHeaderVistas > .contenidoHeaderAgua > h2 {
+    font-size: 40px;
+    color: var(--color-text);
 }
 
 /* ---------------------------------------- */
@@ -48,17 +134,17 @@ body {
 .contenido-main {
     position: relative;
 
-    margin-left: 1%;
-    margin-right: 1%;
+    /*margin-left: 1%;*/
+    /*margin-right: 1%;*/
     margin-top: 1rem;
 
     width: 98%;
-    height: 85vh;
+    /*height: 85vh;*/
 
-    background-color: whitesmoke;
-    border-radius: 20px;
-    border: 6px black solid;
-    box-shadow: 0 0 15px 5px rgba(83, 80, 133, 1);
+    /*background-color: var(--background-content-main);*/
+    /*border-radius: 20px;*/
+    /*border: 6px black solid;*/
+    /*box-shadow: 0 0 15px 5px rgba(83, 80, 133, 1);*/
 }
 
 .tituloPrincipalVista {
@@ -70,10 +156,12 @@ body {
     margin-bottom: 1rem;
 
     width: 100%;
-    background-color: yellow;
+    background-color: var(--yellow-view);
     color: black;
-    border-radius: 20px 20px 0 0;
+    /*border-radius: 20px 20px 0 0;*/
 }
+
+
 
 #vistaGeneral {
     display: inherit;

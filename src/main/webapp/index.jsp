@@ -26,15 +26,30 @@
 <body>
 
 <div id="main">
-    <header class="container-fluid contenidoHeader">
-        <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" class="logo-img-header">
-        <h1>Estadísticas de consumo de agua y luz</h1>
+    <header class="container-fluid p-0">
+        <div class="contenidoHeader">
+            <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" class="logo-img-header">
+            <div class="contenidoHeaderTitulo">
+                <h1>Estadísticas de consumo de agua y luz</h1>
+            </div>
+        </div>
+
+        <div class="contenidoHeaderVistas">
+            <div class="contenidoHeaderEnergy">
+                <img src="img/vectorEnergia.svg" alt="Imagen energía">
+                <h2>Energía</h2>
+            </div>
+            <div class="contenidoHeaderAgua">
+                <img src="img/vectorAgua.svg" alt="Imagen energía">
+                <h2>Agua</h2>
+            </div>
+        </div>
     </header>
 
     <main class="contenido-main" id="contenido-main">
-        <h1 class="tituloPrincipalVista" id="tituloPrincipalVista">
-            <span id="textoTituloPrincipalVista"></span>
-        </h1>
+<%--        <h1 class="tituloPrincipalVista" id="tituloPrincipalVista">--%>
+<%--            <span id="textoTituloPrincipalVista"></span>--%>
+<%--        </h1>--%>
         <div class="container-fluid" id="vistaGeneral">
             <div class="row">
                 <div id="diario" class="col-8 diarioChart"></div>
