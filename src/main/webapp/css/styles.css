@@ -181,6 +181,11 @@ body {
 }
 
 .consumoEnergySemanal, .consumoAguaSemanal {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+
     height: 50vh;
     width: 98%;
     border-radius: 20px;
