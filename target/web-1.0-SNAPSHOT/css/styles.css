@@ -160,7 +160,18 @@ body {
     padding-left: 36px;
 }
 
+.contenidoVistaGeneral span {
+    text-align: center;
+    font-size: 35px;
+}
+
 .consumoEnergyActual, .consumoAguaActual {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
     margin-bottom: 2rem;
     height: 10vh;
     width: 98%;

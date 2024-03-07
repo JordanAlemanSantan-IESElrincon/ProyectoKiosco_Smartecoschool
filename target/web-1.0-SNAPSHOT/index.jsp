@@ -50,7 +50,10 @@
         <section id="contenidoVistaGeneral" class="row contenidoVistaGeneral">
             <div class="col-6 contenidoVistaGeneralEnergy">
                 <div class="row">
-                    <div class="consumoEnergyActual">Consumo actual</div>
+                    <div class="consumoEnergyActual">
+                        <h3>Consumo actual</h3>
+                        <span>50 kWh</span>
+                    </div>
                     <div class="consumoEnergySemanal" id="mensual"></div>
                 </div>
             </div>
@@ -58,7 +61,10 @@
 
             <div class="col-6 contenidoVistaGeneralAgua">
                 <div class="row">
-                    <div class="consumoAguaActual">Consumo actual</div>
+                    <div class="consumoAguaActual">
+                        <h3>Consumo actual</h3>
+                        <span>3.375 L</span>
+                    </div>
                     <div class="consumoAguaSemanal" id="diario">Consumo semanal</div>
                 </div>
             </div>
