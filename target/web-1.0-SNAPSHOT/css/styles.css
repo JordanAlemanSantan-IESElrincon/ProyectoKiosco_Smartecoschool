@@ -25,6 +25,9 @@ body {
     --yellow-chart: #5470c6;
     --blue-chart: #fac858;
 
+    --yellow-content-chart: #F9F9DF;
+    --blue-content-chart: #D8E6F3;
+
     --tam-column: 48%;
 }
 
@@ -131,12 +134,12 @@ body {
 /* ---------------------------------------- */
 /*          Contenido principal
 /* ---------------------------------------- */
-.contenido-main {
-    position: relative;
+.contenidoMain {
+    display: flex;
+    align-items: center;
+    justify-content: start;
 
-    /*margin-left: 1%;*/
-    /*margin-right: 1%;*/
-    margin-top: 1rem;
+    margin: 2rem;
 
     width: 98%;
     /*height: 85vh;*/
@@ -147,27 +150,59 @@ body {
     /*box-shadow: 0 0 15px 5px rgba(83, 80, 133, 1);*/
 }
 
-.tituloPrincipalVista {
+/* ------------------------------ Vista general ----------------------------- */
+.contenidoVistaGeneral {
+    width: 100%;
+}
+
+/*Padding izquierdo para que se ajuste con la vista de arriba*/
+.contenidoVistaGeneral > .contenidoVistaGeneralAgua {
+    padding-left: 36px;
+}
+
+.consumoEnergyActual, .consumoAguaActual {
+    margin-bottom: 2rem;
+    height: 10vh;
+    width: 98%;
+
+    border-radius: 20px;
+    box-shadow: 0 10px 11px -1px rgba(0,0,0,0.75);
+}
+
+.consumoEnergySemanal, .consumoAguaSemanal {
+    height: 50vh;
+    width: 98%;
+    border-radius: 20px;
+    box-shadow: 0 10px 11px -1px rgba(0,0,0,0.75);
+}
+
+/*Estableciendo el color de fondo en la sección de gráficas del consumo actual y semanal de energía*/
+.consumoEnergySemanal, .consumoEnergyActual {
+    background-color: var(--yellow-content-chart);
+    border: 1px var(--yellow-content-chart) solid;
+}
+
+/*Estableciendo el color de fondo en la sección de gráficas del consumo actual y semanal de agua*/
+.consumoAguaSemanal, .consumoAguaActual {
+    background-color: var(--blue-content-chart);
+    border: 1px var(--blue-content-chart) solid;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Contenido final (footer)                          */
+/* -------------------------------------------------------------------------- */
+.contenidoFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
     display: flex;
-    align-items: center;
+    align-content: center;
     justify-content: center;
 
-    padding: 10px 0 10px 0;
-    margin-bottom: 1rem;
+    /*De altura el mismo tamaño que hay en el header*/
+    height: 136px;
 
-    width: 100%;
-    background-color: var(--yellow-view);
-    color: black;
-    /*border-radius: 20px 20px 0 0;*/
+    background-color: var(--green-view);
 }
-
-
-
-#vistaGeneral {
-    display: inherit;
-}
-
-#vistaMensual {
-    display: none;
-}
-

@@ -46,30 +46,36 @@
         </div>
     </header>
 
-    <main class="contenido-main" id="contenido-main">
-<%--        <h1 class="tituloPrincipalVista" id="tituloPrincipalVista">--%>
-<%--            <span id="textoTituloPrincipalVista"></span>--%>
-<%--        </h1>--%>
-        <div class="container-fluid" id="vistaGeneral">
-            <div class="row">
-                <div id="diario" class="col-8 diarioChart"></div>
+    <main class="contenidoMain" id="contenidoMain">
+        <section id="contenidoVistaGeneral" class="row contenidoVistaGeneral">
+            <div class="col-6 contenidoVistaGeneralEnergy">
+                <div class="row">
+                    <div class="consumoEnergyActual">Consumo actual</div>
+                    <div class="consumoEnergySemanal" id="mensual"></div>
+                </div>
             </div>
-        </div>
 
-        <div class="container-fluid" id="vistaMensual">
-            <div class="row">
-                <div id="mensual" class="col-8 mensualChart"></div>
+
+            <div class="col-6 contenidoVistaGeneralAgua">
+                <div class="row">
+                    <div class="consumoAguaActual">Consumo actual</div>
+                    <div class="consumoAguaSemanal" id="diario">Consumo semanal</div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section id="vistaMensual"></section>
     </main>
+
+<%--    <footer class="contenidoFooter"></footer>--%>
 </div>
 
 <!-- Prepare a DOM with a defined width and height for ECharts -->
 <%--<div id="semanal" style="width: 1000px;height:400px;"></div>--%>
 <%--<div id="mensual" style="width: 600px;height:600px;"></div>--%>
 
-<script src="js/controlVistasGráficas.js"></script>
-<script src="js/semanal.js"></script>
+<%--<script src="js/controlVistasGráficas.js"></script>--%>
+<%--<script src="js/semanal.js"></script>--%>
 <script src="js/mensual.js"></script>
 <script src="js/diario.js"></script>
 
