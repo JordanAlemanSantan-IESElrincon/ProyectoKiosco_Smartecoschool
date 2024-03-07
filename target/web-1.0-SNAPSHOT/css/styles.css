@@ -14,7 +14,7 @@ body {
 }
 
 :root {
-    --color-text: #4A4A4A;
+    --color-text: #0B373F;
 
     --yellow-view: #F5F7A8;
     --blue-view: #A8D1F7;
@@ -49,8 +49,8 @@ body {
 }
 
 .logo-img-header {
-    width: 150px;
-    padding-left: 1rem;
+    width: 160px;
+    padding-left: 2rem;
 }
 
 .contenidoHeaderTitulo {
@@ -160,6 +160,10 @@ body {
     padding-left: 36px;
 }
 
+.contenidoVistaGeneral h3 {
+    color: var(--color-text);
+}
+
 .contenidoVistaGeneral span {
     text-align: center;
     font-size: 35px;
@@ -176,8 +180,8 @@ body {
     height: 10vh;
     width: 98%;
 
-    border-radius: 20px;
-    box-shadow: 0 10px 11px -1px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    box-shadow: 0 10px 11px -1px rgba(215,217,245,1);
 }
 
 .consumoEnergySemanal, .consumoAguaSemanal {
@@ -188,8 +192,8 @@ body {
 
     height: 50vh;
     width: 98%;
-    border-radius: 20px;
-    box-shadow: 0 10px 11px -1px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    box-shadow: 0 10px 11px -1px rgba(215,217,245,1);
 }
 
 /*Estableciendo el color de fondo en la sección de gráficas del consumo actual y semanal de energía*/
