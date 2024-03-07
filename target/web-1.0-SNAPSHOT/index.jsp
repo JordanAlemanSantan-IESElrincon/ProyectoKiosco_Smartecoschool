@@ -30,7 +30,7 @@
         <div class="contenidoHeader">
             <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" class="logo-img-header">
             <div class="contenidoHeaderTitulo">
-                <h1>Estadísticas de consumo de agua y luz</h1>
+                <h1>Estadísticas de Consumo de Agua y Luz</h1>
             </div>
         </div>
 

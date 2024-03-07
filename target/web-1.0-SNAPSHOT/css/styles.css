@@ -181,7 +181,7 @@ body {
     width: 98%;
 
     border-radius: 10px;
-    box-shadow: 0 10px 11px -1px rgba(215,217,245,1);
+    box-shadow: 0 10px 11px -1px rgba(101,102,140,0.5);
 }
 
 .consumoEnergySemanal, .consumoAguaSemanal {
@@ -193,7 +193,7 @@ body {
     height: 50vh;
     width: 98%;
     border-radius: 10px;
-    box-shadow: 0 10px 11px -1px rgba(215,217,245,1);
+    box-shadow: 0 10px 11px -1px rgba(101,102,140,0.5);
 }
 
 /*Estableciendo el color de fondo en la sección de gráficas del consumo actual y semanal de energía*/
