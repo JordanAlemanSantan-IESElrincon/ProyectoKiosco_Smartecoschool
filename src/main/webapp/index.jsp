@@ -26,17 +26,22 @@
 <body>
 
 <div id="main">
-    <header class="container-fluid p-0">
-        <div class="contenidoHeader">
-            <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" class="logo-img-header">
-            <div class="contenidoHeaderTitulo">
+    <header class="container-fluid">
+        <div class="row contenidoHeader">
+            <div class="col-2 imagenHeader">
+                <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" width="210" height="170" class="logo-img-header">
+            </div>
+            <div class="col-8 contenidoHeaderTitulo">
                 <h1>Estadísticas de Consumo de Agua y Luz</h1>
+            </div>
+            <div class="col-2 imagenHeader">
+                <img src="img/iconElRincon.png" alt="Imagen del logo IES_ElRincón" width="170" height="170">
             </div>
         </div>
 
         <div class="contenidoHeaderVistas">
             <div class="contenidoHeaderEnergy">
-                <img src="img/vectorEnergia.svg" alt="Imagen energía">
+                <img src="img/vectorEnergy.svg" alt="Imagen energía">
                 <h2>Energía</h2>
             </div>
             <div class="contenidoHeaderAgua">
@@ -52,9 +57,9 @@
                 <div class="row">
                     <div class="consumoEnergyActual">
                         <h3>Consumo actual</h3>
-                        <span>50 kWh</span>
+                        <span id="cantidadConsumoEnergyActual">50 kWh</span>
                     </div>
-                    <div class="consumoEnergySemanal" id="mensual"></div>
+                    <div class="consumoEnergySemanal" id="diarioEnergy"></div>
                 </div>
             </div>
 
@@ -63,9 +68,9 @@
                 <div class="row">
                     <div class="consumoAguaActual">
                         <h3>Consumo actual</h3>
-                        <span>3.375 L</span>
+                        <span id="cantidadConsumoAguaActual">3.375 L</span>
                     </div>
-                    <div class="consumoAguaSemanal" id="diario">Consumo semanal</div>
+                    <div class="consumoAguaSemanal" id="diarioAgua"></div>
                 </div>
             </div>
         </section>
@@ -73,17 +78,18 @@
         <section id="vistaMensual"></section>
     </main>
 
-<%--    <footer class="contenidoFooter"></footer>--%>
+    <%--    <footer class="contenidoFooter"></footer>--%>
 </div>
 
 <!-- Prepare a DOM with a defined width and height for ECharts -->
 <%--<div id="semanal" style="width: 1000px;height:400px;"></div>--%>
 <%--<div id="mensual" style="width: 600px;height:600px;"></div>--%>
 
-<%--<script src="js/controlVistasGráficas.js"></script>--%>
-<%--<script src="js/semanal.js"></script>--%>
+<script src="js/controlVistasGráficas.js"></script>
+<script src="js/semanal.js"></script>
 <script src="js/mensual.js"></script>
-<script src="js/diario.js"></script>
+<script src="js/diarioAgua.js"></script>
+<script src="js/diarioEnergy.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"

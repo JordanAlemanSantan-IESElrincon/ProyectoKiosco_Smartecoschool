@@ -1,5 +1,5 @@
 // Initialize the echarts instance based on the prepared dom
-var myChart = echarts.init(document.getElementById('diario'));
+var myChart = echarts.init(document.getElementById('diarioEnergy'));
 
 // Specify the configuration items and data for the chart
 var option = {
@@ -19,8 +19,8 @@ var option = {
         ]
     },
     color: [
-        '#5470c6',
-        '#5aabff'
+        '#f9ff1e',
+        '#fac858'
     ],
     xAxis: { type: 'category' },
     yAxis: {},
