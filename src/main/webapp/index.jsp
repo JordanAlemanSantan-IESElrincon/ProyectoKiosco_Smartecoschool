@@ -56,7 +56,7 @@
             <div class="col-6 contenidoVistaGeneralEnergy">
                 <div class="row">
                     <%-- Cambio animación del texto de consumo diario actual a mensual--%>
-                    <div class="contenidoConsumoEnergy">
+                    <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyActual">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoEnergyActual">50 kWh</span>
                     </div>
@@ -66,7 +66,7 @@
 
             <div class="col-6 contenidoVistaGeneralAgua">
                 <div class="row">
-                    <div class="contenidoConsumoAgua">
+                    <div class="contenidoConsumoAgua" id="contenidoConsumoAguaActual">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoAguaActual">3.375 L</span>
                     </div>
@@ -79,7 +79,7 @@
             <div class="col-6 contenidoVistaGeneralEnergy">
                 <div class="row">
                     <%-- Cambio animación del texto de consumo diario actual a mensual--%>
-                    <div class="contenidoConsumoEnergy">
+                    <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyMensual">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoEnergyMensual">50 kWh</span>
                     </div>
@@ -89,7 +89,7 @@
 
             <div class="col-6 contenidoVistaGeneralAgua">
                 <div class="row">
-                    <div class="contenidoConsumoAgua">
+                    <div class="contenidoConsumoAgua" id="contenidoConsumoAguaMensual">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoAguaMensual">3.375 L</span>
                     </div>
