@@ -1,32 +1,41 @@
+
 #contenidoConsumoEnergyActual {
-    display: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 #contenidoConsumoEnergyMensual {
     display: none;
+    flex-direction: column;
 }
 
 #contenidoConsumoAguaActual {
-    display: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 #contenidoConsumoAguaMensual {
     display: none;
+    flex-direction: column;
 }
 
 /*Contenido gráficas*/
 #graficaSemanalEnergy {
-    display: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 #graficaMensualEnergy {
     display: none;
+    flex-direction: column;
 }
 
 #graficaSemanalAgua {
-    display: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 #graficaMensualAgua {
     display: none;
+    flex-direction: column;
 }
