@@ -1,5 +1,5 @@
 // Initialize the echarts instance based on the prepared dom
-var myChart = echarts.init(document.getElementById('diarioAgua'));
+var myChart = echarts.init(document.getElementById('graficaDiarioAgua'));
 
 // Specify the configuration items and data for the chart
 option = {

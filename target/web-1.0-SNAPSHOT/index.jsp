@@ -56,21 +56,21 @@
             <div class="col-6 contenidoVistaGeneralEnergy">
                 <div class="row">
                     <%-- Cambio animación del texto de consumo diario actual a mensual--%>
-                    <div class="consumoEnergyActual">
+                    <div class="contenidoConsumoEnergy">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoEnergyActual">50 kWh</span>
                     </div>
-                    <div class="consumoEnergySemanal" id="diarioEnergy"></div>
+                    <div class="contenidoGraficaConsumoEnergy" id="graficaDiarioEnergy"></div>
                 </div>
             </div>
 
             <div class="col-6 contenidoVistaGeneralAgua">
                 <div class="row">
-                    <div class="consumoAguaActual">
+                    <div class="contenidoConsumoAgua">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoAguaActual">3.375 L</span>
                     </div>
-                    <div class="consumoAguaSemanal" id="diarioAgua"></div>
+                    <div class="contenidoGraficaConsumoAgua" id="graficaDiarioAgua"></div>
                 </div>
             </div>
         </section>
@@ -79,21 +79,21 @@
             <div class="col-6 contenidoVistaGeneralEnergy">
                 <div class="row">
                     <%-- Cambio animación del texto de consumo diario actual a mensual--%>
-                    <div class="consumoEnergyActual">
+                    <div class="contenidoConsumoEnergy">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoEnergyMensual">50 kWh</span>
                     </div>
-                    <div class="consumoEnergySemanal" id="mensualEnergy"></div>
+                    <div class="contenidoGraficaConsumoEnergy" id="graficaMensualEnergy"></div>
                 </div>
             </div>
 
             <div class="col-6 contenidoVistaGeneralAgua">
                 <div class="row">
-                    <div class="consumoAguaActual">
+                    <div class="contenidoConsumoAgua">
                         <h3>Consumo actual</h3>
                         <span id="cantidadConsumoAguaMensual">3.375 L</span>
                     </div>
-                    <div class="consumoAguaSemanal" id="mensualAgua"></div>
+                    <div class="contenidoGraficaConsumoAgua" id="graficaMensualAgua"></div>
                 </div>
             </div>
         </section>

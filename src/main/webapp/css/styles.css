@@ -165,7 +165,7 @@ body {
     font-size: 35px;
 }
 
-.consumoEnergyActual, .consumoAguaActual {
+.contenidoConsumoEnergy, .contenidoConsumoAgua {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -180,7 +180,7 @@ body {
     box-shadow: 0 10px 11px -1px rgba(101,102,140,0.5);
 }
 
-.consumoEnergySemanal, .consumoAguaSemanal {
+.contenidoGraficaConsumoEnergy, .contenidoGraficaConsumoAgua {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -194,13 +194,13 @@ body {
 }
 
 /*Estableciendo el color de fondo en la sección de gráficas del consumo actual y semanal de energía*/
-.consumoEnergySemanal, .consumoEnergyActual {
+.contenidoGraficaConsumoEnergy, .contenidoConsumoEnergy {
     background-color: var(--yellow-content-chart);
     border: 1px var(--yellow-content-chart) solid;
 }
 
 /*Estableciendo el color de fondo en la sección de gráficas del consumo actual y semanal de agua*/
-.consumoAguaSemanal, .consumoAguaActual {
+.contenidoGraficaConsumoAgua, .contenidoConsumoAgua {
     background-color: var(--blue-content-chart);
     border: 1px var(--blue-content-chart) solid;
 }
