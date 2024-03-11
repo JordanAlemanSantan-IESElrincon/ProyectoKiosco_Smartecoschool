@@ -1,4 +1,6 @@
 // Initialize the echarts instance based on the prepared dom
+// import {fetchWeeklyConsumption} from "../api-service";
+
 const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalAgua'));
 
 // Specify the configuration items and data for the chart
