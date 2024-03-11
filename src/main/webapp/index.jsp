@@ -64,7 +64,6 @@
                 </div>
             </div>
 
-
             <div class="col-6 contenidoVistaGeneralAgua">
                 <div class="row">
                     <div class="consumoAguaActual">
@@ -76,10 +75,31 @@
             </div>
         </section>
 
-        <section id="vistaMensual"></section>
+        <section id="vistaMensual" class="row contenidoVistaGeneral">
+            <div class="col-6 contenidoVistaGeneralEnergy">
+                <div class="row">
+                    <%-- Cambio animación del texto de consumo diario actual a mensual--%>
+                    <div class="consumoEnergyActual">
+                        <h3>Consumo actual</h3>
+                        <span id="cantidadConsumoEnergyMensual">50 kWh</span>
+                    </div>
+                    <div class="consumoEnergySemanal" id="mensualEnergy"></div>
+                </div>
+            </div>
+
+            <div class="col-6 contenidoVistaGeneralAgua">
+                <div class="row">
+                    <div class="consumoAguaActual">
+                        <h3>Consumo actual</h3>
+                        <span id="cantidadConsumoAguaMensual">3.375 L</span>
+                    </div>
+                    <div class="consumoAguaSemanal" id="mensualAgua"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
-        <footer class="contenidoFooter"></footer>
+<%--        <footer class="contenidoFooter"></footer>--%>
 </div>
 
 <!-- Prepare a DOM with a defined width and height for ECharts -->
