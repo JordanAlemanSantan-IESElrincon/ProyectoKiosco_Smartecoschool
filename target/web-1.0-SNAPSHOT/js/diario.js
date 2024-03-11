@@ -6,19 +6,21 @@ var option = {
     legend: {},
     tooltip: {},
     dataset: {
-        dimensions: ['week', 'Agua', 'Luz'],
+        dimensions: ['week', 'Semana_anterior', 'Semana_pasada'],
         source: [
-            { week: 'Lunes', Agua: 43.3, Luz: 85.8 },
-            { week: 'Martes', Agua: 83.1, Luz: 73.4 },
-            { week: 'Miércoles', Agua: 86.4, Luz: 65.2 },
-            { week: 'Jueves', Agua: 72.4, Luz: 53.9 },
-            { week: 'Viernes', Agua: 43.3, Luz: 0 }
+            { week: 'Lunes', Semana_anterior: 43.3, Semana_pasada: 85.8 },
+            { week: 'Martes', Semana_anterior: 83.1, Semana_pasada: 73.4 },
+            { week: 'Miércoles', Semana_anterior: 86.4, Semana_pasada: 65.2 },
+            { week: 'Jueves', Semana_anterior: 72.4, Semana_pasada: 53.9 },
+            { week: 'Viernes', Semana_anterior: 72.4, Semana_pasada: 53.9 },
+            { week: 'Sábado', Semana_anterior: 72.4, Semana_pasada: 53.9 },
+            { week: 'Domingo', Semana_anterior: 43.3, Semana_pasada: 0 }
 
         ]
     },
     color: [
         '#5470c6',
-        '#fac858'
+        '#5aabff'
     ],
     xAxis: { type: 'category' },
     yAxis: {},
