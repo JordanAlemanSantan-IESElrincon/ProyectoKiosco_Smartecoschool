@@ -12,9 +12,9 @@ option = {
       { week: 'Martes', Semana_anterior: 83.1, Semana_actual: 73.4 },
       { week: 'Miércoles', Semana_anterior: 86.4, Semana_actual: 65.2 },
       { week: 'Jueves', Semana_anterior: 72.4, Semana_actual: 53.9 },
-      { week: 'Viernes', Semana_anterior: 43.3, Semana_actual: 5 },
+      { week: 'Viernes', Semana_anterior: 43.3, Semana_actual: 50.1 },
       { week: 'Sábado', Semana_anterior: 72.4, Semana_actual: 53.9 },
-      { week: 'Domingo', Semana_anterior: 43.3, Semana_actual: 10 }
+      { week: 'Domingo', Semana_anterior: 43.3, Semana_actual: 99.9 }
     ]
   },
 
@@ -49,7 +49,7 @@ option = {
     },
     {
       type: 'bar',
-      data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 10], // Datos de la semana actual
+      data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 99], // Datos de la semana actual
       label: { // Configuración de la etiqueta
         show: true, // Mostrar etiqueta
         position: 'inside', // Posición de la etiqueta
