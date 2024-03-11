@@ -56,6 +56,19 @@ body {
     justify-content: center;
 }
 
+/* Tamaño máximo de las imágenes de la cabecera */
+.logo-img-header-SES > img {
+    max-width: 210px;
+    max-height: 170px;
+}
+
+.logo-img-header-Rincon > img {
+    max-width: 170px;
+    max-height: 170px;
+}
+/* ---------------------------------------- */
+
+
 .contenidoHeaderTitulo {
     display: flex;
     align-items: center;
@@ -144,20 +157,20 @@ body {
 }
 
 /* ------------------------------ Vista general ----------------------------- */
-.contenidoVistaGeneral {
+.contenidoMain {
     width: 100%;
 }
 
 /*Padding izquierdo para que se ajuste con la vista de arriba*/
-.contenidoVistaGeneral > .contenidoVistaGeneralAgua {
+.contenidoMain .contenidoVistaGeneralAgua {
     padding-left: 20px;
 }
 
-.contenidoVistaGeneral h3 {
+.contenidoMain h3 {
     color: var(--color-text);
 }
 
-.contenidoVistaGeneral span {
+.contenidoMain span {
     text-align: center;
     font-size: 35px;
 }

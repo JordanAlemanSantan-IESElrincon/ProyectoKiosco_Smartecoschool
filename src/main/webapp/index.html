@@ -22,74 +22,72 @@
 <div id="main">
     <header class="container-fluid">
         <div class="row contenidoHeader">
-            <div class="col-2 imagenHeader">
-                <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" width="210" height="170"
-                     class="logo-img-header">
+            <div class="col-2 imagenHeader logo-img-header-SES">
+                <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" width="752" height="583">
             </div>
             <div class="col-8 contenidoHeaderTitulo">
                 <h1>Estadísticas de Consumo de Agua y Luz</h1>
             </div>
-            <div class="col-2 imagenHeader">
-                <img src="img/iconElRincon.png" alt="Imagen del logo IES_ElRincón" width="170" height="170">
+            <div class="col-2 imagenHeader logo-img-header-Rincon">
+                <img src="img/iconElRincon.png" alt="Imagen del logo IES_ElRincón" width="1280" height="1329">
             </div>
         </div>
     </header>
 
-    <main class="contenidoMain" id="contenidoMain">
-        <section id="contenidoVistaGeneral" class="row contenidoVistaGeneral">
-            <div class="col-6 contenidoVistaGeneralEnergy">
-                <div class="row">
-                    <div class="col-12 contenidoHeaderVistas">
-                        <div class="contenidoHeaderEnergy">
-                            <img src="img/vectorEnergy.svg" alt="Imagen energía">
-                            <h2>Energía</h2>
-                        </div>
+    <main class="contenidoMain row" id="contenidoMain">
+        <section class="col-6 contenidoVistaGeneralEnergy" id="contenidoVistaGeneralEnergy">
+            <div class="row">
+                <div class="col-12 contenidoHeaderVistas">
+                    <div class="contenidoHeaderEnergy">
+                        <img src="img/vectorEnergy.svg" alt="Imagen energía">
+                        <h2>Energía</h2>
                     </div>
-                </div>
-                <div class="row">
-
-                    <!--                    Cambio animación del texto de consumo diario actual a mensual-->
-                    <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyActual">
-                        <h3>Consumo diario actual</h3>
-                        <span id="cantidadConsumoEnergyActual">50 kWh</span>
-                    </div>
-
-                    <!--                    <Cambio animación del texto de consumo diario actual a mensual-->
-                    <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyMensual">
-                        <h3>Consumo mensual</h3>
-                        <span id="cantidadConsumoEnergyMensual">500 kWh</span>
-                    </div>
-
-                    <div class="contenidoGraficaConsumoEnergy" id="graficaSemanalEnergy"></div>
-                    <div class="contenidoGraficaConsumoEnergy" id="graficaMensualEnergy"></div>
                 </div>
             </div>
 
-            <div class="col-6 contenidoVistaGeneralAgua">
-                <div class="row">
-                    <div class="contenidoHeaderVistas contenidoHeaderAgua">
-                        <div class="contenidoHeaderAgua">
-                            <img src="img/vectorAgua.svg" alt="Imagen energía">
-                            <h2>Agua</h2>
-                        </div>
-                    </div>
-                    <div class="contenidoConsumoAgua" id="contenidoConsumoAguaActual">
-                        <h3>Consumo diario actual</h3>
-                        <span id="cantidadConsumoAguaActual">3.375 L</span>
-                    </div>
-
-                    <div class="contenidoConsumoAgua" id="contenidoConsumoAguaMensual">
-                        <h3>Consumo mensual</h3>
-                        <span id="cantidadConsumoAguaMensual">8.375 L</span>
-                    </div>
-
-                    <div class="contenidoGraficaConsumoAgua" id="graficaSemanalAgua"></div>
-                    <div class="contenidoGraficaConsumoAgua" id="graficaMensualAgua"></div>
+            <div class="row">
+                <!-- Cambio animación del texto de consumo diario actual a mensual -->
+                <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyActual">
+                    <h3>Consumo diario actual</h3>
+                    <span id="cantidadConsumoEnergyActual">50 kWh</span>
                 </div>
+
+                <!-- Cambio animación del texto de consumo diario actual a mensual -->
+                <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyMensual">
+                    <h3>Consumo mensual</h3>
+                    <span id="cantidadConsumoEnergyMensual">500 kWh</span>
+                </div>
+
+                <div class="contenidoGraficaConsumoEnergy" id="graficaSemanalEnergy"></div>
+                <div class="contenidoGraficaConsumoEnergy" id="graficaMensualEnergy"></div>
             </div>
         </section>
 
+        <section class="col-6 contenidoVistaGeneralAgua" id="contenidoVistaGeneralAgua">
+            <div class="row">
+                <div class="contenidoHeaderVistas contenidoHeaderAgua">
+                    <div class="contenidoHeaderAgua">
+                        <img src="img/vectorAgua.svg" alt="Imagen energía">
+                        <h2>Agua</h2>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="contenidoConsumoAgua" id="contenidoConsumoAguaActual">
+                    <h3>Consumo diario actual</h3>
+                    <span id="cantidadConsumoAguaActual">3.375 L</span>
+                </div>
+
+                <div class="contenidoConsumoAgua" id="contenidoConsumoAguaMensual">
+                    <h3>Consumo mensual</h3>
+                    <span id="cantidadConsumoAguaMensual">8.375 L</span>
+                </div>
+
+                <div class="contenidoGraficaConsumoAgua" id="graficaSemanalAgua"></div>
+                <div class="contenidoGraficaConsumoAgua" id="graficaMensualAgua"></div>
+            </div>
+        </section>
     </main>
 
     <!--    <footer class="contenidoFooter"></footer>-->
