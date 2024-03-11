@@ -19,16 +19,11 @@
     --yellow-content-chart: #F9F9DF;
     --blue-content-chart: #D8E6F3;
 
-    --tam-column: 49%;
+    --tam-column: 98%;
 
-    --box-shadow: 0 10px 11px -1px rgba(101,102,140,0.5);
+    --box-shadow: 0 10px 11px -1px rgba(101, 102, 140, 0.5);
     --border-radius: 10px;
 }
-
-.mainBody {
-    height: 100vh;
-}
-
 
 /* ---------------------------------------- */
 /*          Contenido cabecera
@@ -49,16 +44,15 @@
 
 /* Tamaño máximo de las imágenes de la cabecera */
 .logo-img-header-SES > img {
-    max-width: 210px;
-    max-height: 170px;
+    max-width: 160px;
+    max-height: 120px;
 }
 
 .logo-img-header-Rincon > img {
-    max-width: 170px;
-    max-height: 170px;
+    max-width: 120px;
+    max-height: 120px;
 }
 /* ---------------------------------------- */
-
 
 .contenidoHeaderTitulo {
     display: flex;
@@ -73,49 +67,6 @@
     font-size: 66px;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                  Contenido de las vistas de energía y agua                 */
-/* -------------------------------------------------------------------------- */
-.contenidoTituloVistas {
-    display: flex;
-    justify-content: space-between;
-
-    margin-bottom: 1rem;
-    padding: 0;
-}
-
-/* El contenido de los títulos de energía y luz comparten casi todas las propiedades. */
-/* La diferencia entre ellos está en el color de fondo */
-.contenidoTituloEnergy, .contenidoTituloAgua  {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-
-    padding: 1rem 2rem 1rem 2rem;
-    width: 98%;
-
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-}
-
-.contenidoTituloEnergy {
-    background-color: var(--yellow-view);
-}
-
-.contenidoTituloAgua {
-    background-color: var(--blue-view);
-}
-/* --------------------------------------------------------------------------------- */
-
-.contenidoTituloVistas img {
-    margin-right: 1rem;
-}
-
-.contenidoTituloVistas h2 {
-    font-size: 40px;
-    color: var(--color-text);
-}
-
 /* ---------------------------------------- */
 /*          Contenido principal
 /* ---------------------------------------- */
@@ -126,49 +77,96 @@
 
     margin: 2rem;
 
-    width: 98%;
+    width: var(--tam-column);
 }
 
-/* ------------------------------ Vista general ----------------------------- */
 .contenidoVistaGeneral {
     width: 100%;
 }
 
-.contenidoVistaGeneral h3 {
+/* ---------- Bloque contenido titulo vistas ---------- */
+.contenidoTituloVistas {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+/* El contenido de los títulos de energía y luz comparten casi todas las propiedades. */
+/* La diferencia entre ellos está en el color de fondo */
+.contenidoTituloEnergy, .contenidoTituloAgua {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    padding: 1rem 2rem 1rem 2rem;
+    width: var(--tam-column);
+
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contenidoTituloEnergy {
+    background-color: var(--yellow-view);
+}
+
+.contenidoTituloAgua {
+    background-color: var(--blue-view);
+}
+
+.contenidoTituloVistas img {
+    margin-right: 1rem;
+}
+
+.contenidoTituloVistas h2 {
+    font-size: 40px;
     color: var(--color-text);
 }
 
-.contenidoVistaGeneral span {
+/* ---------- FIN Bloque contenido titulo vistas ---------- */
+
+/* ---------- Bloque contenido del consumo ---------- */
+.contenidoConsumoEnergy, .contenidoConsumoAgua {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    margin-bottom: 2rem;
+    height: 10vh;
+    width: var(--tam-column);
+
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contenidoConsumoEnergy h3, .contenidoConsumoAgua h3 {
+    color: var(--color-text);
+}
+
+.contenidoConsumoEnergy span, .contenidoConsumoAgua span {
     text-align: center;
     font-size: 35px;
 }
 
-.contenidoConsumoEnergy, .contenidoConsumoAgua {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
+/* ---------- FIN Bloque contenido del consumo ---------- */
 
-    margin-bottom: 2rem;
-    height: 10vh;
-    width: 98%;
-
-    border-radius: 10px;
-    box-shadow: 0 10px 11px -1px rgba(101,102,140,0.5);
-}
-
+/* ---------- Bloque contenido de la gráfica de consumo  ---------- */
 .contenidoGraficaConsumoEnergy, .contenidoGraficaConsumoAgua {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
 
     padding-top: 3rem;
     height: 50vh;
-    width: 98%;
-    border-radius: 10px;
-    box-shadow: 0 10px 11px -1px rgba(101,102,140,0.5);
+    width: var(--tam-column);
+
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 /*Estableciendo el color de fondo en la sección de gráficas del consumo actual y semanal de energía*/
@@ -182,6 +180,8 @@
     background-color: var(--blue-content-chart);
     border: 1px var(--blue-content-chart) solid;
 }
+
+/* ---------- FIN Bloque contenido de la gráfica de consumo ---------- */
 
 /* -------------------------------------------------------------------------- */
 /*                          Contenido final (footer)                          */
