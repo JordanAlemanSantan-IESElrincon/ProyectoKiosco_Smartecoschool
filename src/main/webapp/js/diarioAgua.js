@@ -1,3 +1,5 @@
+import {fetchWeeklyConsumption} from "./api-service.js";
+
 // Initialize the echarts instance based on the prepared dom
 var myChart = echarts.init(document.getElementById('graficaDiarioAgua'));
 
@@ -61,3 +63,5 @@ option = {
 
 // Display the chart using the configuration items and data just specified.
 myChart.setOption(option);
+
+fetchWeeklyConsumption(2, 3).then(d => console.log(d));

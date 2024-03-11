@@ -1,0 +1,32 @@
+#contenidoConsumoEnergyActual {
+    display: inherit;
+}
+
+#contenidoConsumoEnergyMensual {
+    display: none;
+}
+
+#contenidoConsumoAguaActual {
+    display: inherit;
+}
+
+#contenidoConsumoAguaMensual {
+    display: none;
+}
+
+/*Contenido gráficas*/
+#graficaDiarioEnergy {
+    display: inherit;
+}
+
+#graficaMensualEnergy {
+    display: none;
+}
+
+#graficaSemanalAgua {
+    display: inherit;
+}
+
+#graficaMensualAgua {
+    display: none;
+}
