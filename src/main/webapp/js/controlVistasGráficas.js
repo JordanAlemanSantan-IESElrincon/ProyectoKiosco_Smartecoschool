@@ -89,3 +89,42 @@
 // }
 //
 // setInterval(cambiarVisibilidad, 8000);  // 8,000 milisegundos = 8 segundos
+
+
+const contenidoConsumoEnergy = document.querySelector("#contenidoConsumoEnergy");
+const contenidoConsumoAgua = document.querySelector("#contenidoConsumoAgua");
+
+let vistaContenidoConsumoEnergyActual =
+    `
+        <h3>Consumo diario actual</h3>
+        <span id="cantidadConsumoEnergyActual">5000 kWh</span>
+    `;
+
+let vistaContenidoConsumoAguaActual =
+    `
+        <h3>Consumo diario actual</h3>
+        <span id="cantidadConsumoAguaActual">3.375 L</span>
+    `;
+
+contenidoConsumoEnergy.innerHTML = vistaContenidoConsumoEnergyActual;
+contenidoConsumoAgua.innerHTML = vistaContenidoConsumoAguaActual;
+
+// const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
+//     vistaActual.forEach((contenidoVista) => {contenidoVista.classList.add('desaparecer')});
+//
+//     setTimeout(() => {
+//         vistaActual.forEach((contenidoVista) => contenidoVista.style.display = 'none');
+//         vistaNueva.forEach((contenidoVista) => contenidoVista.style.display = 'inherit');
+//
+//         vistaNueva.forEach((contenidoVista) => {contenidoVista.classList.add('aparecer')});
+//     }, 1900);  // Duración de la animación en milisegundos (1.9 segundo en este caso)
+//
+//     vistaActual.forEach((contenidoVista) => {contenidoVista.classList.remove('aparecer')});
+//     vistaNueva.forEach((contenidoVista) => {contenidoVista.classList.remove('desaparecer')});
+// }
+//
+// const cambiarVisibilidad = () => {
+//     (document.querySelector("#contenidoConsumoEnergyMensual").style.display === 'none')
+//         ? aplicarAnimationCambioVisibilidad(contenidoMensual, contenidoActual)
+//         : aplicarAnimationCambioVisibilidad(contenidoActual, contenidoMensual);
+// }
