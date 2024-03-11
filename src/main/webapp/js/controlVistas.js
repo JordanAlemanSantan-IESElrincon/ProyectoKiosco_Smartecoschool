@@ -16,15 +16,15 @@ graficaMensualEnergy.style.visibility = 'hidden';
 graficaMensualAgua.style.visibility = 'hidden';
 
 const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
-    if (vistaNueva.style.visibility === 'hidden')
-        vistaNueva.style.visibility = 'visible';
-
     vistaNueva.classList.remove('desaparecer')
 
     vistaActual.classList.remove('aparecer');
     vistaActual.classList.add('desaparecer');
 
     setTimeout(() => {
+        if (vistaNueva.style.visibility === 'hidden')
+            vistaNueva.style.visibility = 'visible';
+
         vistaActual.style.display = 'none';
         vistaNueva.style.display = 'flex';
 
