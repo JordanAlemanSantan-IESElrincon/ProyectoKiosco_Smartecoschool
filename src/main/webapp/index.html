@@ -53,17 +53,17 @@
 
                     <!--                    Cambio animación del texto de consumo diario actual a mensual-->
                     <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyActual">
-                        <h3>Consumo actual</h3>
+                        <h3>Consumo diario actual</h3>
                         <span id="cantidadConsumoEnergyActual">50 kWh</span>
                     </div>
 
                     <!--                    <Cambio animación del texto de consumo diario actual a mensual-->
                     <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyMensual">
                         <h3>Consumo mensual</h3>
-                        <span id="cantidadConsumoEnergyMensual">50 kWh</span>
+                        <span id="cantidadConsumoEnergyMensual">500 kWh</span>
                     </div>
 
-                    <div class="contenidoGraficaConsumoEnergy" id="graficaDiarioEnergy"></div>
+                    <div class="contenidoGraficaConsumoEnergy" id="graficaSemanalEnergy"></div>
                     <div class="contenidoGraficaConsumoEnergy" id="graficaMensualEnergy"></div>
                 </div>
             </div>
@@ -71,16 +71,16 @@
             <div class="col-6 contenidoVistaGeneralAgua">
                 <div class="row">
                     <div class="contenidoConsumoAgua" id="contenidoConsumoAguaActual">
-                        <h3>Consumo actual</h3>
+                        <h3>Consumo diario actual</h3>
                         <span id="cantidadConsumoAguaActual">3.375 L</span>
                     </div>
 
                     <div class="contenidoConsumoAgua" id="contenidoConsumoAguaMensual">
                         <h3>Consumo mensual</h3>
-                        <span id="cantidadConsumoAguaMensual">3.375 L</span>
+                        <span id="cantidadConsumoAguaMensual">8.375 L</span>
                     </div>
 
-                    <div class="contenidoGraficaConsumoAgua" id="graficaDiarioAgua"></div>
+                    <div class="contenidoGraficaConsumoAgua" id="graficaSemanalAgua"></div>
                     <div class="contenidoGraficaConsumoAgua" id="graficaMensualAgua"></div>
                 </div>
             </div>
@@ -94,8 +94,8 @@
 
 <!-- Prepare a DOM with a defined width and height for ECharts -->
 <script src="js/controlVistasGráficas.js"></script>
-<script type="module" src="js/diarioAgua.js"></script>
-<script src="js/diarioEnergy.js"></script>
+<script type="module" src="js/semanalAgua.js"></script>
+<script src="js/semanalEnergy.js"></script>
 <script type="module" src="js/api-service.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
