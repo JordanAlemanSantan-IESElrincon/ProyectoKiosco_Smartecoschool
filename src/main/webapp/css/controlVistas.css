@@ -24,6 +24,8 @@
     position: relative;
 }
 
+/*Las gráficas tienen que inicializarse en un div existente y con el suficiente espacio.*/
+/*Como serán dos gráficas ocupando el mismo espacio de div, las añado con una posición absoluta*/
 .contenidoGraficaConsumoEnergy > div, .contenidoGraficaConsumoAgua > div {
     position: absolute;
     top: 0;

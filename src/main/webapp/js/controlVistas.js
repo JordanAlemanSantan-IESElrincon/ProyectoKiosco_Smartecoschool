@@ -12,6 +12,14 @@ const graficaMensualEnergy = document.querySelector("#graficaMensualEnergy");
 const graficaSemanalAgua = document.querySelector("#graficaSemanalAgua");
 const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
 
+//      Las gráficas tienen que inicializarse en un div existente y con el suficiente espacio.
+//      Como serán dos gráficas ocupando el mismo espacio de div, se inicializa las mensuales
+// a hidden para que no se vean. Al aplicar "aplicarAnimationCambioVisibilidad()", ya se
+// ponen a visible por el resto del tiempo.
+//      Como están en una posición absoluta (ver en css/controlVistas.css), podrán ocupar
+// ambas gráficas el mismo espacio del div donde se encuentran.
+//      div de graficaMensualEnergy => contenidoGraficaConsumoEnergy
+//      div de graficaMensualAgua   => contenidoGraficaConsumoAgua
 graficaMensualEnergy.style.visibility = 'hidden';
 graficaMensualAgua.style.visibility = 'hidden';
 
