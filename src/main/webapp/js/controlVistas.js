@@ -6,6 +6,12 @@ const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoE
 const contenidoConsumoAguaActual = document.querySelector("#contenidoConsumoAguaActual");
 const contenidoConsumoAguaMensual = document.querySelector("#contenidoConsumoAguaMensual");
 
+const graficaSemanalEnergy = document.querySelector("#graficaSemanalEnergy");
+const graficaMensualEnergy = document.querySelector("#graficaMensualEnergy");
+
+const graficaSemanalAgua = document.querySelector("#graficaSemanalAgua");
+const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
+
 const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
     vistaNueva.classList.remove('desaparecer')
 
@@ -30,4 +36,6 @@ const cambiarVisibilidad = (vistaActual, vistaMensual) => {
 setInterval(() => {
     cambiarVisibilidad(contenidoConsumoEnergyActual, contenidoConsumoEnergyMensual)
     cambiarVisibilidad(contenidoConsumoAguaActual, contenidoConsumoAguaMensual)
+
+    cambiarVisibilidad()
 }, tiempoEsperaCambioVista);
