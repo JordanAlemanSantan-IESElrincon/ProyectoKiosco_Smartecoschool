@@ -34,60 +34,87 @@
         </div>
     </header>
 
-    <main class="contenidoMain row" id="contenidoMain">
-        <section class="col-6 contenidoVistaGeneralEnergy" id="contenidoVistaGeneralEnergy">
-            <div class="row">
-                <div class="col-12 contenidoHeaderVistas">
-                    <div class="contenidoHeaderEnergy">
-                        <img src="img/vectorEnergy.svg" alt="Imagen energía">
-                        <h2>Energía</h2>
+    <main class="contenidoMain" id="contenidoMain">
+        <div class="row contenidoVistaGeneral">
+
+            <!-- ------------------------------ -->
+            <!-- Vista de la sección de ENERGÍA -->
+            <!-- ------------------------------ -->
+            <section class="col-6 contenidoVistaGeneralEnergy" id="contenidoVistaGeneralEnergy">
+                <div class="row">
+
+                    <!-- Título de la sección de energía (luz) -->
+                    <div class="col-12 contenidoTituloVistas">
+                        <div class="contenidoTituloEnergy">
+                            <img src="img/vectorEnergy.svg" alt="Imagen energía">
+                            <h2>Energía</h2>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <!-- ----------------------------------------------------------------------- -->
 
-            <div class="row">
-                <!-- Cambio animación del texto de consumo diario actual a mensual -->
-                <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyActual">
-                    <h3>Consumo diario actual</h3>
-                    <span id="cantidadConsumoEnergyActual">50 kWh</span>
-                </div>
-
-                <!-- Cambio animación del texto de consumo diario actual a mensual -->
-                <div class="contenidoConsumoEnergy" id="contenidoConsumoEnergyMensual">
-                    <h3>Consumo mensual</h3>
-                    <span id="cantidadConsumoEnergyMensual">500 kWh</span>
-                </div>
-
-                <div class="contenidoGraficaConsumoEnergy" id="graficaSemanalEnergy"></div>
-                <div class="contenidoGraficaConsumoEnergy" id="graficaMensualEnergy"></div>
-            </div>
-        </section>
-
-        <section class="col-6 contenidoVistaGeneralAgua" id="contenidoVistaGeneralAgua">
-            <div class="row">
-                <div class="contenidoHeaderVistas contenidoHeaderAgua">
-                    <div class="contenidoHeaderAgua">
-                        <img src="img/vectorAgua.svg" alt="Imagen energía">
-                        <h2>Agua</h2>
+                    <!-- Vista del consumo SEMANAL de energía. Inicialmente visible.
+                    Cambiará cada x tiempo por la vista del consumo mensual de energía -->
+                    <div class="col-12 contenidoConsumoEnergy" id="contenidoConsumoEnergyActual">
+                        <h3>Consumo diario actual</h3>
+                        <span id="cantidadConsumoEnergyActual">50 kWh</span>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="contenidoConsumoAgua" id="contenidoConsumoAguaActual">
-                    <h3>Consumo diario actual</h3>
-                    <span id="cantidadConsumoAguaActual">3.375 L</span>
-                </div>
+                    <div class="contenidoGraficaConsumoEnergy" id="graficaSemanalEnergy"></div>
+                    <!-- ----------------------------------------------------------------------- -->
 
-                <div class="contenidoConsumoAgua" id="contenidoConsumoAguaMensual">
-                    <h3>Consumo mensual</h3>
-                    <span id="cantidadConsumoAguaMensual">8.375 L</span>
-                </div>
+                    <!-- Vista del consumo MENSUAL de energía. Inicialmente oculto.
+                    Cambiará cada x tiempo por la vista del consumo semanal de energía -->
+                    <div class="col-12 contenidoConsumoEnergy" id="contenidoConsumoEnergyMensual">
+                        <h3>Consumo mensual</h3>
+                        <span id="cantidadConsumoEnergyMensual">500 kWh</span>
+                    </div>
 
-                <div class="contenidoGraficaConsumoAgua" id="graficaSemanalAgua"></div>
-                <div class="contenidoGraficaConsumoAgua" id="graficaMensualAgua"></div>
-            </div>
-        </section>
+                    <div class="contenidoGraficaConsumoEnergy" id="graficaMensualEnergy"></div>
+                    <!-- ----------------------------------------------------------------------- -->
+
+                </div>
+            </section>
+
+            <!-- --------------------------- -->
+            <!-- Vista de la sección de AGUA -->
+            <!-- --------------------------- -->
+            <section class="col-6 contenidoVistaGeneralAgua" id="contenidoVistaGeneralAgua">
+                <div class="row">
+
+                    <!-- Título de la sección de agua -->
+                    <div class="col-12 contenidoTituloVistas">
+                        <div class="contenidoTituloAgua">
+                            <img src="img/vectorAgua.svg" alt="Imagen energía">
+                            <h2>Agua</h2>
+                        </div>
+                    </div>
+                    <!-- ----------------------------------------------------------------------- -->
+
+                    <!-- Vista del consumo SEMANAL del agua. Inicialmente visible.
+                    Cambiará cada x tiempo por la vista del consumo mensual del agua -->
+                    <div class="col-12 contenidoConsumoAgua" id="contenidoConsumoAguaActual">
+                        <h3>Consumo diario actual</h3>
+                        <span id="cantidadConsumoAguaActual">3.375 L</span>
+                    </div>
+
+                    <div class="contenidoGraficaConsumoAgua" id="graficaSemanalAgua"></div>
+                    <!-- ----------------------------------------------------------------------- -->
+
+                    <!-- Vista del consumo MENSUAL del agua. Inicialmente oculto.
+                    Cambiará cada x tiempo por la vista del consumo semanal del agua -->
+                    <div class="col-12 contenidoConsumoAgua" id="contenidoConsumoAguaMensual">
+                        <h3>Consumo mensual</h3>
+                        <span id="cantidadConsumoAguaMensual">8.375 L</span>
+                    </div>
+
+                    <div class="contenidoGraficaConsumoAgua" id="graficaMensualAgua"></div>
+                    <!-- ----------------------------------------------------------------------- -->
+
+                </div>
+            </section>
+        </div>
+
+
     </main>
 
     <!--    <footer class="contenidoFooter"></footer>-->

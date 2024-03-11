@@ -4,15 +4,6 @@
     padding: 0;
 }
 
-body {
-    position: relative;
-
-    /* border-radius: 10px; */
-    /* border: 12px black solid; */
-    /* box-shadow: 0px 0px 15px 5px rgba(83,80,133,1); */
-    /*background-color: #082C36;*/
-}
-
 :root {
     --color-text: #0B373F;
 
@@ -82,7 +73,10 @@ body {
     font-size: 66px;
 }
 
-.contenidoHeaderVistas {
+/* -------------------------------------------------------------------------- */
+/*                  Contenido de las vistas de energía y agua                 */
+/* -------------------------------------------------------------------------- */
+.contenidoTituloVistas {
     display: flex;
     justify-content: space-between;
 
@@ -90,55 +84,34 @@ body {
     padding: 0;
 }
 
-
-/* -------------------------------------------------------------------------- */
-/*                  Contenido de las vistas de energía y agua                 */
-/* -------------------------------------------------------------------------- */
-/* Energía */
-.contenidoHeaderVistas > .contenidoHeaderEnergy {
+/* El contenido de los títulos de energía y luz comparten casi todas las propiedades. */
+/* La diferencia entre ellos está en el color de fondo */
+.contenidoTituloEnergy, .contenidoTituloAgua  {
     display: flex;
     align-items: center;
     justify-content: start;
 
+    padding: 1rem 2rem 1rem 2rem;
+    width: 98%;
 
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+.contenidoTituloEnergy {
     background-color: var(--yellow-view);
-
-    padding: 1rem 2rem 1rem 2rem;
-    width: 98%;
-
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
 }
 
-.contenidoHeaderVistas > .contenidoHeaderEnergy > img {
-    margin-right: 1rem;
-}
-
-.contenidoHeaderVistas > .contenidoHeaderEnergy > h2 {
-    font-size: 40px;
-    color: var(--color-text);
-}
-
-/* Agua */
-.contenidoHeaderVistas > .contenidoHeaderAgua {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-
+.contenidoTituloAgua {
     background-color: var(--blue-view);
-
-    padding: 1rem 2rem 1rem 2rem;
-    width: 98%;
-
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
 }
+/* --------------------------------------------------------------------------------- */
 
-.contenidoHeaderVistas > .contenidoHeaderAgua > img {
+.contenidoTituloVistas img {
     margin-right: 1rem;
 }
 
-.contenidoHeaderVistas > .contenidoHeaderAgua > h2 {
+.contenidoTituloVistas h2 {
     font-size: 40px;
     color: var(--color-text);
 }
@@ -157,20 +130,15 @@ body {
 }
 
 /* ------------------------------ Vista general ----------------------------- */
-.contenidoMain {
+.contenidoVistaGeneral {
     width: 100%;
 }
 
-/*Padding izquierdo para que se ajuste con la vista de arriba*/
-.contenidoMain .contenidoVistaGeneralAgua {
-    padding-left: 20px;
-}
-
-.contenidoMain h3 {
+.contenidoVistaGeneral h3 {
     color: var(--color-text);
 }
 
-.contenidoMain span {
+.contenidoVistaGeneral span {
     text-align: center;
     font-size: 35px;
 }
