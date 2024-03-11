@@ -1,5 +1,5 @@
 // Initialize the echarts instance based on the prepared dom
-var myChart = echarts.init(document.getElementById('graficaSemanalEnergy'));
+const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalAgua'));
 
 // Specify the configuration items and data for the chart
 option = {
@@ -19,8 +19,8 @@ option = {
   },
 
   color: [
-    '#C0C51A',
-    '#7F8206'
+    '#7261DF',
+    '#4A3F92'
   ],
 
   grid: {
@@ -60,4 +60,6 @@ option = {
 };
 
 // Display the chart using the configuration items and data just specified.
-myChart.setOption(option);
+myChartSemanalAgua.setOption(option);
+
+// fetchWeeklyConsumption(2, 3).then(d => console.log(d));

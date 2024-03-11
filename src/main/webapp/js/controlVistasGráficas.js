@@ -50,10 +50,12 @@ const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
 const contenidoActual = [contenidoConsumoEnergyActual, contenidoConsumoAguaActual, graficaSemanalEnergy, graficaSemanalAgua];
 const contenidoMensual = [contenidoConsumoEnergyMensual, contenidoConsumoAguaMensual, graficaMensualEnergy, graficaMensualAgua];
 const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
-    vistaNueva.forEach((propiedad) => {propiedad.classList.add('aparecer')});
+    // vistaNueva.forEach((propiedad) => {propiedad.classList.add('aparecer')});
+    //
+    // vistaActual.forEach((propiedad) => {propiedad.classList.remove('aparecer')});
+    // vistaActual.forEach((propiedad) => {propiedad.classList.add('desaparecer')});
 
-    vistaActual.forEach((propiedad) => {propiedad.classList.remove('aparecer')});
-    vistaActual.forEach((propiedad) => {propiedad.classList.add('desaparecer')});
+    vistaNueva.forEach((contenidoVista) => contenidoVista.style.display = 'inherit');
 
     // tituloPrincipalVista.classList.add('desaparecer');
     //
@@ -69,3 +71,5 @@ const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
     //
     // tituloPrincipalVista.classList.remove(('aparecer'))
 }
+
+// aplicarAnimationCambioVisibilidad(contenidoActual, contenidoMensual);

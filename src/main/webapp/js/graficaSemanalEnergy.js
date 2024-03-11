@@ -1,7 +1,5 @@
-import {fetchWeeklyConsumption} from "./api-service.js";
-
 // Initialize the echarts instance based on the prepared dom
-var myChart = echarts.init(document.getElementById('graficaSemanalAgua'));
+const myChartSemanalEnergy = echarts.init(document.getElementById('graficaSemanalEnergy'));
 
 // Specify the configuration items and data for the chart
 option = {
@@ -21,8 +19,8 @@ option = {
   },
 
   color: [
-    '#7261DF',
-    '#4A3F92'
+    '#C0C51A',
+    '#7F8206'
   ],
 
   grid: {
@@ -62,6 +60,4 @@ option = {
 };
 
 // Display the chart using the configuration items and data just specified.
-myChart.setOption(option);
-
-fetchWeeklyConsumption(2, 3).then(d => console.log(d));
+myChartSemanalEnergy.setOption(option);
