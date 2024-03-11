@@ -41,3 +41,31 @@ const contenidoConsumoAguaActual = document.querySelector("#contenidoConsumoAgua
 const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoEnergyMensual");
 const contenidoConsumoAguaMensual = document.querySelector("#contenidoConsumoAguaMensual");
 
+const graficaSemanalEnergy = document.querySelector("#graficaSemanalEnergy");
+const graficaSemanalAgua = document.querySelector("#graficaSemanalAgua");
+
+const graficaMensualEnergy = document.querySelector("#graficaMensualEnergy");
+const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
+
+const contenidoActual = [contenidoConsumoEnergyActual, contenidoConsumoAguaActual, graficaSemanalEnergy, graficaSemanalAgua];
+const contenidoMensual = [contenidoConsumoEnergyMensual, contenidoConsumoAguaMensual, graficaMensualEnergy, graficaMensualAgua];
+const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
+    vistaNueva.forEach((propiedad) => {propiedad.classList.add('aparecer')});
+
+    vistaActual.forEach((propiedad) => {propiedad.classList.remove('aparecer')});
+    vistaActual.forEach((propiedad) => {propiedad.classList.add('desaparecer')});
+
+    // tituloPrincipalVista.classList.add('desaparecer');
+    //
+    // setTimeout(() => {
+    //     vistaActual.style.display = 'none';
+    //     vistaNueva.style.display = 'inherit';
+    //     tituloPrincipalVista.innerHTML = textoTituloVista;
+    //
+    //     vistaNueva.classList.add('aparecer');
+    //     tituloPrincipalVista.classList.remove(('desaparecer'))
+    //     tituloPrincipalVista.classList.add('aparecer');
+    // }, 1900);  // Duración de la animación en milisegundos (1.9 segundo en este caso)
+    //
+    // tituloPrincipalVista.classList.remove(('aparecer'))
+}
