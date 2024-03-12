@@ -9,15 +9,15 @@ option = {
   tooltip: {},
   dataset: {
     dimensions: ['week', 'Semana_anterior', 'Semana_actual'],
-    source: [
-      { week: 'Lunes', Semana_anterior: 43.3, Semana_actual: 85.8 },
-      { week: 'Martes', Semana_anterior: 83.1, Semana_actual: 73.4 },
-      { week: 'Miércoles', Semana_anterior: 86.4, Semana_actual: 65.2 },
-      { week: 'Jueves', Semana_anterior: 72.4, Semana_actual: 53.9 },
-      { week: 'Viernes', Semana_anterior: 43.3, Semana_actual: 5 },
-      { week: 'Sábado', Semana_anterior: 72.4, Semana_actual: 53.9 },
-      { week: 'Domingo', Semana_anterior: 43.3, Semana_actual: 10 }
-    ]
+    // source: [
+    //   { week: 'Lunes', Semana_anterior: 43.3, Semana_actual: 85.8 },
+    //   { week: 'Martes', Semana_anterior: 83.1, Semana_actual: 73.4 },
+    //   { week: 'Miércoles', Semana_anterior: 86.4, Semana_actual: 65.2 },
+    //   { week: 'Jueves', Semana_anterior: 72.4, Semana_actual: 53.9 },
+    //   { week: 'Viernes', Semana_anterior: 43.3, Semana_actual: 5 },
+    //   { week: 'Sábado', Semana_anterior: 72.4, Semana_actual: 53.9 },
+    //   { week: 'Domingo', Semana_anterior: 43.3, Semana_actual: 10 }
+    // ]
   },
 
   color: [
@@ -42,7 +42,7 @@ option = {
   series: [
     {
       type: 'bar',
-      data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
+      data: [43.3 , 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
       label: { // Configuración de la etiqueta
         show: true, // Mostrar etiqueta
         position: 'inside', // Posición de la etiqueta

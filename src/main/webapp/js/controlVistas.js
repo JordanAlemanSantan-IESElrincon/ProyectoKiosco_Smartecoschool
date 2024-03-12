@@ -1,4 +1,4 @@
-const tiempoEsperaCambioVista = 10000;
+const tiempoEsperaCambioVista = 6000;
 
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
 const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoEnergyMensual");
@@ -18,8 +18,8 @@ const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
 // ponen a visible por el resto del tiempo.
 //      Como están en una posición absoluta (ver en css/controlVistas.css), podrán ocupar
 // ambas gráficas el mismo espacio del div donde se encuentran.
-//      div de graficaMensualEnergy => contenidoGraficaConsumoEnergy
-//      div de graficaMensualAgua   => contenidoGraficaConsumoAgua
+//      div de graficaMensualEnergy → contenidoGraficaConsumoEnergy
+//      div de graficaMensualAgua → contenidoGraficaConsumoAgua
 graficaMensualEnergy.style.visibility = 'hidden';
 graficaMensualAgua.style.visibility = 'hidden';
 
@@ -48,6 +48,7 @@ const cambiarVisibilidad = (vistaActual, vistaMensual) => {
 }
 
 setInterval(() => {
+
     cambiarVisibilidad(contenidoConsumoEnergyActual, contenidoConsumoEnergyMensual)
     cambiarVisibilidad(contenidoConsumoAguaActual, contenidoConsumoAguaMensual)
 
