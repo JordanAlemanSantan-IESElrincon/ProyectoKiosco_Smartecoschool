@@ -74,6 +74,8 @@ option = {
         color: '#CBCD2A'
       },
 
+      //Datos de los meses
+      //Abr May Jun Jul Ago Sep Oct Nov Dic Ene Feb Mar
       data: [820, 932, 901, 934, 1290, 1330, 1320, 1000, 1200, 1100, 1000, 1005]
     }
   ]
