@@ -25,6 +25,24 @@
     --border-radius: 10px;
 }
 
+body {
+    background: linear-gradient(137deg,#baf6dd,#f5f7a8,#a8d1f7);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
 /* ---------------------------------------- */
 /*          Contenido cabecera
 /* ---------------------------------------- */
@@ -34,7 +52,6 @@
 
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: var(--green-view);
 }
 
 .imagenHeader {
@@ -214,7 +231,8 @@ body {
     text-align: center;
     z-index: 99;
     position: absolute;
-    left: 100px;
+    left: 10px;
+    top: 100px;
     height: 100vh;
     opacity: 0.5;
 }

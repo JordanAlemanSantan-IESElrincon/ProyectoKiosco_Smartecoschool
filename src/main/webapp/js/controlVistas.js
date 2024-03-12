@@ -1,4 +1,4 @@
-const tiempoEsperaCambioVista = 6000;
+const tiempoEsperaCambioVista = 60000;
 
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
 const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoEnergyMensual");
