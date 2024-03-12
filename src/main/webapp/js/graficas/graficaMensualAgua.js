@@ -3,9 +3,6 @@ const myChartMensualAgua = echarts.init(document.getElementById('graficaMensualA
 
 // Specify the configuration items and data for the chart
 option = {
-  title: {
-    text: 'Agua'
-  },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -15,14 +12,16 @@ option = {
       }
     }
   },
+
+  //titulo de leyenda
   legend: {
-    data: ['Consumo mensual']
-  },
-  toolbox: {
-    feature: {
-      saveAsImage: {}
+    data: ['Consumo mensual'],
+    //Cambiar el tamano del dato Consumo Mensual
+    textStyle: {
+      fontSize: 24,
     }
   },
+
   grid: {
     left: '3%',
     right: '4%',
@@ -34,7 +33,11 @@ option = {
       type: 'category',
       boundaryGap: false,
       data: ['Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep',
-      'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar']
+      'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
+      //Cambiar el tamano de los nombres del mes
+      axisLabel: {
+        fontSize: 18,
+      }
     }
   ],
   yAxis: [
@@ -57,6 +60,7 @@ option = {
         //Color R/G/B/Alfa
         color: 'rgba(6, 140, 170, 0.5)'
       },
+
       emphasis: {
         focus: 'series'
       },
