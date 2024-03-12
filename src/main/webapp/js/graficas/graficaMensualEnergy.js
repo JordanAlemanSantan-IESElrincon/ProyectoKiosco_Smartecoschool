@@ -3,9 +3,6 @@ const myChartMensualEnergy = echarts.init(document.getElementById('graficaMensua
 
 // Specify the configuration items and data for the chart
 option = {
-  title: {
-    text: 'Energía'
-  },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -15,14 +12,16 @@ option = {
       }
     }
   },
+
+  //titulo de leyenda
   legend: {
-    data: ['Consumo mensual']
-  },
-  toolbox: {
-    feature: {
-      saveAsImage: {}
+    data: ['Consumo mensual'],
+    //Cambiar el tamaño del dato Consumo Mensual
+    textStyle: {
+      fontSize: 24,
     }
   },
+
   grid: {
     left: '3%',
     right: '4%',
@@ -34,7 +33,11 @@ option = {
       type: 'category',
       boundaryGap: false,
       data: ['Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep',
-      'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar']
+        'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
+      //Cambiar el tamaño de los nombres del mes
+      axisLabel: {
+        fontSize: 18,
+      }
     }
   ],
   yAxis: [
@@ -52,7 +55,7 @@ option = {
         position: 'top'
       },
 
-      //Cambiar el color del interior de la grafica
+      //Cambiar el color del interior de la gráfica
       areaStyle: {
         //Color R/G/B/Alfa
         color: 'rgba(230, 232, 57, 0.5)'
@@ -61,16 +64,15 @@ option = {
         focus: 'series'
       },
 
-      //Cambiar el color de la linea de la grafica
+      //Cambiar el color de la línea de la gráfica
       lineStyle: {
         color: '#CBCD2A'
       },
 
-      //Cambiar el color de los circulos de la grafica
-       itemStyle: {
+      //Cambiar el color de los círculos de la gráfica
+      itemStyle: {
         color: '#CBCD2A'
       },
-
       //Datos de los meses
       //Abr May Jun Jul Ago Sep Oct Nov Dic Ene Feb Mar
       data: [820, 932, 901, 934, 1290, 1330, 1320, 1000, 1200, 1100, 1000, 1005]

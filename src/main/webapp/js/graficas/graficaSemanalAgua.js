@@ -43,7 +43,7 @@ const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalA
       grid: {
         left: '3%',
         right: '4%',
-        bottom: '25%', // Aumenta el espacio en la parte inferior para hacer espacio para las etiquetas del eje x
+        bottom: '10%', // Aumenta el espacio en la parte inferior para hacer espacio para las etiquetas del eje x
         containLabel: true
       },
 

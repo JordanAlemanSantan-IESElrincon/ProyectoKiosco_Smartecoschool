@@ -20,16 +20,22 @@
 }
 
 /*Contenido gráficas*/
+/*.contenidoGraficaConsumoEnergy se establece como un contenedor relativo para que */
+/* los elementos posicionados absolutamente dentro de él se basen en este contenedor.*/
 .contenidoGraficaConsumoEnergy, .contenidoGraficaConsumoAgua {
     position: relative;
 }
 
 /*Las gráficas tienen que inicializarse en un div existente y con el suficiente espacio.*/
 /*Como serán dos gráficas ocupando el mismo espacio de div, las añado con una posición absoluta*/
+/*  Se posiciona absolutamente con un top y left del 50%, lo que coloca su esquina superior izquierda en el centro del contenedor padre*/
+/*  transform: translate(-50%, -50%) se utiliza para ajustar la posición del elemento en relación con su propio tamaño, */
+/*centrando así completamente el elemento dentro de su contenedor.*/
 .contenidoGraficaConsumoEnergy > div, .contenidoGraficaConsumoAgua > div {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     width: 100%;
     height: 100%;

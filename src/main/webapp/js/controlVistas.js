@@ -1,4 +1,4 @@
-const tiempoEsperaCambioVista = 60000;
+const tiempoEsperaCambioVista = 6000;
 
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
 const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoEnergyMensual");
@@ -45,13 +45,14 @@ const cambiarVisibilidad = (vistaActual, vistaMensual) => {
     (vistaActual.style.display === 'none')
         ? aplicarAnimationCambioVisibilidad(vistaMensual, vistaActual)
         : aplicarAnimationCambioVisibilidad(vistaActual, vistaMensual);
-}
+};
 
-setInterval(() => {
-
+const cambiasVisibilidadTotal = () => {
     cambiarVisibilidad(contenidoConsumoEnergyActual, contenidoConsumoEnergyMensual)
     cambiarVisibilidad(contenidoConsumoAguaActual, contenidoConsumoAguaMensual)
 
     cambiarVisibilidad(graficaSemanalEnergy, graficaMensualEnergy);
     cambiarVisibilidad(graficaSemanalAgua, graficaMensualAgua);
-}, tiempoEsperaCambioVista);
+};
+
+setInterval(() => cambiasVisibilidadTotal(), tiempoEsperaCambioVista);
