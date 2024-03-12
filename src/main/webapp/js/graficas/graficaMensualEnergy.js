@@ -3,6 +3,9 @@ const myChartMensualEnergy = echarts.init(document.getElementById('graficaMensua
 
 // Specify the configuration items and data for the chart
 option = {
+  title: {
+    text: 'Energía'
+  },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -12,16 +15,14 @@ option = {
       }
     }
   },
-
-  //titulo de leyenda
   legend: {
-    data: ['Consumo mensual'],
-    //Cambiar el tamano del dato Consumo Mensual
-    textStyle: {
-      fontSize: 24,
+    data: ['Consumo mensual']
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
     }
   },
-
   grid: {
     left: '3%',
     right: '4%',
@@ -33,11 +34,7 @@ option = {
       type: 'category',
       boundaryGap: false,
       data: ['Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep',
-      'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
-      //Cambiar el tamano de los nombres del mes
-      axisLabel: {
-        fontSize: 18,
-      }
+      'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar']
     }
   ],
   yAxis: [
