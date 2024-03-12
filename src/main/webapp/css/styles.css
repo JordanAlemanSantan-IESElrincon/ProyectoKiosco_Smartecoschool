@@ -163,7 +163,23 @@ body {
     box-shadow: var(--box-shadow);
 }
 
+.contenidoConsumoEnergy > div, .contenidoConsumoAgua > div {
+    width: 100%;
+
+    flex-direction: column;
+    /*flex-direction: row;*/
+}
+
+/*.contenidoConsumoEnergy .col-6, .contenidoConsumoAgua .col-6 {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    align-content: center;*/
+/*    justify-content: center;*/
+/*}*/
+
 .contenidoConsumoEnergy h3, .contenidoConsumoAgua h3 {
+    text-align: center;
     color: var(--color-text);
 }
 
@@ -171,7 +187,6 @@ body {
     text-align: center;
     font-size: 35px;
 }
-
 /* ---------- FIN Bloque contenido del consumo ---------- */
 
 /* ---------- Bloque contenido de la gráfica de consumo  ---------- */

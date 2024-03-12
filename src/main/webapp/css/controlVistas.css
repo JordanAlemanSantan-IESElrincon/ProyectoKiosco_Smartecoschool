@@ -1,22 +1,18 @@
 
 #contenidoConsumoEnergyActual {
     display: flex;
-    flex-direction: column;
 }
 
 #contenidoConsumoEnergyMensual {
     display: none;
-    flex-direction: column;
 }
 
 #contenidoConsumoAguaActual {
     display: flex;
-    flex-direction: column;
 }
 
 #contenidoConsumoAguaMensual {
     display: none;
-    flex-direction: column;
 }
 
 /*Contenido gráficas*/
