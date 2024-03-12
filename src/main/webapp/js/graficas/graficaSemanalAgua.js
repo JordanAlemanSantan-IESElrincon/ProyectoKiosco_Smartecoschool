@@ -1,5 +1,5 @@
 // Initialize the echarts instance based on the prepared dom
-// import {fetchWeeklyConsumption} from "../api-service";
+import {fetchWeeklyConsumption} from "../api-service.js";
 
 const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalAgua'));
 
@@ -42,7 +42,7 @@ option = {
   series: [
     {
       type: 'bar',
-      data: [43.3 , 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
+      data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
       label: { // Configuración de la etiqueta
         show: true, // Mostrar etiqueta
         position: 'inside', // Posición de la etiqueta
@@ -64,4 +64,5 @@ option = {
 // Display the chart using the configuration items and data just specified.
 myChartSemanalAgua.setOption(option);
 
-// fetchWeeklyConsumption(2, 3).then(d => console.log(d));
+console.log("graficaSemanalAgua.js debe mostrar los datos de la API")
+fetchWeeklyConsumption(2, 3).then(d => console.log(d));

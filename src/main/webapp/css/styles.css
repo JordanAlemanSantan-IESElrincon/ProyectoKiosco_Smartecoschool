@@ -202,3 +202,25 @@
     background-color: var(--green-view);
 }
 
+
+
+
+/*Temporal*/
+body {
+    position: relative;
+}
+
+.tempoConstruccion {
+    text-align: center;
+    z-index: 99;
+    position: absolute;
+    left: 100px;
+    height: 100vh;
+    opacity: 0.5;
+}
+
+.tempoConstruccion h1 {
+    font-size: 230px;
+}
+
+
