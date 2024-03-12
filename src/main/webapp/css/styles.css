@@ -11,7 +11,7 @@
     --blue-view: #A8D1F7;
     --green-view: #BAF6DD;
 
-    --background-content-main: whitesmoke;
+    /*--background-content-main: whitesmoke;*/
 
     --yellow-chart: #5470c6;
     --blue-chart: #fac858;
@@ -33,14 +33,18 @@ body {
 
 @keyframes gradient-animation {
     0% {
-        background-position: 0 50%;
+        background-position: 0% 50%;
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0 50%;
+        background-position: 0% 50%;
     }
+}
+
+.container {
+    max-width: 100%!important;
 }
 
 /* ---------------------------------------- */
@@ -50,7 +54,7 @@ body {
     display: flex;
     flex-direction: row;
 
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 1rem;
 }
 
@@ -232,8 +236,8 @@ body {
     z-index: 99;
     position: absolute;
     left: 10px;
-    top: 100px;
-    height: 100vh;
+    top:100px;
+    height: 95vh;
     opacity: 0.5;
 }
 
