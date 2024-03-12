@@ -10,13 +10,13 @@ const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalA
     const datosGraficaSemanalAgua = await fetchWeeklyConsumption(2, 3);
 
     // Filtrar el primer array de datos
-    const datosSemanaActual = datosGraficaSemanalAgua[1].map(dato => dato.waterConsumption);
-    console.log("Datos semana actual", datosSemanaActual);
+    const datosSemanaActualAgua = datosGraficaSemanalAgua[1].map(dato => dato.waterConsumption);
+    console.log("Datos semana actual", datosSemanaActualAgua);
     // Filtrar el segundo array de datos (ignorar el de la posición 0)
-    const datosSemanaPasada = datosGraficaSemanalAgua[0].map(dato => dato.waterConsumption);
-    datosSemanaPasada.shift();
+    const datosSemanaPasadaAgua = datosGraficaSemanalAgua[0].map(dato => dato.waterConsumption);
+    datosSemanaPasadaAgua.shift();
 
-    console.log("Datos semana pasada", datosSemanaPasada);
+    console.log("Datos semana pasada", datosSemanaPasadaAgua);
 
     // Specify the configuration items and data for the chart
     let option = {
@@ -58,7 +58,7 @@ const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalA
         {
           type: 'bar',
           // data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
-          data: datosSemanaActual, // Datos de la semana anterior
+          data: datosSemanaActualAgua, // Datos de la semana anterior
           label: { // Configuración de la etiqueta
             show: true, // Mostrar etiqueta
             position: 'inside', // Posición de la etiqueta
@@ -68,7 +68,7 @@ const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalA
         {
           type: 'bar',
           // data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 70], // Datos de la semana actual
-          data: datosSemanaPasada, // Datos de la semana actual
+          data: datosSemanaPasadaAgua, // Datos de la semana actual
           label: { // Configuración de la etiqueta
             show: true, // Mostrar etiqueta
             position: 'inside', // Posición de la etiqueta
