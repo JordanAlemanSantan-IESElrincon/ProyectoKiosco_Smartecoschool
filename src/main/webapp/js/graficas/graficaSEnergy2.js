@@ -1,26 +1,36 @@
 // Initialize the echarts instance based on the prepared dom
 import {fetchWeeklyConsumption} from "../api-service.js";
 
+/**
+ * @typedef {Object} WeeklyConsumptionData
+ * @property {string} dateName - Nombre de la fecha
+ * @property {number} lightConsumption - Consumo de luz
+ */
+
 // Inicializa la instancia de echarts en relación con el DOM preparado
-const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalEnergy'));
-const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoEnergyActual');
+const myChartSemanalEnergy = echarts.init(document.getElementById('graficaSemanalEnergy'));
+
+// Obtiene el elemento HTML para mostrar el valor actual de consumo de luz
+const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnergyActual');
 
 (async () => {
     try {
-        // Obtiene los datos semanales de consumo
-        const datosGraficaSemanalAgua = await fetchWeeklyConsumption(2, 3);
+        // Obtiene los datos semanales de consumo desde la API
+        const datosGraficaSemanalEnergy = await fetchWeeklyConsumption(2, 3);
 
-        datosGraficaSemanalAgua.forEach(dato => console.log(dato));
+        // Muestra los datos obtenidos desde la API en la consola
+        datosGraficaSemanalEnergy.forEach(dato => console.log(dato));
 
-        // Actualiza el valor actual de consumo de agua
-        myChartSemanalAguaActual.innerHTML = `${datosGraficaSemanalAgua[1][datosGraficaSemanalAgua[1].length - 1].lightConsumption} L`;
+        // Actualiza el valor actual de consumo de luz en el HTML
+        myChartSemanalEnergyActual.innerHTML = `${datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].lightConsumption} L`;
 
-        // Función para formatear los datos de la semana
+        // Función para obtener el número del día completo
         let numeroDiaCompletoEnergy = (diaCompeto) => diaCompeto.slice(diaCompeto.indexOf(" ") + 1, diaCompeto.length);
 
-        const fechaParaEnergy = datosGraficaSemanalAgua[0].map((item, index) => {
+        // Genera las etiquetas personalizadas del eje x
+        const fechaParaEnergy = datosGraficaSemanalEnergy[0].map((item, index) => {
             const diaCompletoSemanaAnterior = item.dateName;
-            const diaCompletoSemanaPasada = datosGraficaSemanalAgua[1][index].dateName;
+            const diaCompletoSemanaPasada = datosGraficaSemanalEnergy[1][index].dateName;
 
             const diaSemana = diaCompletoSemanaAnterior.split(" ")[0];
             const numeroDiaCompletoSemanaAnterior = numeroDiaCompletoEnergy(diaCompletoSemanaAnterior);
@@ -29,20 +39,22 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoEnergyA
             return `${numeroDiaCompletoSemanaAnterior} ${numeroDiaCompletoSemanaPasada}\n\n${diaSemana}`;
         });
 
+        // Muestra las fechas personalizadas para el eje x en la consola
         console.log("fechaParaEnergy", fechaParaEnergy);
 
-        const datosSemanaActualEnergy = datosGraficaSemanalAgua[1].map(dato => dato.lightConsumption);
-        const datosSemanaPasadaEnergy = datosGraficaSemanalAgua[0].map(dato => dato.lightConsumption);
+        // Obtiene los datos de consumo de luz para la semana actual y la semana pasada
+        const datosSemanaActualEnergy = datosGraficaSemanalEnergy[1].map(dato => dato.lightConsumption);
+        const datosSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.lightConsumption);
 
         // Obtener las fechas de inicio y fin de la semana anterior
-        const inicioSemanaAnterior = numeroDiaCompletoEnergy(datosGraficaSemanalAgua[0][0].dateName);
-        const finSemanaAnterior = numeroDiaCompletoEnergy(datosGraficaSemanalAgua[0][datosGraficaSemanalAgua[0].length - 1].dateName);
+        const inicioSemanaAnterior = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[0][0].dateName);
+        const finSemanaAnterior = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[0][datosGraficaSemanalEnergy[0].length - 1].dateName);
 
         // Obtener las fechas de inicio y fin de la semana pasada
-        const inicioSemanaPasada = numeroDiaCompletoEnergy(datosGraficaSemanalAgua[1][0].dateName);
-        const finSemanaPasada = numeroDiaCompletoEnergy(datosGraficaSemanalAgua[1][datosGraficaSemanalAgua[1].length - 1].dateName);
+        const inicioSemanaPasada = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[1][0].dateName);
+        const finSemanaPasada = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].dateName);
 
-        // Specify the configuration items and data for the chart
+        // Especifica los elementos de configuración y los datos para el gráfico
         let option = {
 
             // Comentario explicativo sobre el rango de tiempo
@@ -60,8 +72,8 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoEnergyA
             },
 
             color: [
-                '#FFCA7F',
-                '#FFBB5C'
+                '#FFCA7F', // Color para la serie de "Semana anterior"
+                '#FFBB5C' // Color para la serie de "Semana pasada"
             ],
 
             grid: {
@@ -84,7 +96,6 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoEnergyA
                 {
                     name: `Semana anterior: ${inicioSemanaAnterior} - ${finSemanaAnterior}     `, // Etiqueta para la serie de la semana anterior
                     type: 'bar',
-                    // data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
                     data: datosSemanaPasadaEnergy, // Datos de la semana anterior
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
@@ -95,7 +106,6 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoEnergyA
                 {
                     name: `Semana pasada: ${inicioSemanaPasada} - ${finSemanaPasada}`, // Etiqueta para la serie de la semana pasada
                     type: 'bar',
-                    // data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 70], // Datos de la semana actual
                     data: datosSemanaActualEnergy, // Datos de la semana actual
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
@@ -106,9 +116,10 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoEnergyA
             ]
         };
 
-// Display the chart using the configuration items and data just specified.
-        myChartSemanalAgua.setOption(option);
+        // Muestra el gráfico utilizando la configuración y los datos especificados
+        myChartSemanalEnergy.setOption(option);
     } catch (error) {
+        // Muestra un mensaje de error en la consola en caso de fallo
         console.error('Error:', error);
     }
 })();

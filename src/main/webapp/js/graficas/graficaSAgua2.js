@@ -1,23 +1,33 @@
 // Initialize the echarts instance based on the prepared dom
 import {fetchWeeklyConsumption} from "../api-service.js";
 
+/**
+ * @typedef {Object} WeeklyConsumptionData
+ * @property {string} dateName - Nombre de la fecha
+ * @property {number} waterConsumption - Consumo de agua
+ */
+
 // Inicializa la instancia de echarts en relación con el DOM preparado
 const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalAgua'));
+
+// Obtiene el elemento HTML para mostrar el valor actual de consumo de agua
 const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaActual');
 
 (async () => {
     try {
-        // Obtiene los datos semanales de consumo
+        // Obtiene los datos semanales de consumo desde la API
         const datosGraficaSemanalAgua = await fetchWeeklyConsumption(2, 3);
 
+        // Muestra los datos obtenidos desde la API en la consola
         datosGraficaSemanalAgua.forEach(dato => console.log(dato));
 
-        // Actualiza el valor actual de consumo de agua
+        // Actualiza el valor actual de consumo de agua en el HTML
         myChartSemanalAguaActual.innerHTML = `${datosGraficaSemanalAgua[1][datosGraficaSemanalAgua[1].length - 1].waterConsumption} L`;
 
-        // Función para formatear los datos de la semana
+        // Función para obtener el número del día completo
         let numeroDiaCompletoAgua = (diaCompeto) => diaCompeto.slice(diaCompeto.indexOf(" ") + 1, diaCompeto.length);
 
+        // Genera las etiquetas personalizadas del eje x
         const fechaParaEnergy = datosGraficaSemanalAgua[0].map((item, index) => {
             const diaCompletoSemanaAnterior = item.dateName;
             const diaCompletoSemanaPasada = datosGraficaSemanalAgua[1][index].dateName;
@@ -29,8 +39,10 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
             return `${numeroDiaCompletoSemanaAnterior} ${numeroDiaCompletoSemanaPasada}\n\n${diaSemana}`;
         });
 
+        // Muestra las fechas personalizadas para el eje x en la consola
         console.log("fechaParaEnergy", fechaParaEnergy);
 
+        // Obtiene los datos de consumo de agua para la semana actual y la semana pasada
         const datosSemanaActualAgua = datosGraficaSemanalAgua[1].map(dato => dato.waterConsumption);
         const datosSemanaPasadaAgua = datosGraficaSemanalAgua[0].map(dato => dato.waterConsumption);
 
@@ -42,7 +54,7 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
         const inicioSemanaPasada = numeroDiaCompletoAgua(datosGraficaSemanalAgua[1][0].dateName);
         const finSemanaPasada = numeroDiaCompletoAgua(datosGraficaSemanalAgua[1][datosGraficaSemanalAgua[1].length - 1].dateName);
 
-        // Specify the configuration items and data for the chart
+        // Especifica los elementos de configuración y los datos para el gráfico
         let option = {
 
             // Comentario explicativo sobre el rango de tiempo
@@ -60,8 +72,8 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
             },
 
             color: [
-                '#8C88EE',
-                '#6964DC'
+                '#8C88EE', // Color para la serie de "Semana anterior"
+                '#6964DC' // Color para la serie de "Semana pasada"
             ],
 
             grid: {
@@ -74,7 +86,7 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
 
             xAxis: {
                 type: 'category',
-                axisTick: { show: false }, // Oculta las marcas del eje x para que solo se muestren las etiquetas
+                axisTick: {show: false}, // Oculta las marcas del eje x para que solo se muestren las etiquetas
                 data: fechaParaEnergy // Etiquetas personalizadas del eje x
 
             },
@@ -84,7 +96,6 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
                 {
                     name: `Semana anterior: ${inicioSemanaAnterior} - ${finSemanaAnterior}     `, // Etiqueta para la serie de la semana anterior
                     type: 'bar',
-                    // data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
                     data: datosSemanaPasadaAgua, // Datos de la semana anterior
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
@@ -95,7 +106,6 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
                 {
                     name: `Semana pasada: ${inicioSemanaPasada} - ${finSemanaPasada}`, // Etiqueta para la serie de la semana pasada
                     type: 'bar',
-                    // data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 70], // Datos de la semana actual
                     data: datosSemanaActualAgua, // Datos de la semana actual
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
@@ -106,9 +116,10 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
             ]
         };
 
-// Display the chart using the configuration items and data just specified.
+        // Muestra el gráfico utilizando la configuración y los datos especificados
         myChartSemanalAgua.setOption(option);
     } catch (error) {
+        // Muestra un mensaje de error en la consola en caso de fallo
         console.error('Error:', error);
     }
 })();
