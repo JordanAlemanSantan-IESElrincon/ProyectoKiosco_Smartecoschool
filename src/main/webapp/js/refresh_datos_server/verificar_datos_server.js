@@ -1,47 +1,56 @@
-bower install crypto-js// En tu archivo JavaScript en la aplicación web
-function verificarDatosModificados() {
-    // Enviar una solicitud al servidor para verificar los datos modificados
-    fetch('ruta_en_tu_servidor_para_procesar_solicitud')
-        .then(response => response.json())
-        .then(data => {
-            // Recibir el código hash del servidor
-            const codigoHashServidor = data.codigoHash;
+const fs = require('fs');
+const crypto = require('crypto');
 
-            // Calcular el código hash localmente
-            const codigoHashLocal = calcularCodigoHashLocal();
-
-            // Comparar los códigos hash
-            if (codigoHashServidor === codigoHashLocal) {
-                console.log('Los datos no han sido modificados.');
-            } else {
-                console.log('Los datos han sido modificados.');
-            }
-        })
-        .catch(error => {
-            console.error('Error al verificar los datos modificados:', error);
+// Función para calcular el hash de un archivo o una carpeta
+function calcularHash(archivoOCarpeta) {
+    if (fs.statSync(archivoOCarpeta).isFile()) {
+        // Si es un archivo, calcular el hash del contenido del archivo
+        const contenido = fs.readFileSync(archivoOCarpeta);
+        return crypto.createHash('sha256').update(contenido).digest('hex');
+    } else if (fs.statSync(archivoOCarpeta).isDirectory()) {
+        // Si es una carpeta, calcular el hash de todos los archivos dentro de la carpeta
+        const archivos = fs.readdirSync(archivoOCarpeta);
+        const hash = crypto.createHash('sha256');
+        archivos.forEach(archivo => {
+            const contenidoArchivo = fs.readFileSync(`${archivoOCarpeta}/${archivo}`);
+            hash.update(contenidoArchivo);
         });
+        return hash.digest('hex');
+    } else {
+        // Si no es ni un archivo ni una carpeta válida, retornar null
+        return null;
+    }
 }
 
-// Importa la biblioteca CryptoJS si estás trabajando en Node.js
-const CryptoJS = require('crypto-js');
+// Función para verificar si la carpeta o el archivo han sido modificados
+function verificarModificaciones() {
+    // Rutas de los archivos HTML y la carpeta de archivos JavaScript
+    const rutaHTML = 'src/main/webapp/version2.html';
+    const rutaJS = 'src/main/webapp/js';
 
-function calcularCodigoHashLocal(data) {
-    // Lógica para calcular el código hash localmente
-    // Usar la librería CryptoJS para calcular el hash
-    // https://github.com/brix/crypto-js
+    // Calcula los hashes de los archivos o carpeta
+    const hashHTML = calcularHash(rutaHTML);
+    const hashJS = calcularHash(rutaJS);
 
-    // Calcula el hash SHA-256
-    const hash = CryptoJS.SHA256(data);
+    // Compara los hashes con los hashes anteriores almacenados o con un valor conocido
+    // Si los hashes son diferentes, significa que los archivos han sido modificados
+    if (hashHTML !== hashHTMLAnterior) {
+        copiarArchivo(rutaHTML, 'src/main/webapp/version2.html');
+        console.log('El archivo HTML ha sido modificado y reemplazado.');
+    }
 
-    // Retorna el hash como una cadena hexadecimal
-    return hash.toString(CryptoJS.enc.Hex);
+    if (hashJS !== hashJSAnterior) {
+        copiarCarpeta(rutaJS, 'src/main/webapp/version2.html');
+        console.log('La carpeta de archivos JavaScript ha sido modificada y reemplazada.');
+    }
 }
 
-// Ejemplo de uso
-const data = 'Datos a ser hasheados';
-const hash = calcularCodigoHashLocal(data);
-console.log('Hash SHA-256:', hash);
+// Opcional: Ejecutar la verificación de modificaciones cada cierto tiempo (ej. cada 10 minutos)
+const ejecutarVerificacionCadaTiempo = false; // Cambia a true para habilitar
+if (ejecutarVerificacionCadaTiempo) {
+    const intervaloTiempo = 10 * 60 * 1000; // 10 minutos en milisegundos
+    setInterval(verificarModificaciones, intervaloTiempo);
+}
 
-
-// Llamar a la función para verificar los datos modificados cuando sea necesario
-verificarDatosModificados();
+// Llamar a la función para verificar modificaciones
+verificarModificaciones();

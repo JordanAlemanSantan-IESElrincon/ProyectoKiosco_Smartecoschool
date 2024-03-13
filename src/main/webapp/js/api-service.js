@@ -3,6 +3,8 @@
 //         .then(response => response.json())
 //         .catch(error => console.error('Error:', error));
 // }
+const express = require('express');
+const app = express();
 
 export async function fetchWeeklyConsumption(waterId, lightId) {
     try {
