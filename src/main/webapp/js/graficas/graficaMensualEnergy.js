@@ -32,17 +32,17 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
             },
 
             //titulo de leyenda
-            legend: {
-                data: ['Consumo mensual'],
-                //Cambiar el tamaño del dato Consumo Mensual
-                textStyle: {
-                    fontSize: 24,
-                },
-                top: '5%'
-            },
+            // legend: {
+            //     data: ['Consumo mensual'],
+            //     //Cambiar el tamaño del dato Consumo Mensual
+            //     textStyle: {
+            //         fontSize: 24,
+            //     },
+            //     top: '5%'
+            // },
 
             grid: {
-                top: '15%',
+                top: '10%',
                 left: '3%',
                 right: '4%',
                 bottom: '5%',
