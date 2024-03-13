@@ -7,16 +7,16 @@
 :root {
     --color-text: #0B373F;
 
-    --yellow-view: #F5F7A8;
+    --yellow-view: #FFEAA7;
     --blue-view: #A8D1F7;
     --green-view: #BAF6DD;
 
     /*--background-content-main: whitesmoke;*/
 
-    --yellow-chart: #5470c6;
-    --blue-chart: #fac858;
+    --yellow-chart: #fac858;
+    --blue-chart: #5470c6;
 
-    --yellow-content-chart: #F9F9DF;
+    --yellow-content-chart: #FFF6D8;
     --blue-content-chart: #D8E6F3;
 
     --tam-column: 98%;

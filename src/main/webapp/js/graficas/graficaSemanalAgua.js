@@ -17,7 +17,6 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
     console.log("Datos semana actual", datosSemanaActualAgua);
     // Filtrar el segundo array de datos (ignorar el de la posición 0)
     const datosSemanaPasadaAgua = datosGraficaSemanalAgua[0].map(dato => dato.waterConsumption);
-    datosSemanaPasadaAgua.shift();
 
     console.log("Datos semana pasada", datosSemanaPasadaAgua);
 
@@ -39,8 +38,8 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
       },
 
       color: [
-        '#7261DF',
-        '#4A3F92'
+        '#8C88EE',
+        '#6964DC'
       ],
 
       grid: {

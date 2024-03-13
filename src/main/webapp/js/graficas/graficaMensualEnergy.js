@@ -19,13 +19,15 @@ option = {
     //Cambiar el tamaño del dato Consumo Mensual
     textStyle: {
       fontSize: 24,
-    }
+    },
+    top: '5%'
   },
 
   grid: {
+    top: '15%',
     left: '3%',
     right: '4%',
-    bottom: '3%',
+    bottom: '5%',
     containLabel: true
   },
   xAxis: [
@@ -42,7 +44,21 @@ option = {
   ],
   yAxis: [
     {
-      type: 'value'
+      type: 'value',
+      axisLabel: {
+        fontSize: 18,
+        formatter: function(value) { // Transforma los valores
+          return value / 1000 + 'k  ';
+        }
+      },
+
+      // Configuración de las líneas horizontales (grid) en el eje x
+      splitLine: {
+        show: true,
+        lineStyle: {
+          color: ['#d8e6f3'],
+        }
+      }
     }
   ],
   series: [

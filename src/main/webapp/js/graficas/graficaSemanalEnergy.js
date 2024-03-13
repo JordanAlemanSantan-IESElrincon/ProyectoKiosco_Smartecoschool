@@ -16,7 +16,6 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
         console.log("Datos semana actual", datosSemanaActualEnergy);
         // Filtrar el segundo array de datos (ignorar el de la posición 0)
         const datosSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.lightConsumption);
-        datosSemanaPasadaEnergy.shift();
 
         console.log("Datos semana pasada", datosSemanaPasadaEnergy);
 
@@ -38,8 +37,8 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
             },
 
             color: [
-                '#C0C51A',
-                '#7F8206'
+                '#FFCA7F',
+                '#FFBB5C'
             ],
 
             grid: {
