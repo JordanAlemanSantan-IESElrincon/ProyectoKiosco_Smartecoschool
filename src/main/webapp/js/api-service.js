@@ -25,3 +25,5 @@ export async function fetchMonthlyConsumption(waterId, lightId) {
         console.error('Error:', error);
     }
 }
+
+export const tiempoEsperaParaVolverASolicitarDatos = 5000;
