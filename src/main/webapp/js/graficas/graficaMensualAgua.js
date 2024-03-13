@@ -11,13 +11,13 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
         myChartCantidadConsumoAguaMensual.innerHTML =
             `${datosGraficaMensualAgua[datosGraficaMensualAgua.length - 1].waterConsumption} L`;
 
-        // Filtrar el primer array de datos
-        // const datosSemanaActualEnergy = datosGraficaSemanalEnergy[1].map(dato => dato.lightConsumption);
-        // console.log("Datos semana actual", datosSemanaActualEnergy);
-        // // Filtrar el segundo array de datos (ignorar el de la posición 0)
-        // const datosSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.lightConsumption);
-        //
-        // console.log("Datos semana pasada", datosSemanaPasadaEnergy);
+        // Filtrar el array de datos
+        const datosMensualAgua = datosGraficaMensualAgua.map(dato => dato.waterConsumption);
+        console.log("Datos mes agua actual", datosMensualAgua);
+
+        const datosMesesAgua = datosGraficaMensualAgua.map(dato => dato.dateName);
+        console.log("Datos meses agua", datosMesesAgua);
+
 
         // Specify the configuration items and data for the chart
         let option = {
@@ -52,8 +52,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
                 {
                     type: 'category',
                     boundaryGap: false,
-                    data: ['Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep',
-                        'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
+                    data: datosMesesAgua,
                     //Cambiar el tamaño de los nombres del mes
                     axisLabel: {
                         fontSize: 18,
@@ -86,7 +85,10 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
                     stack: 'Total',
                     label: {
                         show: true,
-                        position: 'top'
+                        position: 'top',
+                        formatter: function (params) {
+                            return (params.value / 1000).toFixed(1) + 'k';
+                        }
                     },
 
                     //Cambiar el color del interior de la gráfica
@@ -111,7 +113,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
 
                     //Datos de los meses
                     //Abr May Jun Jul Ago Sep Oct Nov Dic Ene Feb Mar
-                    data: [820, 932, 901, 934, 1290, 1330, 1320, 1000, 1200, 1100, 1000, 1005]
+                    data: datosMensualAgua
                 }
             ]
         };

@@ -12,13 +12,12 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
         myChartCantidadConsumoEnergyMensual.innerHTML =
             `${datosGraficaMensualEnergy[datosGraficaMensualEnergy.length - 1].lightConsumption} kWh`;
 
-        // Filtrar el primer array de datos
-        // const datosSemanaActualEnergy = datosGraficaSemanalEnergy[1].map(dato => dato.lightConsumption);
-        // console.log("Datos semana actual", datosSemanaActualEnergy);
-        // // Filtrar el segundo array de datos (ignorar el de la posición 0)
-        // const datosSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.lightConsumption);
-        //
-        // console.log("Datos semana pasada", datosSemanaPasadaEnergy);
+        // Filtrar el array de datos
+        const datosMensualEnergy = datosGraficaMensualEnergy.map(dato => dato.lightConsumption);
+        console.log("Datos mes energy actual", datosMensualEnergy);
+
+        const datosMesesEnergy = datosGraficaMensualEnergy.map(dato => dato.dateName);
+        console.log("Datos meses energy", datosMesesEnergy);
 
         // Specify the configuration items and data for the chart
         let option = {
@@ -53,8 +52,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
                 {
                     type: 'category',
                     boundaryGap: false,
-                    data: ['Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep',
-                        'Oct', 'Nov', 'Dic', 'Ene', 'Feb', 'Mar'],
+                    data: datosMesesEnergy,
                     //Cambiar el tamaño de los nombres del mes
                     axisLabel: {
                         fontSize: 18,
@@ -87,7 +85,10 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
                     stack: 'Total',
                     label: {
                         show: true,
-                        position: 'top'
+                        position: 'top',
+                        formatter: function (params) {
+                            return (params.value / 1000).toFixed(1) + 'k';
+                        }
                     },
 
                     //Cambiar el color del interior de la gráfica
@@ -110,7 +111,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
                     },
                     //Datos de los meses
                     //Abr May Jun Jul Ago Sep Oct Nov Dic Ene Feb Mar
-                    data: [820, 932, 901, 934, 1290, 1330, 1320, 1000, 1200, 1100, 1000, 1005]
+                    data: datosMensualEnergy
                 }
             ]
         };
