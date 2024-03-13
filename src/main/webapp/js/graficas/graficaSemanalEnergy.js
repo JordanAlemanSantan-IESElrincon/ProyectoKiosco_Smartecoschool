@@ -77,7 +77,7 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
             ],
 
             grid: {
-                top: '10%',
+                top: '15%',
                 left: '3%',
                 right: '4%',
                 bottom: '10%', // Aumenta el espacio en la parte inferior para hacer espacio para las etiquetas del eje x
@@ -90,7 +90,14 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
                 data: fechaParaEnergy // Etiquetas personalizadas del eje x
 
             },
-            yAxis: {},
+            yAxis: {
+                // Configuración de las líneas horizontales (grid) en el eje x
+                splitLine: {
+                    show: true, // Muestra las líneas horizontales en el eje y
+                    lineStyle: {
+                        color: ['#d8e6f3'], // Color de las líneas horizontales
+                    }
+                }},
 
             series: [
                 {
