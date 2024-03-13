@@ -14,10 +14,47 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
         // Filtrar el primer array de datos
         const datosSemanaActualEnergy = datosGraficaSemanalEnergy[1].map(dato => dato.lightConsumption);
         console.log("Datos semana actual", datosSemanaActualEnergy);
+        // Filtrar el primer array de datos
+        const fechaSemanaActualEnergy = datosGraficaSemanalEnergy[1].map(dato => dato.dateName);
+        console.log("fechaSemanaActualEnergy" + fechaSemanaActualEnergy)
+        // Inicializamos las nuevas matrices
+        let diasSemana = [];
+
+        let diaMesActual = [];
+
+// Iteramos sobre cada cadena en cadenaArray
+        fechaSemanaActualEnergy.forEach(cadena => {
+            // Dividimos la cadena en partes usando split(" ")
+            let partes = cadena.split(" ");
+
+            // Agregamos la primera parte a la matriz primeraCadenaArray
+            diasSemana.push(partes[0]);
+
+            // Si hay al menos dos partes, agregamos las dos siguientes partes a la matriz siguientesDosCadenasArray
+            if (partes.length >= 3) {
+                diaMesActual.push(partes.slice(1, 3).join(" "));
+            }
+        });
+        // Filtrar el segundo array de datos (ignorar el de la posición 0)
+        const fechaSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.dateName);
+        // Inicializamos las nuevas matrices
+        const diaMesPasado = [];
+
+        // Iteramos sobre cada cadena en cadenaArray
+        fechaSemanaPasadaEnergy.forEach(cadena => {
+            // Dividimos la cadena en partes usando split(" ")
+            const partes = cadena.split(" ");
+
+            // Si hay al menos dos partes, agregamos las dos siguientes partes a la matriz siguientesDosCadenasArray
+            if (partes.length >= 3) {
+                diaMesPasado.push(partes.slice(1, 3).join(" "));
+            }
+        });
+        const data = diaMesActual.map((element, index) =>
+            `${element} ${diaMesPasado[index]}\n\n${diasSemana[index]}`
+        );
         // Filtrar el segundo array de datos (ignorar el de la posición 0)
         const datosSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.lightConsumption);
-
-        console.log("Datos semana pasada", datosSemanaPasadaEnergy);
 
         // Specify the configuration items and data for the chart
         let option = {
@@ -51,7 +88,7 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
             xAxis: {
                 type: 'category',
                 axisTick: {show: false}, // Oculta las marcas del eje x para que solo se muestren las etiquetas
-                data: ['Lun [4 y 11]', 'Mar [5 y 12]', 'Mie [6 y 13]', 'Jue [7 y 14]', 'Vie [8 y 15]', 'Sab [9 y 16]', 'Dom [10 y 17]'] // Etiquetas personalizadas del eje x
+                data: data
             },
             yAxis: {},
 
@@ -59,7 +96,7 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
                 {
                     type: 'bar',
                     // data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
-                    data: datosSemanaActualEnergy, // Datos de la semana anterior
+                    data: datosSemanaPasadaEnergy, // Datos de la semana anterior
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
                         position: 'inside', // Posición de la etiqueta
@@ -69,7 +106,7 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
                 {
                     type: 'bar',
                     // data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 70], // Datos de la semana actual
-                    data: datosSemanaPasadaEnergy, // Datos de la semana actual
+                    data: datosSemanaActualEnergy, // Datos de la semana actual
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
                         position: 'inside', // Posición de la etiqueta

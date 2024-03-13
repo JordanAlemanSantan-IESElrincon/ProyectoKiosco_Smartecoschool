@@ -13,12 +13,48 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
         `${datosGraficaSemanalAgua[1][datosGraficaSemanalAgua[1].length - 1].waterConsumption} L`;
 
     // Filtrar el primer array de datos
+    const fechaSemanaActualAgua = datosGraficaSemanalAgua[1].map(dato => dato.dateName);
+    // Inicializamos las nuevas matrices
+    let diasSemana = [];
+
+    let diaMesActual = [];
+
+// Iteramos sobre cada cadena en cadenaArray
+    fechaSemanaActualAgua.forEach(cadena => {
+      // Dividimos la cadena en partes usando split(" ")
+      let partes = cadena.split(" ");
+
+      // Agregamos la primera parte a la matriz primeraCadenaArray
+      diasSemana.push(partes[0]);
+
+      // Si hay al menos dos partes, agregamos las dos siguientes partes a la matriz siguientesDosCadenasArray
+      if (partes.length >= 3) {
+        diaMesActual.push(partes.slice(1, 3).join(" "));
+      }
+    });
+
     const datosSemanaActualAgua = datosGraficaSemanalAgua[1].map(dato => dato.waterConsumption);
-    console.log("Datos semana actual", datosSemanaActualAgua);
     // Filtrar el segundo array de datos (ignorar el de la posición 0)
+    const fechaSemanaPasadaAgua = datosGraficaSemanalAgua[0].map(dato => dato.dateName);
+    // Inicializamos las nuevas matrices
+    const diaMesPasado = [];
+
+// Iteramos sobre cada cadena en cadenaArray
+    fechaSemanaPasadaAgua.forEach(cadena => {
+      // Dividimos la cadena en partes usando split(" ")
+      const partes = cadena.split(" ");
+
+      // Si hay al menos dos partes, agregamos las dos siguientes partes a la matriz siguientesDosCadenasArray
+      if (partes.length >= 3) {
+        diaMesPasado.push(partes.slice(1, 3).join(" "));
+      }
+    });
+    const data = diaMesActual.map((element, index) =>
+        `${element} ${diaMesPasado[index]}\n\n${diasSemana[index]}`
+    );
+
     const datosSemanaPasadaAgua = datosGraficaSemanalAgua[0].map(dato => dato.waterConsumption);
 
-    console.log("Datos semana pasada", datosSemanaPasadaAgua);
 
     // Specify the configuration items and data for the chart
     let option = {
@@ -26,15 +62,6 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
       tooltip: {},
       dataset: {
         dimensions: ['week', 'Semana_anterior', 'Semana_actual'],
-        // source: [
-        //   { week: 'Lunes', Semana_anterior: 43.3, Semana_actual: 85.8 },
-        //   { week: 'Martes', Semana_anterior: 83.1, Semana_actual: 73.4 },
-        //   { week: 'Miércoles', Semana_anterior: 86.4, Semana_actual: 65.2 },
-        //   { week: 'Jueves', Semana_anterior: 72.4, Semana_actual: 53.9 },
-        //   { week: 'Viernes', Semana_anterior: 43.3, Semana_actual: 5 },
-        //   { week: 'Sábado', Semana_anterior: 72.4, Semana_actual: 53.9 },
-        //   { week: 'Domingo', Semana_anterior: 43.3, Semana_actual: 10 }
-        // ]
       },
 
       color: [
@@ -52,7 +79,8 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
       xAxis: {
         type: 'category',
         axisTick: { show: false }, // Oculta las marcas del eje x para que solo se muestren las etiquetas
-        data: ['Lun [4 y 11]', 'Mar [5 y 12]', 'Mie [6 y 13]', 'Jue [7 y 14]', 'Vie [8 y 15]', 'Sab [9 y 16]', 'Dom [10 y 17]'] // Etiquetas personalizadas del eje x
+        data: data // Etiquetas personalizadas del eje x
+
       },
       yAxis: {},
 
@@ -60,7 +88,7 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
         {
           type: 'bar',
           // data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
-          data: datosSemanaActualAgua, // Datos de la semana anterior
+          data: datosSemanaPasadaAgua, // Datos de la semana anterior
           label: { // Configuración de la etiqueta
             show: true, // Mostrar etiqueta
             position: 'inside', // Posición de la etiqueta
@@ -70,7 +98,7 @@ const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaAct
         {
           type: 'bar',
           // data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 70], // Datos de la semana actual
-          data: datosSemanaPasadaAgua, // Datos de la semana actual
+          data: datosSemanaActualAgua, // Datos de la semana actual
           label: { // Configuración de la etiqueta
             show: true, // Mostrar etiqueta
             position: 'inside', // Posición de la etiqueta

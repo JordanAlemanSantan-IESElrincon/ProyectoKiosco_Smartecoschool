@@ -65,7 +65,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
                     axisLabel: {
                         fontSize: 18,
                         formatter: function (value) { // Transforma los valores
-                            return value / 1000 + 'k  ';
+                            return value / 1000 + 'k   ';
                         }
                     },
 
@@ -94,7 +94,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
                     //Cambiar el color del interior de la gráfica
                     areaStyle: {
                         //Color R/G/B/Alfa
-                        color: 'rgba(230, 232, 57, 0.5)'
+                        color: '#FFCA7F'
                     },
                     emphasis: {
                         focus: 'series'
@@ -102,7 +102,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
 
                     //Cambiar el color de la línea de la gráfica
                     lineStyle: {
-                        color: '#CBCD2A'
+                        color: '#FFBB5C'
                     },
 
                     //Cambiar el color de los círculos de la gráfica

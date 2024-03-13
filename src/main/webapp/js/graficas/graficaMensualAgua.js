@@ -65,7 +65,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
                     axisLabel: {
                         fontSize: 18,
                         formatter: function (value) { // Transforma los valores
-                            return value / 1000 + 'k  ';
+                            return value / 1000 + 'k   ';
                         }
                     },
 
@@ -94,7 +94,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
                     //Cambiar el color del interior de la gráfica
                     areaStyle: {
                         //Color R/G/B/Alfa
-                        color: 'rgba(6, 140, 170, 0.5)'
+                        color: '#8C88EE'
                     },
 
                     emphasis: {
@@ -103,7 +103,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
 
                     //Cambiar el color de la línea de la gráfica
                     lineStyle: {
-                        color: '#068CAA'
+                        color: '#6964DC'
                     },
 
                     //Cambiar el color de los círculos de la gráfica
