@@ -130,7 +130,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
                     symbol: 'circle', // Forma del símbolo (círculo en este caso)
                     symbolSize: 12, // Tamaño de los círculos
                     itemStyle: {
-                        color: '#FFE48D' // Color de los círculos de la gráfica
+                        color: '#FFBB5C' // Color de los círculos de la gráfica
                     },
 
                     //Datos de los meses

@@ -1,17 +1,17 @@
+/* Reset de estilos para todos los elementos */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Definición de variables globales usando la pseudo-clase :root */
 :root {
     --color-text: #0B373F;
 
     --yellow-view: #FFEAA7;
     --blue-view: #A8D1F7;
     --green-view: #BAF6DD;
-
-    /*--background-content-main: whitesmoke;*/
 
     --yellow-chart: #fac858;
     --blue-chart: #5470c6;
@@ -25,12 +25,14 @@
     --border-radius: 10px;
 }
 
+/* Animación de gradiente de fondo del cuerpo */
 body {
     background: linear-gradient(137deg,#baf6dd,#f5f7a8,#a8d1f7);
     background-size: 180% 180%;
     animation: gradient-animation 5s ease infinite;
 }
 
+/* Keyframes para la animación de gradiente */
 @keyframes gradient-animation {
     0% {
         background-position: 0 50%;
@@ -43,6 +45,7 @@ body {
     }
 }
 
+/* Estilos para los contenedores generales */
 .container {
     max-width: 100%!important;
 }
@@ -114,8 +117,8 @@ body {
     padding: 0;
 }
 
-/* El contenido de los títulos de energía y luz comparten casi todas las propiedades. */
-/* La diferencia entre ellos está en el color de fondo */
+/* Los títulos de energía y agua comparten casi todas las propiedades. */
+/* La diferencia está en el color de fondo */
 .contenidoTituloEnergy, .contenidoTituloAgua {
     display: flex;
     align-items: center;
@@ -144,7 +147,6 @@ body {
     font-size: 40px;
     color: var(--color-text);
 }
-
 /* ---------- FIN Bloque contenido titulo vistas ---------- */
 
 /* ---------- Bloque contenido del consumo ---------- */
@@ -215,7 +217,6 @@ body {
     background-color: var(--blue-content-chart);
     border: 1px var(--blue-content-chart) solid;
 }
-
 /* ---------- FIN Bloque contenido de la gráfica de consumo ---------- */
 
 /* -------------------------------------------------------------------------- */
