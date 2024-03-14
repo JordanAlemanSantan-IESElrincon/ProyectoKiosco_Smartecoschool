@@ -26,7 +26,7 @@
 }
 
 /* Animación de gradiente de fondo del cuerpo */
-body {
+.bodyGeneral {
     background: linear-gradient(137deg,#baf6dd,#f5f7a8,#a8d1f7);
     background-size: 180% 180%;
     animation: gradient-animation 5s ease infinite;
@@ -111,7 +111,6 @@ body {
 }
 
 .contenidoHeaderTitulo > h1 {
-    text-shadow: 0 4px 4px 0 #00000040;
     font-size: 66px;
 }
 
@@ -200,6 +199,7 @@ body {
 .contenidoConsumoEnergy h3, .contenidoConsumoAgua h3 {
     text-align: center;
     color: var(--color-text);
+    font-weight: normal;
 }
 
 .contenidoConsumoEnergy span, .contenidoConsumoAgua span {

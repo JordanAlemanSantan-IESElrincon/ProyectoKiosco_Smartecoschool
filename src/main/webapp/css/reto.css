@@ -1,0 +1,57 @@
+.bodyReto {
+    background: linear-gradient(137deg, #0B0D21, #161A42, #5c0a6e);
+    background-size: 180% 180%;
+    animation: gradient-animation-reto 5s ease infinite;
+}
+
+/* Keyframes para la animación de gradiente */
+@keyframes gradient-animation-reto {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.bodyReto .logo-img-header-Rincon > img {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.bodyReto .logo-img-header-SanCristobal > img{
+    background-color: white;
+}
+
+.bodyReto .contenidoHeaderTitulo > h1 {
+    color: white;
+    mix-blend-mode: luminosity;
+}
+
+/* ---------------------------------------- */
+/*          Contenido principal
+/* ---------------------------------------- */
+.bodyReto .contenidoTituloEnergy {
+    background-color: #ff7200 !important;
+}
+
+.bodyReto .contenidoTituloEnergy h2 {
+    color: black;
+}
+
+.bodyReto .contenidoTituloAgua {
+    background-color: #043f77 !important;
+}
+
+.bodyReto .contenidoTituloAgua h2 {
+    color: white;
+}
+
+.bodyReto .contenidoConsumoEnergy span, .bodyReto .contenidoConsumoAgua span {
+    color: red;
+}
+
+
