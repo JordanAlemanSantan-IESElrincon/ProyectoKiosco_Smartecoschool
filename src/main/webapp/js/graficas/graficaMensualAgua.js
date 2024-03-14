@@ -71,6 +71,7 @@ const implementarGraficaMensualAgua = async () => {
                     // Configuración del tamaño de los nombres del mes en el eje x
                     axisLabel: {
                         fontSize: 18, // Tamaño de la fuente para los nombres de los meses
+                        fontWeight: 'bold' // Pone el texto del eje x en negrita
                     }
                 }
             ],
