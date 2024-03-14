@@ -31,9 +31,10 @@ if (hashActual !== hashPrevio) {
     console.log('Los hashes son diferentes. Los archivos han sido modificados.');
 
     // Recorre los archivos del directorio local y copia los archivos a la ubicación en Tomcat
-    const archivosLocal = fs.readdirSync('/ruta/al/directorio/local');
+    //const archivosLocal = fs.readdirSync('/ruta/al/directorio/local');
+    const archivosLocal = fs.readdirSync('ProyectoKiosco_Smartecoschool');
     archivosLocal.forEach(archivo => {
-        const rutaArchivoLocal = `/ruta/al/directorio/local/${archivo}`;
+        const rutaArchivoLocal = `ProyectoKiosco_Smartecoschool${archivo}`;
         const rutaArchivoTomcat = `${rutaProyectoTomcat}/${archivo}`;
         fs.copyFileSync(rutaArchivoLocal, rutaArchivoTomcat);
     });
