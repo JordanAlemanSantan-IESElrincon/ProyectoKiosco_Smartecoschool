@@ -1,48 +1,40 @@
 const fs = require('fs');
 const crypto = require('crypto');
+const { exec } = require('child_process');
 
-function calcularHashDirectorio(rutaDirectorio) {
-    let hash = crypto.createHash('sha256');
-    const archivos = fs.readdirSync(rutaDirectorio);
-    archivos.forEach(archivo => {
-        const rutaArchivo = `${rutaDirectorio}/${archivo}`;
-        const stats = fs.statSync(rutaArchivo);
-        if (stats.isFile()) {
-            const contenidoArchivo = fs.readFileSync(rutaArchivo);
-            hash.update(contenidoArchivo);
-        } else if (stats.isDirectory()) {
-            const contenidoDirectorio = calcularHashDirectorio(rutaArchivo);
-            hash.update(contenidoDirectorio);
-        }
-    });
-    return hash.digest('hex');
+// Función para calcular el hash de un archivo
+function calcularHashArchivo(rutaArchivo) {
+    const contenidoArchivo = fs.readFileSync(rutaArchivo);
+    return crypto.createHash('sha256').update(contenidoArchivo).digest('hex');
 }
 
-// Ruta del directorio desplegado en Tomcat
-const rutaProyectoTomcat = 'http://23.97.221.154:8080/manager/html';
-// Hash previo almacenado
-let hashPrevio = 'hash_previo'; // Cambia esto por el hash previo almacenado
+// Ruta del archivo WAR local
+const rutaArchivoLocal = 'target/web-1.0-SNAPSHOT.war';
+// Host del servidor Tomcat
+const hostTomcat = 'usuario@direccion_servidor'; // Cambia esto por tu dirección de servidor y usuario SSH
 
-const hashActual = calcularHashDirectorio(rutaProyectoTomcat);
-console.log('Hash actual del proyecto desplegado en Tomcat:', hashActual);
+// Ejecutar comando SSH para obtener el hash del archivo en el servidor
+exec(`ssh ${hostTomcat} "sha256sum /ruta/al/archivo/desplegado/en/tomcat/nombre_archivo.war"`, (error, stdout, stderr) => {
+    if (error) {
+        console.error(`Error al ejecutar comando SSH: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.error(`Error en salida de comando SSH: ${stderr}`);
+        return;
+    }
 
-// Comparar los hashes
-if (hashActual !== hashPrevio) {
-    console.log('Los hashes son diferentes. Los archivos han sido modificados.');
+    // Hash del archivo desplegado en Tomcat obtenido a través de SSH
+    const hashTomcat = stdout.trim().split(' ')[0];
 
-    // Recorre los archivos del directorio local y copia los archivos a la ubicación en Tomcat
-    //const archivosLocal = fs.readdirSync('/ruta/al/directorio/local');
-    const archivosLocal = fs.readdirSync('ProyectoKiosco_Smartecoschool');
-    archivosLocal.forEach(archivo => {
-        const rutaArchivoLocal = `ProyectoKiosco_Smartecoschool${archivo}`;
-        const rutaArchivoTomcat = `${rutaProyectoTomcat}/${archivo}`;
-        fs.copyFileSync(rutaArchivoLocal, rutaArchivoTomcat);
-    });
-    console.log('Los archivos han sido actualizados en Tomcat.');
+    // Calcular el hash del archivo local
+    const hashLocal = calcularHashArchivo(rutaArchivoLocal);
 
-    // Guardar el hash actual como hash previo para la próxima vez
-    // En este ejemplo, simplemente sobrescribimos el valor de la variable hashPrevio
-    hashPrevio = hashActual;
-} else {
-    console.log('Los hashes coinciden. No se han realizado cambios en los archivos.');
-}
+    // Comparar los hashes
+    if (hashLocal !== hashTomcat) {
+        console.log('Los hashes son diferentes. El archivo WAR ha sido modificado.');
+        // Aquí puedes implementar la lógica para actualizar el archivo WAR en Tomcat si es necesario
+    } else {
+        console.log('Los hashes coinciden. No se han realizado cambios en el archivo WAR.');
+    }
+});
