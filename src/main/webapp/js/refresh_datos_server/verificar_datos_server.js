@@ -8,7 +8,7 @@ const myInit = {
   cache: "default",
 };
 
-const myRequest = new Request("http://23.97.221.154:8080/monitor3/", myInit);
+const myRequest = new Request("http://23.97.221.154:8080/kiosk/", myInit);
 
 // Obtener el HTML del proyecto local
 //Incluir la direccion del localhost configurada en el proyecto
