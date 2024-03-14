@@ -22,7 +22,7 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
         datosGraficaSemanalEnergy.forEach(dato => console.log(dato));
 
         // Actualiza el valor actual de consumo de luz en el HTML
-        myChartSemanalEnergyActual.innerHTML = `${datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].lightConsumption} L`;
+        myChartSemanalEnergyActual.innerHTML = `${datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].lightConsumption} kWh`;
 
         // Función para obtener el número del día completo
         let numeroDiaCompletoEnergy = (diaCompeto) => diaCompeto.slice(diaCompeto.indexOf(" ") + 1, diaCompeto.length);

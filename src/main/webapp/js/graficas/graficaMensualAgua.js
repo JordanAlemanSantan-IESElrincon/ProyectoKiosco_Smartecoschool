@@ -66,7 +66,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
                 {
                     type: 'category', // Tipo de eje, en este caso, categoría (para datos de texto)
                     boundaryGap: false, // No deje espacio en blanco al principio y al final del eje x
-                    data: datosMensualAgua, // Datos a mostrar en el eje x (nombres de los meses)
+                    data: datosMesesAgua, // Datos a mostrar en el eje x (nombres de los meses)
 
                     // Configuración del tamaño de los nombres del mes en el eje x
                     axisLabel: {
