@@ -1,84 +1,83 @@
 // Initialize the echarts instance based on the prepared dom
 import {fetchWeeklyConsumption} from "../api-service.js";
 
+/**
+ * @typedef {Object} WeeklyConsumptionData
+ * @property {string} dateName - Nombre de la fecha
+ * @property {number} lightConsumption - Consumo de luz
+ */
+
+// Inicializa la instancia de echarts en relación con el DOM preparado
 const myChartSemanalEnergy = echarts.init(document.getElementById('graficaSemanalEnergy'));
+
+// Obtiene el elemento HTML para mostrar el valor actual de consumo de luz
 const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnergyActual');
 
 (async () => {
     try {
+        // Obtiene los datos semanales de consumo desde la API
         const datosGraficaSemanalEnergy = await fetchWeeklyConsumption(2, 3);
 
-        myChartSemanalEnergyActual.innerHTML =
-            `${datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].lightConsumption} kWh`;
+        // Muestra los datos obtenidos desde la API en la consola
+        datosGraficaSemanalEnergy.forEach(dato => console.log(dato));
 
-        // Filtrar el primer array de datos
+        // Actualiza el valor actual de consumo de luz en el HTML
+        myChartSemanalEnergyActual.innerHTML = `${datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].lightConsumption} kWh`;
+
+        // Función para obtener el número del día completo
+        let numeroDiaCompletoEnergy = (diaCompeto) => diaCompeto.slice(diaCompeto.indexOf(" ") + 1, diaCompeto.length);
+
+        // Genera las etiquetas personalizadas del eje x
+        const fechaParaEnergy = datosGraficaSemanalEnergy[0].map((item, index) => {
+            const diaCompletoSemanaAnterior = item.dateName;
+            const diaCompletoSemanaPasada = datosGraficaSemanalEnergy[1][index].dateName;
+
+            const diaSemana = diaCompletoSemanaAnterior.split(" ")[0];
+            const numeroDiaCompletoSemanaAnterior = numeroDiaCompletoEnergy(diaCompletoSemanaAnterior);
+            const numeroDiaCompletoSemanaPasada = numeroDiaCompletoEnergy(diaCompletoSemanaPasada);
+
+            return `${numeroDiaCompletoSemanaAnterior} ${numeroDiaCompletoSemanaPasada}\n\n${diaSemana}`;
+        });
+
+        // Muestra las fechas personalizadas para el eje x en la consola
+        console.log("fechaParaEnergy", fechaParaEnergy);
+
+        // Obtiene los datos de consumo de luz para la semana actual y la semana pasada
         const datosSemanaActualEnergy = datosGraficaSemanalEnergy[1].map(dato => dato.lightConsumption);
-        console.log("Datos semana actual", datosSemanaActualEnergy);
-        // Filtrar el primer array de datos
-        const fechaSemanaActualEnergy = datosGraficaSemanalEnergy[1].map(dato => dato.dateName);
-        console.log("fechaSemanaActualEnergy" + fechaSemanaActualEnergy)
-        // Inicializamos las nuevas matrices
-        let diasSemana = [];
-
-        let diaMesActual = [];
-
-// Iteramos sobre cada cadena en cadenaArray
-        fechaSemanaActualEnergy.forEach(cadena => {
-            // Dividimos la cadena en partes usando split(" ")
-            let partes = cadena.split(" ");
-
-            // Agregamos la primera parte a la matriz primeraCadenaArray
-            diasSemana.push(partes[0]);
-
-            // Si hay al menos dos partes, agregamos las dos siguientes partes a la matriz siguientesDosCadenasArray
-            if (partes.length >= 3) {
-                diaMesActual.push(partes.slice(1, 3).join(" "));
-            }
-        });
-        // Filtrar el segundo array de datos (ignorar el de la posición 0)
-        const fechaSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.dateName);
-        // Inicializamos las nuevas matrices
-        const diaMesPasado = [];
-
-        // Iteramos sobre cada cadena en cadenaArray
-        fechaSemanaPasadaEnergy.forEach(cadena => {
-            // Dividimos la cadena en partes usando split(" ")
-            const partes = cadena.split(" ");
-
-            // Si hay al menos dos partes, agregamos las dos siguientes partes a la matriz siguientesDosCadenasArray
-            if (partes.length >= 3) {
-                diaMesPasado.push(partes.slice(1, 3).join(" "));
-            }
-        });
-        const data = diaMesActual.map((element, index) =>
-            `${element} ${diaMesPasado[index]}\n\n${diasSemana[index]}`
-        );
-        // Filtrar el segundo array de datos (ignorar el de la posición 0)
         const datosSemanaPasadaEnergy = datosGraficaSemanalEnergy[0].map(dato => dato.lightConsumption);
 
-        // Specify the configuration items and data for the chart
+        // Obtener las fechas de inicio y fin de la semana anterior
+        const inicioSemanaAnterior = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[0][0].dateName);
+        const finSemanaAnterior = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[0][datosGraficaSemanalEnergy[0].length - 1].dateName);
+
+        // Obtener las fechas de inicio y fin de la semana pasada
+        const inicioSemanaPasada = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[1][0].dateName);
+        const finSemanaPasada = numeroDiaCompletoEnergy(datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].dateName);
+
+        // Especifica los elementos de configuración y los datos para el gráfico
         let option = {
-            legend: {},
+
+            // Comentario explicativo sobre el rango de tiempo
+            /*
+                El rango de tiempo de "Semana anterior" abarca desde el primer día hasta el último día de la semana anterior a la actual.
+                El rango de tiempo de "Semana pasada" abarca desde el primer día hasta el último día de la semana pasada con respecto a la actual.
+            */
+            legend: {
+                data: [`Semana anterior: ${inicioSemanaAnterior} - ${finSemanaAnterior}     `, `Semana pasada: ${inicioSemanaPasada} - ${finSemanaPasada}`],
+                top: '5%'
+            },
             tooltip: {},
             dataset: {
                 dimensions: ['week', 'Semana_anterior', 'Semana_actual'],
-                // source: [
-                //   { week: 'Lunes', Semana_anterior: 43.3, Semana_actual: 85.8 },
-                //   { week: 'Martes', Semana_anterior: 83.1, Semana_actual: 73.4 },
-                //   { week: 'Miércoles', Semana_anterior: 86.4, Semana_actual: 65.2 },
-                //   { week: 'Jueves', Semana_anterior: 72.4, Semana_actual: 53.9 },
-                //   { week: 'Viernes', Semana_anterior: 43.3, Semana_actual: 5 },
-                //   { week: 'Sábado', Semana_anterior: 72.4, Semana_actual: 53.9 },
-                //   { week: 'Domingo', Semana_anterior: 43.3, Semana_actual: 10 }
-                // ]
             },
 
             color: [
-                '#FFCA7F',
-                '#FFBB5C'
+                '#FFCA7F', // Color para la serie de "Semana anterior"
+                '#FFBB5C' // Color para la serie de "Semana pasada"
             ],
 
             grid: {
+                top: '15%',
                 left: '3%',
                 right: '4%',
                 bottom: '10%', // Aumenta el espacio en la parte inferior para hacer espacio para las etiquetas del eje x
@@ -88,14 +87,22 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
             xAxis: {
                 type: 'category',
                 axisTick: {show: false}, // Oculta las marcas del eje x para que solo se muestren las etiquetas
-                data: data
+                data: fechaParaEnergy // Etiquetas personalizadas del eje x
+
             },
-            yAxis: {},
+            yAxis: {
+                // Configuración de las líneas horizontales (grid) en el eje x
+                splitLine: {
+                    show: true, // Muestra las líneas horizontales en el eje y
+                    lineStyle: {
+                        color: ['#d8e6f3'], // Color de las líneas horizontales
+                    }
+                }},
 
             series: [
                 {
+                    name: `Semana anterior: ${inicioSemanaAnterior} - ${finSemanaAnterior}     `, // Etiqueta para la serie de la semana anterior
                     type: 'bar',
-                    // data: [43.3, 83.1, 86.4, 72.4, 43.3, 72.4, 43.3], // Datos de la semana anterior
                     data: datosSemanaPasadaEnergy, // Datos de la semana anterior
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
@@ -104,8 +111,8 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
                     }
                 },
                 {
+                    name: `Semana pasada: ${inicioSemanaPasada} - ${finSemanaPasada}`, // Etiqueta para la serie de la semana pasada
                     type: 'bar',
-                    // data: [85.8, 73.4, 65.2, 53.9, 5, 53.9, 70], // Datos de la semana actual
                     data: datosSemanaActualEnergy, // Datos de la semana actual
                     label: { // Configuración de la etiqueta
                         show: true, // Mostrar etiqueta
@@ -116,10 +123,10 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
             ]
         };
 
-// Display the chart using the configuration items and data just specified.
+        // Muestra el gráfico utilizando la configuración y los datos especificados
         myChartSemanalEnergy.setOption(option);
-
     } catch (error) {
+        // Muestra un mensaje de error en la consola en caso de fallo
         console.error('Error:', error);
     }
 })();

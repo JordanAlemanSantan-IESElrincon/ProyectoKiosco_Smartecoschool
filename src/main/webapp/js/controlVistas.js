@@ -1,5 +1,7 @@
-const tiempoEsperaCambioVista = 6000;
+// Tiempo de espera para el cambio automático de vistas en milisegundos
+const tiempoEsperaCambioVista = 10000;
 
+// Selección de elementos HTML por sus ID para manipulación posterior
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
 const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoEnergyMensual");
 
@@ -23,6 +25,7 @@ const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
 graficaMensualEnergy.style.visibility = 'hidden';
 graficaMensualAgua.style.visibility = 'hidden';
 
+// Aplica animación para cambiar la visibilidad de las vistas entre actual y mensual.
 const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
     vistaNueva.classList.remove('desaparecer')
 
@@ -41,12 +44,14 @@ const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
     }, 1900);
 }
 
+// Cambia la visibilidad entre actual y mensual según su estado actual.
 const cambiarVisibilidad = (vistaActual, vistaMensual) => {
     (vistaActual.style.display === 'none')
         ? aplicarAnimationCambioVisibilidad(vistaMensual, vistaActual)
         : aplicarAnimationCambioVisibilidad(vistaActual, vistaMensual);
 };
 
+// Cambia la visibilidad total alternando entre vistas de consumo de energía y agua.
 const cambiasVisibilidadTotal = () => {
     cambiarVisibilidad(contenidoConsumoEnergyActual, contenidoConsumoEnergyMensual)
     cambiarVisibilidad(contenidoConsumoAguaActual, contenidoConsumoAguaMensual)
@@ -55,4 +60,5 @@ const cambiasVisibilidadTotal = () => {
     cambiarVisibilidad(graficaSemanalAgua, graficaMensualAgua);
 };
 
+// Establece la ejecución de la función cada cierto tiempo definido por 'tiempoEsperaCambioVista'.
 setInterval(() => cambiasVisibilidadTotal(), tiempoEsperaCambioVista);
