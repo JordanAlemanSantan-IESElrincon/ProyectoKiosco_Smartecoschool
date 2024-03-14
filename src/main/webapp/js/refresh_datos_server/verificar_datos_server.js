@@ -29,7 +29,8 @@ function calcularHash(archivoOCarpeta) {
 // Nombre de la carpeta del proyecto a verificar
 const carpetaProyecto = 'ProyectoKiosco_Smartecoschool';
 // URL de la API en el servidor que devuelve el hash del proyecto
-const rutaServidor = 'https://tu-servidor.com/api/hash';
+//const rutaServidor = 'https://tu-servidor.com/api/hash';
+const rutaServidor = 'http://23.97.221.154:8080/api-kiosco/api/measurements';
 
 // Función para comparar el hash local con el del servidor
 async function compararHashConServidor() {
@@ -60,5 +61,3 @@ if (ejecutarVerificacionCadaTiempo) {
     const intervaloTiempo = 10 * 60 * 1000; // 10 minutos en milisegundos
     setInterval(compararHashConServidor, intervaloTiempo);
 }
-
-
