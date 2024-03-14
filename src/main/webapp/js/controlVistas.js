@@ -1,5 +1,5 @@
 // Tiempo de espera para el cambio automático de vistas en milisegundos
-const tiempoEsperaCambioVista = 4000;
+const tiempoEsperaCambioVista = 10000;
 
 // Selección de elementos HTML por sus ID para manipulación posterior
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
@@ -45,8 +45,6 @@ const contenidoTodasLasVistas = [
 // ponen a visible por el resto del tiempo.
 //      Como están en una posición absoluta (ver en css/controlVistas.css), podrán ocupar
 // ambas gráficas el mismo espacio del div donde se encuentran.
-//      div de graficaMensualEnergy → contenidoGraficaConsumoEnergy
-//      div de graficaMensualAgua → contenidoGraficaConsumoAgua
 graficaMensualEnergy.style.visibility = 'hidden';
 graficaMensualAgua.style.visibility = 'hidden';
 
@@ -72,35 +70,17 @@ const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
     }, 1900);
 }
 
-// Cambia la visibilidad entre actual y mensual según su estado actual.
-// const cambiarVisibilidad = (vistaActual, vistaMensual) => {
-//     (vistaActual.style.display === 'none')
-//         ? aplicarAnimationCambioVisibilidad(vistaMensual, vistaActual)
-//         : aplicarAnimationCambioVisibilidad(vistaActual, vistaMensual);
-// };
-
 let recorrerContenidos = 0;
 
-// Cambia la visibilidad total alternando entre vistas de consumo de energía y agua.
-// const cambiasVisibilidadTotal = () => {
-//     aplicarAnimationCambioVisibilidad(contenidoConsumoEnergyActual, contenidoConsumoEnergyMensual)
-//     aplicarAnimationCambioVisibilidad(contenidoConsumoAguaActual, contenidoConsumoAguaMensual)
-//
-//     aplicarAnimationCambioVisibilidad(graficaSemanalEnergy, graficaMensualEnergy);
-//     aplicarAnimationCambioVisibilidad(graficaSemanalAgua, graficaMensualAgua);
-// };
-
 const cambiasVisibilidadTotal = () => {
-    aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][0], contenidoTodasLasVistas[(recorrerContenidos + 1) % 3][0])
-    aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][1], contenidoTodasLasVistas[(recorrerContenidos + 1) % 3][1])
+    const tamTotalContenidoTodasLasVistas = contenidoTodasLasVistas.length;
 
-    aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][2], contenidoTodasLasVistas[(recorrerContenidos + 1) % 3][2]);
-    aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][3], contenidoTodasLasVistas[(recorrerContenidos + 1) % 3][3]);
+    for (let i = 0; i < contenidoTodasLasVistas[0].length; i++)
+        aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][i], contenidoTodasLasVistas[(recorrerContenidos + 1) % tamTotalContenidoTodasLasVistas][i]);
 
-    recorrerContenidos = (recorrerContenidos + 1) % 3;
+    recorrerContenidos = (recorrerContenidos + 1) % tamTotalContenidoTodasLasVistas;
     console.log("recorrerContenidos", recorrerContenidos);
 };
-
 
 // Establece la ejecución de la función cada cierto tiempo definido por 'tiempoEsperaCambioVista'.
 setInterval(() => cambiasVisibilidadTotal(), tiempoEsperaCambioVista);
