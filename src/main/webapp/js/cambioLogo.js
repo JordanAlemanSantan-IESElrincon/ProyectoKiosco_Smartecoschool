@@ -8,7 +8,7 @@ function changeLogos() {
     const contenedorLogos = document.getElementById("contenedorLogos");
 
     // Cambiar la opacidad a 0 antes de cambiar la imagen
-    image.style.opacity = 0;
+    image.style.opacity = "0";
 
     // Espera un breve momento para que la transición sea visible
     setTimeout(() => {

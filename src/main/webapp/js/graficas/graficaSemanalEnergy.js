@@ -13,13 +13,10 @@ const myChartSemanalEnergy = echarts.init(document.getElementById('graficaSemana
 // Obtiene el elemento HTML para mostrar el valor actual de consumo de luz
 const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnergyActual');
 
-const implementarGraficaSemanalEnergy = async () => {
+export const implementarGraficaSemanalEnergy = async () => {
     try {
         // Obtiene los datos semanales de consumo desde la API
         const datosGraficaSemanalEnergy = await fetchWeeklyConsumption(1, 2);
-
-        // Muestra los datos obtenidos desde la API en la consola
-        datosGraficaSemanalEnergy.forEach(dato => console.log(dato));
 
         // Actualiza el valor actual de consumo de luz en el HTML
         myChartSemanalEnergyActual.innerHTML = `${datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].lightConsumption} kWh`;
@@ -140,7 +137,7 @@ const implementarGraficaSemanalEnergy = async () => {
     }
 };
 
-import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
-await  implementarGraficaSemanalEnergy();
-
-setInterval(async () => await implementarGraficaSemanalEnergy(), tiempoEsperaParaVolverASolicitarDatos);
+// import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
+// await  implementarGraficaSemanalEnergy();
+//
+// setInterval(async () => await implementarGraficaSemanalEnergy(), tiempoEsperaParaVolverASolicitarDatos);

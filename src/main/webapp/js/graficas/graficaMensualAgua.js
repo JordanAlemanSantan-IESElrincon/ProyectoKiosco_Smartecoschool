@@ -13,7 +13,7 @@ const myChartMensualAgua = echarts.init(document.getElementById('graficaMensualA
 // Obtiene el elemento HTML para mostrar el valor actual de consumo de agua mensual
 const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsumoAguaMensual');
 
-const implementarGraficaMensualAgua = async () => {
+export const implementarGraficaMensualAgua = async () => {
     try {
         // Obtiene los datos mensuales de consumo de agua desde la API
         const datosGraficaMensualAgua = await fetchMonthlyConsumption(1, 2);
@@ -22,8 +22,8 @@ const implementarGraficaMensualAgua = async () => {
         myChartCantidadConsumoAguaMensual.innerHTML = `${datosGraficaMensualAgua[datosGraficaMensualAgua.length - 1].waterConsumption} L`;
 
         // Filtra el array de datos para obtener solo el consumo de agua mensual
-        const datosMensualAgua = datosGraficaMensualAgua.map(dato => dato.waterConsumption);
-        console.log("Datos mes agua actual", datosMensualAgua);
+        const datosConsumoMensualAgua = datosGraficaMensualAgua.map(dato => dato.waterConsumption);
+        console.log("Datos consumo del mes agua actual", datosConsumoMensualAgua);
 
         // Obtiene los nombres de los meses para el eje x
         const datosMesesAgua = datosGraficaMensualAgua.map(dato => dato.dateName);
@@ -136,7 +136,7 @@ const implementarGraficaMensualAgua = async () => {
                     },
 
                     //Datos de los meses
-                    data: datosMensualAgua
+                    data: datosConsumoMensualAgua
                 }
             ]
         };
@@ -150,6 +150,6 @@ const implementarGraficaMensualAgua = async () => {
     }
 };
 
-import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
-await  implementarGraficaMensualAgua();
-setInterval(async () => await implementarGraficaMensualAgua(), tiempoEsperaParaVolverASolicitarDatos);
+// import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
+// await  implementarGraficaMensualAgua();
+// setInterval(async () => await implementarGraficaMensualAgua(), tiempoEsperaParaVolverASolicitarDatos);

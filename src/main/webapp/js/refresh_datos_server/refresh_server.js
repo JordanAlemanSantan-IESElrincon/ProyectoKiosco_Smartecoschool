@@ -8,7 +8,7 @@ function verificarCambios() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                // Si el servidor devuelve 200 (OK), comparamos las fechas de última modificación
+                // Si el servidor devuelve 200 (OK), comparamos las fechas de última modificación.
                 var ultimaModificacionServidor = new Date(xhr.getResponseHeader('Last-Modified'));
                 var ultimaModificacionLocal = new Date(document.lastModified);
 

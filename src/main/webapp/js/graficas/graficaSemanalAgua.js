@@ -1,4 +1,3 @@
-// Initialize the echarts instance based on the prepared dom
 import {fetchWeeklyConsumption} from "../api-service.js";
 
 /**
@@ -13,7 +12,7 @@ const myChartSemanalAgua = echarts.init(document.getElementById('graficaSemanalA
 // Obtiene el elemento HTML para mostrar el valor actual de consumo de agua
 const myChartSemanalAguaActual = document.querySelector('#cantidadConsumoAguaActual');
 
-const implementarGraficaSemanalAgua = async () => {
+export const implementarGraficaSemanalAgua = async () => {
     try {
         // Obtiene los datos semanales de consumo desde la API
         const datosGraficaSemanalAgua = await fetchWeeklyConsumption(1, 2);
@@ -42,7 +41,7 @@ const implementarGraficaSemanalAgua = async () => {
         });
 
         // Muestra las fechas personalizadas para el eje x en la consola
-        console.log("fechaParaEnergy", fechaParaEnergy);
+        console.log("\nfechaParaEnergy", fechaParaEnergy);
 
         // Obtiene los datos de consumo de agua para la semana actual y la semana pasada
         const datosSemanaActualAgua = datosGraficaSemanalAgua[1].map(dato => dato.waterConsumption);
@@ -139,6 +138,6 @@ const implementarGraficaSemanalAgua = async () => {
     }
 };
 
-import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
-await  implementarGraficaSemanalAgua();
-setInterval(async () => await implementarGraficaSemanalAgua(), tiempoEsperaParaVolverASolicitarDatos);
+// import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
+// await  implementarGraficaSemanalAgua();
+// setInterval(async () => await implementarGraficaSemanalAgua(), tiempoEsperaParaVolverASolicitarDatos);

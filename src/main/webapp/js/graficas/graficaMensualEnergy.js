@@ -14,7 +14,7 @@ const myChartMensualEnergy = echarts.init(document.getElementById('graficaMensua
 const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadConsumoEnergyMensual');
 
 // Specify the configuration items and data for the chart
-const implementarGraficaMensualEnergy = async () => {
+export const implementarGraficaMensualEnergy = async () => {
     try {
         // Obtiene los datos mensuales de consumo de luz desde la API
         const datosGraficaMensualEnergy = await fetchMonthlyConsumption(1, 2);
@@ -23,8 +23,8 @@ const implementarGraficaMensualEnergy = async () => {
         myChartCantidadConsumoEnergyMensual.innerHTML =`${datosGraficaMensualEnergy[datosGraficaMensualEnergy.length - 1].lightConsumption} kWh`;
 
         // Filtra el array de datos para obtener solo el consumo de luz mensual
-        const datosMensualEnergy = datosGraficaMensualEnergy.map(dato => dato.lightConsumption);
-        console.log("Datos mes energy actual", datosMensualEnergy);
+        const datosConsumoMensualEnergy = datosGraficaMensualEnergy.map(dato => dato.lightConsumption);
+        console.log("Datos consumo mes energy actual", datosConsumoMensualEnergy);
 
         // Obtiene los nombres de los meses para el eje x
         const datosMesesEnergy = datosGraficaMensualEnergy.map(dato => dato.dateName);
@@ -135,7 +135,7 @@ const implementarGraficaMensualEnergy = async () => {
                     },
 
                     //Datos de los meses
-                    data: datosMensualEnergy
+                    data: datosConsumoMensualEnergy
                 }
             ]
         };
@@ -149,6 +149,6 @@ const implementarGraficaMensualEnergy = async () => {
     }
 };
 
-import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
-await  implementarGraficaMensualEnergy();
-setInterval(async () => await implementarGraficaMensualEnergy(), tiempoEsperaParaVolverASolicitarDatos);
+// import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
+// await  implementarGraficaMensualEnergy();
+// setInterval(async () => await implementarGraficaMensualEnergy(), tiempoEsperaParaVolverASolicitarDatos);

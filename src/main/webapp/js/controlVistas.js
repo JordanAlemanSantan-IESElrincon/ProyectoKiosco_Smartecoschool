@@ -79,7 +79,6 @@ const cambiasVisibilidadTotal = () => {
         aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][i], contenidoTodasLasVistas[(recorrerContenidos + 1) % tamTotalContenidoTodasLasVistas][i]);
 
     recorrerContenidos = (recorrerContenidos + 1) % tamTotalContenidoTodasLasVistas;
-    console.log("recorrerContenidos", recorrerContenidos);
 };
 
 // Establece la ejecución de la función cada cierto tiempo definido por 'tiempoEsperaCambioVista'.
