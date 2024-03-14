@@ -2,7 +2,6 @@
 const tiempoEsperaCambioVista = 4000;
 
 // Selección de elementos HTML por sus ID para manipulación posterior
-const bodyReto = document.querySelector("#body");
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
 const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoEnergyMensual");
 const contenidoRetoEnergy = document.querySelector("#contenidoRetoEnergy");
@@ -73,13 +72,9 @@ const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
 }
 
 let recorrerContenidos = 0;
-let evaluarVistaReto = false;
 
 const cambiasVisibilidadTotal = () => {
     const tamTotalContenidoTodasLasVistas = contenidoTodasLasVistas.length;
-    evaluarVistaReto = (recorrerContenidos === 2);
-
-
 
     for (let i = 0; i < contenidoTodasLasVistas[0].length; i++)
         aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][i], contenidoTodasLasVistas[(recorrerContenidos + 1) % tamTotalContenidoTodasLasVistas][i]);

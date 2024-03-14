@@ -97,9 +97,9 @@ export const implementarGraficaRetoAgua = async () => {
                     title: {
                         offsetCenter: [0, '-10%'],
                         fontSize: 20,
-                        textStyle: {  // Ajusta el tamaño del texto aquí
-                            fontSize: 30  // Tamaño de texto deseado para "Retos"
-                        }
+                        // textStyle: {  // Ajusta el tamaño del texto aquí
+                        //     fontSize: 30  // Tamaño de texto deseado para "Retos"
+                        // }
                     },
                     detail: {
                         fontSize: 30,

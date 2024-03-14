@@ -17,9 +17,6 @@ export const implementarGraficaSemanalAgua = async () => {
         // Obtiene los datos semanales de consumo desde la API
         const datosGraficaSemanalAgua = await fetchWeeklyConsumption(1, 2);
 
-        // Muestra los datos obtenidos desde la API en la consola
-        datosGraficaSemanalAgua.forEach(dato => console.log(dato));
-
         // Actualiza el valor actual de consumo de agua en el HTML
         myChartSemanalAguaActual.innerHTML = `${datosGraficaSemanalAgua[1][datosGraficaSemanalAgua[1].length - 1].waterConsumption} L`;
 
