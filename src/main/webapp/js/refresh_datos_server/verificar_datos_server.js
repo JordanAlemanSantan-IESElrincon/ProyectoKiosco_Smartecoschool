@@ -1,63 +1,49 @@
 const fs = require('fs');
 const crypto = require('crypto');
-const axios = require('axios');
 
-// Función para calcular el hash de un archivo o carpeta de manera recursiva
-function calcularHash(archivoOCarpeta) {
-    if (fs.existsSync(archivoOCarpeta)) {
-        if (fs.statSync(archivoOCarpeta).isFile()) {
-            // Si es un archivo, calcular el hash del contenido del archivo
-            const contenido = fs.readFileSync(archivoOCarpeta);
-            return crypto.createHash('sha256').update(contenido).digest('hex');
-        } else if (fs.statSync(archivoOCarpeta).isDirectory()) {
-            // Si es una carpeta, calcular el hash de todos los archivos dentro de la carpeta
-            let hash = crypto.createHash('sha256');
-            const archivos = fs.readdirSync(archivoOCarpeta);
-            archivos.forEach(archivo => {
-                const rutaArchivo = `${archivoOCarpeta}/${archivo}`;
-                const contenidoArchivo = calcularHash(rutaArchivo);
-                hash.update(contenidoArchivo);
-            });
-            return hash.digest('hex');
+function calcularHashDirectorio(rutaDirectorio) {
+    let hash = crypto.createHash('sha256');
+    const archivos = fs.readdirSync(rutaDirectorio);
+    archivos.forEach(archivo => {
+        const rutaArchivo = `${rutaDirectorio}/${archivo}`;
+        const stats = fs.statSync(rutaArchivo);
+        if (stats.isFile()) {
+            const contenidoArchivo = fs.readFileSync(rutaArchivo);
+            hash.update(contenidoArchivo);
+        } else if (stats.isDirectory()) {
+            const contenidoDirectorio = calcularHashDirectorio(rutaArchivo);
+            hash.update(contenidoDirectorio);
         }
-    } else {
-        console.error(`La ruta ${archivoOCarpeta} no existe.`);
-        return null;
-    }
+    });
+    return hash.digest('hex');
 }
 
-// Nombre de la carpeta del proyecto a verificar
-const carpetaProyecto = 'ProyectoKiosco_Smartecoschool';
-// URL de la API en el servidor que devuelve el hash del proyecto
-//const rutaServidor = 'https://tu-servidor.com/api/hash';
-const rutaServidor = 'http://23.97.221.154:8080/api-kiosco/api/measurements';
+// Ruta del directorio desplegado en Tomcat
+const rutaProyectoTomcat = 'http://23.97.221.154:8080/manager/html';
+// Hash previo almacenado
+let hashPrevio = 'hash_previo'; // Cambia esto por el hash previo almacenado
 
-// Función para comparar el hash local con el del servidor
-async function compararHashConServidor() {
-    const hashLocal = calcularHash(carpetaProyecto);
+const hashActual = calcularHashDirectorio(rutaProyectoTomcat);
+console.log('Hash actual del proyecto desplegado en Tomcat:', hashActual);
 
-    try {
-        // Realizar una solicitud al servidor para obtener el hash del proyecto
-        const response = await axios.get(`${rutaServidor}?carpeta=${carpetaProyecto}`);
-        const hashServidor = response.data.hash;
+// Comparar los hashes
+if (hashActual !== hashPrevio) {
+    console.log('Los hashes son diferentes. Los archivos han sido modificados.');
 
-        // Comparar los hashes
-        if (hashLocal === hashServidor) {
-            console.log('Los hashes coinciden. El proyecto no ha sido modificado en el servidor.');
-        } else {
-            console.log('Los hashes son diferentes. El proyecto ha sido modificado en el servidor.');
-        }
-    } catch (error) {
-        console.error('Error al obtener el hash del servidor:', error.message);
-    }
+    // Recorre los archivos del directorio local y copia los archivos a la ubicación en Tomcat
+    const archivosLocal = fs.readdirSync('/ruta/al/directorio/local');
+    archivosLocal.forEach(archivo => {
+        const rutaArchivoLocal = `/ruta/al/directorio/local/${archivo}`;
+        const rutaArchivoTomcat = `${rutaProyectoTomcat}/${archivo}`;
+        fs.copyFileSync(rutaArchivoLocal, rutaArchivoTomcat);
+    });
+    console.log('Los archivos han sido actualizados en Tomcat.');
+
+    // Guardar el hash actual como hash previo para la próxima vez
+    // En este ejemplo, simplemente sobrescribimos el valor de la variable hashPrevio
+    hashPrevio = hashActual;
+} else {
+    console.log('Los hashes coinciden. No se han realizado cambios en los archivos.');
 }
 
-// Llamar a la función para comparar los hashes
-compararHashConServidor();
-
-// Opcional: Ejecutar la verificación de modificaciones cada cierto tiempo (ej. cada 10 minutos)
-const ejecutarVerificacionCadaTiempo = false; // Cambia a true para habilitar
-if (ejecutarVerificacionCadaTiempo) {
-    const intervaloTiempo = 10 * 60 * 1000; // 10 minutos en milisegundos
-    setInterval(compararHashConServidor, intervaloTiempo);
-}
+// Aquí podrías guardar hashPrevio en una base de datos o en un archivo de configuración para usarlo la próxima vez.
