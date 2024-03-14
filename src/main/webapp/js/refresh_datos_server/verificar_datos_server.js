@@ -46,5 +46,3 @@ if (hashActual !== hashPrevio) {
 } else {
     console.log('Los hashes coinciden. No se han realizado cambios en los archivos.');
 }
-
-// Aquí podrías guardar hashPrevio en una base de datos o en un archivo de configuración para usarlo la próxima vez.
