@@ -17,6 +17,10 @@
 
     <!-- Incluir la biblioteca ECharts -->
     <script src="echarts/dist/echarts.js"></script>
+
+    <!-- Obtener Hash para verificar si hay cambios en la web y poder obtener los nuevos datos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
 </head>
 
 <body>
@@ -25,14 +29,14 @@
 <div class="container">
     <!-- Sección de Encabezado -->
     <header class="row contenidoHeader">
-        <div id="contenedorIcono" class="col-2 imagenHeader logo-img-header-SES">
-            <img id="iconSES" src="img/iconSES.png" alt="Imagen de consumo de agua y luz" width="752" height="583">
+        <div class="col-2 imagenHeader logo-img-header-SES">
+            <img src="img/iconSES.png" alt="Imagen de consumo de agua y luz" width="752" height="583">
         </div>
         <div class="col-8 contenidoHeaderTitulo">
             <h1>Estadísticas de Consumo de Agua y Luz</h1>
         </div>
-        <div id="contenedorLogos" class="col-2 imagenHeader logo-img-header-Rincon">
-            <img id="iconElRincon" src="img/iconElRincon.png" alt="Imagen del logo IES_ElRincón" width="1280" height="1329">
+        <div class="col-2 imagenHeader logo-img-header-Rincon">
+            <img src="img/iconElRincon.png" alt="Imagen del logo IES_ElRincón" width="1280" height="1329">
         </div>
     </header>
 
@@ -70,13 +74,6 @@
                             <h3>Consumo del MES actual </h3>
                             <span id="cantidadConsumoEnergyMensual">___</span>
                         </div>
-
-                        <!-- Vista del RETO de energía. Inicialmente oculto.
-                        Cambiará cada x tiempo por la vista del consumo semanal de energía -->
-<!--                        <div id="contenidoRetoEnergy">-->
-<!--                            <h3>Consumo del MES actual </h3>-->
-<!--                            <span id="retoEnergy">___</span>-->
-<!--                        </div>-->
                     </div>
 
                     <!-- Gráficas de Consumo de Energía -->
@@ -85,8 +82,6 @@
 
                         <!-- Posición absoluta. Inicialmente invisible-->
                         <div id="graficaMensualEnergy"></div>
-
-<!--                        <div id="graficarRetoEnergy">Hola, Energy</div>-->
                     </div>
                     <!-- ----------------------------------------------------------------------- -->
                 </div>
@@ -122,13 +117,6 @@
                             <h3>Consumo del MES actual</h3>
                             <span id="cantidadConsumoAguaMensual">___</span>
                         </div>
-
-                        <!-- Vista del RETO de agua. Inicialmente oculto.
-                       Cambiará cada x tiempo por la vista del consumo semanal de energía -->
-<!--                        <div id="contenidoRetoAgua">-->
-<!--                            <h3>Consumo del MES actual </h3>-->
-<!--                            <span id="retoAgua">___</span>-->
-<!--                        </div>-->
                     </div>
 
                     <!-- Gráficas de Consumo de Agua -->
@@ -137,7 +125,6 @@
 
                         <!-- Posición absoluta. Inicialmente invisible-->
                         <div id="graficaMensualAgua"></div>
-<!--                        <div id="graficarRetoAgua">Hola, Mundo</div>-->
                     </div>
                     <!-- ----------------------------------------------------------------------- -->
 
@@ -153,7 +140,6 @@
 </div>
 
 <!-- Archivos JavaScript -->
-<script src="js/cambioLogo.js"></script>
 <script src="js/controlVistas.js"></script>
 
 <script type="module" src="js/graficas/graficaSemanalEnergy.js"></script>
