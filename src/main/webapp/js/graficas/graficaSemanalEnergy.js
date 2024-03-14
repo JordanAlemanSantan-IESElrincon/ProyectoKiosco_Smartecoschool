@@ -16,7 +16,7 @@ const myChartSemanalEnergyActual = document.querySelector('#cantidadConsumoEnerg
 const implementarGraficaSemanalEnergy = async () => {
     try {
         // Obtiene los datos semanales de consumo desde la API
-        const datosGraficaSemanalEnergy = await fetchWeeklyConsumption(2, 3);
+        const datosGraficaSemanalEnergy = await fetchWeeklyConsumption(1, 2);
 
         // Muestra los datos obtenidos desde la API en la consola
         datosGraficaSemanalEnergy.forEach(dato => console.log(dato));

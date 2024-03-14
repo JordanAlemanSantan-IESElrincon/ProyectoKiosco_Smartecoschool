@@ -17,7 +17,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
 const implementarGraficaMensualEnergy = async () => {
     try {
         // Obtiene los datos mensuales de consumo de luz desde la API
-        const datosGraficaMensualEnergy = await fetchMonthlyConsumption(2, 3);
+        const datosGraficaMensualEnergy = await fetchMonthlyConsumption(1, 2);
 
         // Actualiza el valor actual de consumo de luz mensual en el HTML
         myChartCantidadConsumoEnergyMensual.innerHTML =`${datosGraficaMensualEnergy[datosGraficaMensualEnergy.length - 1].lightConsumption} kWh`;
