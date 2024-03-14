@@ -14,7 +14,7 @@ const myChartMensualEnergy = echarts.init(document.getElementById('graficaMensua
 const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadConsumoEnergyMensual');
 
 // Specify the configuration items and data for the chart
-(async () => {
+const implementarGraficaMensualEnergy = async () => {
     try {
         // Obtiene los datos mensuales de consumo de luz desde la API
         const datosGraficaMensualEnergy = await fetchMonthlyConsumption(2, 3);
@@ -71,6 +71,7 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
                     // Configuración del tamaño de los nombres del mes en el eje x
                     axisLabel: {
                         fontSize: 18, // Tamaño de la fuente para los nombres de los meses
+                        fontWeight: 'bold' // Pone el texto del eje x en negrita
                     }
                 }
             ],
@@ -146,5 +147,8 @@ const myChartCantidadConsumoEnergyMensual = document.querySelector('#cantidadCon
         // Muestra un mensaje de error en la consola en caso de fallo
         console.error('Error:', error);
     }
-})();
+};
 
+import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
+await  implementarGraficaMensualEnergy();
+setInterval(async () => await implementarGraficaMensualEnergy(), tiempoEsperaParaVolverASolicitarDatos);

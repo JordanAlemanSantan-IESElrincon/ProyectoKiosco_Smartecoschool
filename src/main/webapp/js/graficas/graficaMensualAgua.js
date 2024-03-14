@@ -13,7 +13,7 @@ const myChartMensualAgua = echarts.init(document.getElementById('graficaMensualA
 // Obtiene el elemento HTML para mostrar el valor actual de consumo de agua mensual
 const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsumoAguaMensual');
 
-(async () => {
+const implementarGraficaMensualAgua = async () => {
     try {
         // Obtiene los datos mensuales de consumo de agua desde la API
         const datosGraficaMensualAgua = await fetchMonthlyConsumption(2, 3);
@@ -71,6 +71,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
                     // Configuración del tamaño de los nombres del mes en el eje x
                     axisLabel: {
                         fontSize: 18, // Tamaño de la fuente para los nombres de los meses
+                        fontWeight: 'bold' // Pone el texto del eje x en negrita
                     }
                 }
             ],
@@ -147,4 +148,8 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
         // Muestra un mensaje de error en la consola en caso de fallo
         console.error('Error:', error);
     }
-})();
+};
+
+import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
+await  implementarGraficaMensualAgua();
+setInterval(async () => await implementarGraficaMensualAgua(), tiempoEsperaParaVolverASolicitarDatos);
