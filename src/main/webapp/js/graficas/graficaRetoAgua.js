@@ -14,6 +14,23 @@ const myChartRetoConsumoAgua = document.querySelector('#retoAgua');
 
 export const implementarGraficaRetoAgua = async () => {
     try {
+        // Obtiene los datos semanales de consumo desde la API
+        const datosGraficaSemanalAgua = await fetchWeeklyConsumption(1, 2);
+
+        // Calcula los cuatro valores equitativos
+        const cantidadConsumoAguaDiaSemanaAnterior = datosGraficaSemanalAgua[0][datosGraficaSemanalAgua[1].length - 1].waterConsumption;
+        const division = cantidadConsumoAguaDiaSemanaAnterior / 4;
+        const valoresAguaDivididos =
+            [
+                `${cantidadConsumoAguaDiaSemanaAnterior} L`,
+                `${(division * 3).toFixed(1)} L`,
+                `${(division * 2).toFixed(1)} L`,
+                `${division.toFixed(1)} L`
+            ];
+
+        // Actualiza el valor actual de consumo de luz en el HTML
+        myChartRetoConsumoAgua.innerHTML = `${cantidadConsumoAguaDiaSemanaAnterior} L`;
+
         let option = {
             series: [
                 {
@@ -66,13 +83,13 @@ export const implementarGraficaRetoAgua = async () => {
                         rotate: 'tangential',
                         formatter: function (value) {
                             if (value === 0.875) {
-                                return 'DATO4';
+                                return valoresAguaDivididos[0];
                             } else if (value === 0.625) {
-                                return 'DATO3';
+                                return valoresAguaDivididos[1];
                             } else if (value === 0.375) {
-                                return 'DATO2';
+                                return valoresAguaDivididos[2];
                             } else if (value === 0.125) {
-                                return 'DATO1';
+                                return valoresAguaDivididos[3];
                             }
                             return '';
                         }

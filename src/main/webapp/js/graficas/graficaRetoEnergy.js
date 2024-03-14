@@ -14,6 +14,23 @@ const myChartRetoConsumoEnergy = document.querySelector('#retoEnergy');
 
 export const implementarGraficaRetoEnergy = async () => {
   try {
+    // Obtiene los datos semanales de consumo desde la API
+    const datosGraficaSemanalEnergy = await fetchWeeklyConsumption(1, 2);
+
+    // Calcula los cuatro valores equitativos
+    const cantidadConsumoEnergyDiaSemanaAnterior = datosGraficaSemanalEnergy[0][datosGraficaSemanalEnergy[1].length - 1].lightConsumption;
+    const division = cantidadConsumoEnergyDiaSemanaAnterior / 4;
+    const valoresEnergyDivididos =
+        [
+          `${cantidadConsumoEnergyDiaSemanaAnterior} kWh`,
+          `${(division * 3).toFixed(1)} kWh`,
+          `${(division * 2).toFixed(1)} kWh`,
+          `${division.toFixed(1)} kWh`
+        ];
+
+    // Actualiza el valor actual de consumo de luz en el HTML
+    myChartRetoConsumoEnergy.innerHTML = `${cantidadConsumoEnergyDiaSemanaAnterior} kWh`;
+
     let option = {
       series: [
         {
@@ -66,13 +83,13 @@ export const implementarGraficaRetoEnergy = async () => {
             rotate: 'tangential',
             formatter: function (value) {
               if (value === 0.875) {
-                return 'DATO4';
+                return valoresEnergyDivididos[0];
               } else if (value === 0.625) {
-                return 'DATO3';
+                return valoresEnergyDivididos[1];
               } else if (value === 0.375) {
-                return 'DATO2';
+                return valoresEnergyDivididos[2];
               } else if (value === 0.125) {
-                return 'DATO1';
+                return valoresEnergyDivididos[3];
               }
               return '';
             }
