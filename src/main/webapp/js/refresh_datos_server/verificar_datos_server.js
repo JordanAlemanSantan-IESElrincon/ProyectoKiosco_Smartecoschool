@@ -28,7 +28,7 @@ fetch('http://localhost:8001/web')
         // Comparar el HTML del servidor con el HTML local
         if (localHTML !== serverHTML) {
           // Si los HTML son diferentes, realizar una solicitud para modificar el HTML del servidor
-          const modifiedRequest = new Request("http://23.97.221.154:8080/monitor3/", {
+          const modifiedRequest = new Request("http://23.97.221.154:8080/kiosk/", {
             method: 'POST',
             body: localHTML,
             headers: new Headers({
