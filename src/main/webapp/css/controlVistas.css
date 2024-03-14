@@ -7,7 +7,7 @@
     display: none;
 }
 
-#contenidoConsumoEnergyMensual {
+#contenidoRetoEnergy {
     display: none;
 }
 
@@ -17,6 +17,10 @@
 }
 
 #contenidoConsumoAguaMensual {
+    display: none;
+}
+
+#contenidoRetoAgua {
     display: none;
 }
 
