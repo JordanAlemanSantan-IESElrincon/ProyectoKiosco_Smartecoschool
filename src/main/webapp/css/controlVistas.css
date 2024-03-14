@@ -12,6 +12,10 @@
 }
 
 
+#contenidoRetoEnergy {
+    display: none;
+}
+
 #contenidoConsumoAguaActual {
     display: flex;
 }
@@ -19,6 +23,11 @@
 #contenidoConsumoAguaMensual {
     display: none;
 }
+
+#contenidoRetoAgua {
+    display: none;
+}
+
 
 /*Contenido gráficas*/
 /*.contenidoGraficaConsumoEnergy se establece como un contenedor relativo para que */
