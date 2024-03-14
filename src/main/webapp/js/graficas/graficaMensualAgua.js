@@ -16,7 +16,7 @@ const myChartCantidadConsumoAguaMensual = document.querySelector('#cantidadConsu
 const implementarGraficaMensualAgua = async () => {
     try {
         // Obtiene los datos mensuales de consumo de agua desde la API
-        const datosGraficaMensualAgua = await fetchMonthlyConsumption(2, 3);
+        const datosGraficaMensualAgua = await fetchMonthlyConsumption(1, 2);
 
         // Actualiza el valor actual de consumo de agua mensual en el HTML
         myChartCantidadConsumoAguaMensual.innerHTML = `${datosGraficaMensualAgua[datosGraficaMensualAgua.length - 1].waterConsumption} L`;

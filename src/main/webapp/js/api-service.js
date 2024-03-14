@@ -3,8 +3,6 @@
 //         .then(response => response.json())
 //         .catch(error => console.error('Error:', error));
 // }
-const express = require('express');
-const app = express();
 
 // http://23.97.221.154:8080/api-kiosco/api/measurements/getConsumptionBySensorWeekly/2/3
 // http://23.97.221.154:8080/ses/api/measurements/getConsumptionBySensorWeekly/2/3
