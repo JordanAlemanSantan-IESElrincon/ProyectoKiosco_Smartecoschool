@@ -28,4 +28,4 @@ export async function fetchMonthlyConsumption(waterId, lightId) {
     }
 }
 
-export const tiempoEsperaParaVolverASolicitarDatos = 5000;
+export const tiempoEsperaParaVolverASolicitarDatos = 900000;
