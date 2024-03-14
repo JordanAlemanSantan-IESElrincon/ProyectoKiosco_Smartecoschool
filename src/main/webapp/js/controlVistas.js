@@ -1,5 +1,5 @@
 // Tiempo de espera para el cambio automático de vistas en milisegundos
-const tiempoEsperaCambioVista = 10000;
+const tiempoEsperaCambioVista = 4000;
 
 // Selección de elementos HTML por sus ID para manipulación posterior
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
@@ -12,11 +12,11 @@ const contenidoRetoAgua = document.querySelector("#contenidoRetoAgua");
 
 const graficaSemanalEnergy = document.querySelector("#graficaSemanalEnergy");
 const graficaMensualEnergy = document.querySelector("#graficaMensualEnergy");
-const graficarRetoEnergy = document.querySelector("#graficarRetoEnergy");
+const graficaRetoEnergy = document.querySelector("#graficaRetoEnergy");
 
 const graficaSemanalAgua = document.querySelector("#graficaSemanalAgua");
 const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
-const graficarRetoAgua = document.querySelector("#graficarRetoAgua");
+const graficaRetoAgua = document.querySelector("#graficaRetoAgua");
 
 const contenidoTodasLasVistas = [
     [
@@ -34,8 +34,8 @@ const contenidoTodasLasVistas = [
     [
         contenidoRetoEnergy,
         contenidoRetoAgua,
-        graficarRetoEnergy,
-        graficarRetoAgua
+        graficaRetoEnergy,
+        graficaRetoAgua
     ]
 ]
 
@@ -48,8 +48,8 @@ const contenidoTodasLasVistas = [
 graficaMensualEnergy.style.visibility = 'hidden';
 graficaMensualAgua.style.visibility = 'hidden';
 
-graficarRetoEnergy.style.visibility = 'hidden';
-graficarRetoAgua.style.visibility = 'hidden';
+graficaRetoEnergy.style.visibility = 'hidden';
+graficaRetoAgua.style.visibility = 'hidden';
 
 // Aplica animación para cambiar la visibilidad de las vistas entre actual y mensual.
 const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {

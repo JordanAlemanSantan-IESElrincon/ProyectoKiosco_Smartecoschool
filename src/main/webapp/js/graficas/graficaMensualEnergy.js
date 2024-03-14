@@ -148,7 +148,3 @@ export const implementarGraficaMensualEnergy = async () => {
         console.error('Error:', error);
     }
 };
-
-// import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
-// await  implementarGraficaMensualEnergy();
-// setInterval(async () => await implementarGraficaMensualEnergy(), tiempoEsperaParaVolverASolicitarDatos);

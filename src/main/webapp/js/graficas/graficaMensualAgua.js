@@ -149,7 +149,3 @@ export const implementarGraficaMensualAgua = async () => {
         console.error('Error:', error);
     }
 };
-
-// import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
-// await  implementarGraficaMensualAgua();
-// setInterval(async () => await implementarGraficaMensualAgua(), tiempoEsperaParaVolverASolicitarDatos);

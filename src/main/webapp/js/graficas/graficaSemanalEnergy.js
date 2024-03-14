@@ -136,8 +136,3 @@ export const implementarGraficaSemanalEnergy = async () => {
         console.error('Error:', error);
     }
 };
-
-// import {tiempoEsperaParaVolverASolicitarDatos} from "../api-service.js";
-// await  implementarGraficaSemanalEnergy();
-//
-// setInterval(async () => await implementarGraficaSemanalEnergy(), tiempoEsperaParaVolverASolicitarDatos);
