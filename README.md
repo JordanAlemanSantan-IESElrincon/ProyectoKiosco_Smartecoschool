@@ -54,7 +54,10 @@ Las tecnologías de este proyecto son:
 
   <p>Accedemos a "web-1.0-SNAPSHOT", Lifecycle y luego en Clean, le damos a Run Maven Build (el botón de "Play" en donde se muestran las demás herramientas de Maven).</p>
 
-  
+  <p>Luego de hacer un Clean, vamos a donde pone Install y le damos de nuevo al botón de Run Maven Build.</p>
+
+  <p>Una vez hecho esos pasos, se nos creará una carpeta en nuestro proyecto llamada "Target".</p>
+
 
 ## Smart Eco School - Contenido
 ***
