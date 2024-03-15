@@ -14,21 +14,22 @@
 7. [Smart Eco School - HTML](#smart-eco-school-html)
 8. [Smart Eco School - Graficas](#smart-eco-school-graficas)
 9. [Smart Eco School - Refrescar datos](#smart-eco-school-refrescar-datos)
+10. [Autores](#autores)
 
-### Información general
+## Información general
 ***
 <p>Smart Eco School es un proyecto creado por un grupo de Alumnos del IES El Rincón el cual pretende analizar
 el gasto tanto de energía como de agua del centro para que se controle el uso de dichos recursos.</p>
 
 <p>El proyecto incluido en éste repositorio consta de una Página Web compuesta por HTML, Javascript y CSS.</p>
 
-## Tecnologías
+### Tecnologías
 ***
 Las tecnologías de este proyecto son:
 * Technology stack: IntelliJ IDEA Ultimate con Apache Tomcat 9.0.86
 * Base de datos: MySQL Server
 
-## Instalación
+### Instalación
 ***
 <p>Para poder utilizar este proyecto, hay que asegurarse de poder utilizar Maven.</p>
 
@@ -42,12 +43,28 @@ Las tecnologías de este proyecto son:
   Iniciar tu aplicación:
   <p>- npm run start</p>
 
-## Instalación en Intellij Community
+### Instalación en Intellij Community
 ***
 * Apache Tomcat en Intellij Community
   <p>Si se instala Apache Tomcat en Intellij Community en lugar de Intellij Ultimate, hay que hacer unos pasos adicionales para que funcione Apache Tomcat.</p>
   PDF of the document: [Instalacion_Apache_Tomcat_Intellij_Community.pdf](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/files/14614105/Instalacion_Apache_Tomcat_Intellij_Community.pdf)
   
-## Smart Eco School - Contenido
+### Smart Eco School - Contenido
+***
+<p>Escribe aqui contenido</p>
+
+### Smart Eco School - Diseño
+***
+<p>Escribe aqui contenido</p>
+
+### Smart Eco School - HTML
+***
+<p>Escribe aqui contenido</p>
+
+### Smart Eco School - Graficas
+***
+<p>Escribe aqui contenido</p>
+
+### Smart Eco School - Refrescar datos
 ***
 <p>Escribe aqui contenido</p>
