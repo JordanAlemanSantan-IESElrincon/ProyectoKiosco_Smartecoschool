@@ -5,9 +5,8 @@ import {fetchWeeklyConsumption} from "../api-service.js";
  * @property {string} dateName - Nombre de la fecha
  * @property {number} waterConsumption - Consumo de agua
  */
-
 // Inicializa la instancia de echarts en relación con el DOM preparado
-const myChartRetoEnergy = echarts.init(document.getElementById('graficaRetoEnergy'));
+const myChartRetoEnergy = echarts.init(document.getElementById('graficaRetoEnergy'), 'dark');
 
 // Obtiene el elemento HTML para mostrar el valor actual de consumo de agua mensual
 const myChartRetoConsumoEnergy = document.querySelector('#retoEnergy');
@@ -19,6 +18,15 @@ export const implementarGraficaRetoEnergy = async () => {
 
     // Calcula los cuatro valores equitativos
     const cantidadConsumoEnergyDiaSemanaAnterior = datosGraficaSemanalEnergy[0][datosGraficaSemanalEnergy[1].length - 1].lightConsumption;
+    console.log("cantidadConsumoEnergyDiaSemanaAnterior " + cantidadConsumoEnergyDiaSemanaAnterior)
+    const cantidadConsumoEnergyDiaSemanaActual = datosGraficaSemanalEnergy[1][datosGraficaSemanalEnergy[1].length - 1].lightConsumption;
+    console.log("cantidadConsumoEnergyDiaSemanaActual " + cantidadConsumoEnergyDiaSemanaActual)
+
+    // Calcular el porcentaje de consumo de agua del día actual respecto al día anterior
+    const porcentajeConsumoEnergia = (cantidadConsumoEnergyDiaSemanaActual / cantidadConsumoEnergyDiaSemanaAnterior) * 100;
+
+    console.log(`El porcentaje de consumo de energia del día actual respecto al día anterior es: ${porcentajeConsumoEnergia.toFixed(2)}%`);
+
     const division = cantidadConsumoEnergyDiaSemanaAnterior / 4;
     const valoresEnergyDivididos =
         [
@@ -37,8 +45,8 @@ export const implementarGraficaRetoEnergy = async () => {
           type: 'gauge',
           startAngle: 180,
           endAngle: 0,
-          center: ['50%', '75%'],
-          radius: '90%',
+          center: ['50%', '90%'],
+          radius: '140%',
           min: 0,
           max: 1,
           splitNumber: 8,
@@ -78,7 +86,7 @@ export const implementarGraficaRetoEnergy = async () => {
           },
           axisLabel: {
             color: '#464646',
-            fontSize: 20,
+            fontSize: 30,
             distance: -60,
             rotate: 'tangential',
             formatter: function (value) {
@@ -96,7 +104,7 @@ export const implementarGraficaRetoEnergy = async () => {
           },
           title: {
             offsetCenter: [0, '-10%'],
-            fontSize: 20,
+            fontSize: 30,
             // textStyle: {  // Ajusta el tamaño del texto aquí
             //   fontSize: 30  // Tamaño de texto deseado para "Retos"
             // }
@@ -106,14 +114,14 @@ export const implementarGraficaRetoEnergy = async () => {
             offsetCenter: [0, '-35%'],
             valueAnimation: true,
             formatter: function (value) {
-              return Math.round(value * 100) + '';
+              return Math.round(value * 100) + ' %'; // Agregar el símbolo "%" al valor
             },
             color: 'inherit'
           },
           data: [
             {
-              value: 0.7,
-              name: 'Retos'
+              value: porcentajeConsumoEnergia / 100,
+              name: cantidadConsumoEnergyDiaSemanaActual + ' kWh'
             }
           ]
         }
