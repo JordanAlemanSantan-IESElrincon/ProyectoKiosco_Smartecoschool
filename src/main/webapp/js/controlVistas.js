@@ -1,7 +1,8 @@
 // Tiempo de espera para el cambio automático de vistas en milisegundos
-const tiempoEsperaCambioVista = 10000;
+const tiempoEsperaCambioVista = 60000;
 
 // Selección de elementos HTML por sus ID para manipulación posterior
+const bodyReto = document.querySelector("#body");
 const contenidoConsumoEnergyActual = document.querySelector("#contenidoConsumoEnergyActual");
 const contenidoConsumoEnergyMensual = document.querySelector("#contenidoConsumoEnergyMensual");
 const contenidoRetoEnergy = document.querySelector("#contenidoRetoEnergy");
@@ -17,6 +18,9 @@ const graficaRetoEnergy = document.querySelector("#graficaRetoEnergy");
 const graficaSemanalAgua = document.querySelector("#graficaSemanalAgua");
 const graficaMensualAgua = document.querySelector("#graficaMensualAgua");
 const graficaRetoAgua = document.querySelector("#graficaRetoAgua");
+
+const momentoReto = document.querySelector("#momentoReto");
+const retoTextoBlanco = document.querySelector("#retoTextoBlanco");
 
 const contenidoTodasLasVistas = [
     [
@@ -71,10 +75,35 @@ const aplicarAnimationCambioVisibilidad = (vistaActual, vistaNueva) => {
     }, 1900);
 }
 
+
+const cambioVistaModoReto = (textoVista, claseActual, claseNueva) => {
+    momentoReto.classList.remove("desaparecer");
+    momentoReto.classList.add("aparecer");
+
+    retoTextoBlanco.innerHTML = textoVista;
+
+    // Asignar timeout
+    setTimeout(() => {
+        momentoReto.style.opacity = 1;
+        setTimeout(() => {
+            momentoReto.style.opacity = 0;
+
+            bodyReto.classList.remove(claseActual);
+            bodyReto.classList.add(claseNueva);
+
+            momentoReto.classList.remove("aparecer");
+            momentoReto.classList.add("desaparecer");
+        }, 2000);
+    }, 2000);
+};
+
 let recorrerContenidos = 0;
 
 const cambiasVisibilidadTotal = () => {
     const tamTotalContenidoTodasLasVistas = contenidoTodasLasVistas.length;
+
+    if (recorrerContenidos === 1) cambioVistaModoReto('RETO', 'bodyGeneral', 'bodyReto');
+    if (recorrerContenidos === 2) cambioVistaModoReto('GRÁFICO', 'bodyReto', 'bodyGeneral');
 
     for (let i = 0; i < contenidoTodasLasVistas[0].length; i++)
         aplicarAnimationCambioVisibilidad(contenidoTodasLasVistas[recorrerContenidos][i], contenidoTodasLasVistas[(recorrerContenidos + 1) % tamTotalContenidoTodasLasVistas][i]);

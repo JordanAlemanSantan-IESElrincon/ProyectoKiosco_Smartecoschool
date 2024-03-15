@@ -31,6 +31,22 @@
     color: white;
     mix-blend-mode: luminosity;
 }
+/* ---------------------------------------- */
+/*          Contenido cabecera
+/* ---------------------------------------- */
+.bodyReto .contenidoHeaderTituloGeneral {
+    display: none;
+}
+
+.bodyReto .contenidoHeaderTituloReto {
+    display: inherit;
+    font-size: 120px;
+}
+
+.bodyReto #contenedorLogos {
+    display: none;
+}
+
 
 /* ---------------------------------------- */
 /*          Contenido principal

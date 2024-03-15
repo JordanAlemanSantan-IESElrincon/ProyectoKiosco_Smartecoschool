@@ -108,6 +108,17 @@
     font-size: 66px;
 }
 
+.contenidoHeaderTituloGeneral {
+    display: inherit;
+}
+
+.contenidoHeaderTitulo .contenidoHeaderTituloReto {
+    display: none;
+}
+
+#contenedorLogos {
+    display: inherit;
+}
 
 /* ---------------------------------------- */
 /*          Contenido principal
