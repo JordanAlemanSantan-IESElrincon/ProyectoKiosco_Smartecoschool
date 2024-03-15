@@ -45,7 +45,7 @@ Las tecnologías de este proyecto son:
 ***
 * Apache Tomcat en Intellij Community
   <p>Si se instala Apache Tomcat en Intellij Community en lugar de Intellij Ultimate, hay que hacer unos pasos adicionales para que funcione Apache Tomcat.</p>
-  PDF of the document: [Instalacion_Apache_Tomcat_Intellij_Community.pdf](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/files/14614105/Instalacion_Apache_Tomcat_Intellij_Community.pdf)
+  PDF of the document: [Instalación de Apache Tomcat en Intellij Community.pdf](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/files/14615742/Instalacion.de.Apache.Tomcat.en.Intellij.Community.pdf)
   
 ### Smart Eco School - Contenido
 ***
