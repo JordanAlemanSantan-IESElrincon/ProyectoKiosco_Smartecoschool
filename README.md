@@ -45,8 +45,8 @@ Las tecnologías de este proyecto son:
 ***
 * Apache Tomcat en Intellij Community
   <p>Si se instala Apache Tomcat en Intellij Community en lugar de Intellij Ultimate, hay que hacer unos pasos adicionales para que funcione Apache Tomcat.</p>
-  PDF of the document: [Instalación de Apache Tomcat en Intellij Community.pdf](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/files/14615742/Instalacion.de.Apache.Tomcat.en.Intellij.Community.pdf)
-  
+  PDF of the document: [Instalacion_de_Apache_Tomcat_en_Intellij_Community.pdf](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/files/14615761/Instalacion_de_Apache_Tomcat_en_Intellij_Community.pdf)
+
 ### Smart Eco School - Contenido
 ***
 <p>Este proyecto está hecho para poder mostrarse mediante Raspberry Pi, datos de Agua y Luz en una Pantalla en el centro.</p>
