@@ -10,6 +10,10 @@
 3. [Instalación](#instalacion)
 4. [Instalación en Intellij Community](#instalacion-intellij-community)
 5. [Smart Eco School - Contenido](#smart-eco-school-contenido)
+6. [Smart Eco School - Diseño](#smart-eco-school-diseño)
+7. [Smart Eco School - HTML](#smart-eco-school-html)
+8. [Smart Eco School - Graficas](#smart-eco-school-graficas)
+9. [Smart Eco School - Refrescar datos](#smart-eco-school-refrescar-datos)
 
 ### Información general
 ***
@@ -26,49 +30,24 @@ Las tecnologías de este proyecto son:
 
 ## Instalación
 ***
-<p>El proyecto está creado con Maven.</p>
+<p>Para poder utilizar este proyecto, hay que asegurarse de poder utilizar Maven.</p>
+
+<p>Cuando hacemos un Git Clone en Github, necesitamos instalar en nuestro ordenador el comando NPM.</p>
+
+* Instalar NPM
+<p>Abre una terminal accede a la carpeta donde deseas crear tu proyecto y sigue estos pasos para poder tenerlo configurado:</p>
+  <p>- npm init</p>
+  <p>- npm install nombre-de-paquete</p>
+
+  Iniciar tu aplicación:
+  <p>- npm run start</p>
 
 ## Instalación en Intellij Community
 ***
 * Apache Tomcat en Intellij Community
   <p>Si se instala Apache Tomcat en Intellij Community en lugar de Intellij Ultimate, hay que hacer unos pasos adicionales para que funcione Apache Tomcat.</p>
-
-* Primer paso
-  <p>Accedemos a Intellij Community y en la esquina superior izquierda hacemos clic en File, Settings, Tools, External Tools y una vez lo seleccionemos, hacemos clic en el + dentro de la ventana de External Tools.</p>
-
-* Create tool
-  - <p>En el recuadro del nombre, ponemos el nombre del Tomcat descargado, por ejemplo, "apache-tomcat-9.0.86".</p>
-
-  - <p>En Tool Settings, en donde pone Program, indicamos la ruta en donde tenemos nuestro "Catalina.bat": "Program Files\apache-tomcat-9.0.86\bin\catalina.bat"</p>
-
-  - <p>En Arguments, incluimos este comando: jpda run.</p>
-
-  - <p>En Working Directory, indicamos la ruta en donde esta el "Bin" de Apache Tomcat "Program Files\apache-tomcat-9.0.86\bin"</p>
-
-  - <p>Cuando terminemos éstos pasos, aplicamos los cambios y aceptamos.</p>
-
-  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/8fcf5280-bd96-45bd-8c49-610584cbf40e" width="350"></h1>
-
-* Maven
-  - <p>Si vamos al lateral derecho, podremos ver una Campana de Notificaciones y debajo, una M de Maven; accederemos a ésta última.</p>
-
-  - <p>Podremos ver que nos sale una ventana que pone "Maven" y debajo, vemos archivos de nuestro proyecto.</p>
-
-  - <p>Accedemos a "web-1.0-SNAPSHOT", Lifecycle y luego en Clean, le damos a Run Maven Build (el botón de "Play" en donde se muestran las demás herramientas de Maven).</p>
-
-  - <p>Luego de hacer un Clean, vamos a donde pone Install y le damos de nuevo al botón de Run Maven Build.</p>
-
-  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/8279e192-4ca8-4042-bf40-ec28b3d8f155" width="400"></h1>
-
-  - <p>Una vez hecho esos pasos, se nos creará una carpeta en nuestro proyecto llamada "Target".</p>
-
-  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/ddbd24c3-9041-4ea9-bde7-616256c2fea2" width="300"></h1>
+  PDF of the document: [Instalacion_Apache_Tomcat_Intellij_Community.pdf](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/files/14614105/Instalacion_Apache_Tomcat_Intellij_Community.pdf)
   
-* Settings, pluggins:
-  - <p>Accedemos a Settings, Pluggins y descargamos Smart Tomcat como aparece en la imagen.</p>
-  
-  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/5334b7d4-01fa-44e7-ab7c-8db9d0036281" width="600"></h1>
-
 ## Smart Eco School - Contenido
 ***
 <p>Escribe aqui contenido</p>
