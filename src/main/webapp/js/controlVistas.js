@@ -1,5 +1,5 @@
 // Tiempo de espera para el cambio automático de vistas en milisegundos
-const tiempoEsperaCambioVista = 60000;
+const tiempoEsperaCambioVista = 6000;
 
 // Selección de elementos HTML por sus ID para manipulación posterior
 const bodyReto = document.querySelector("#body");

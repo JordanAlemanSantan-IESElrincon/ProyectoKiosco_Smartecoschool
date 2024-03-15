@@ -52,19 +52,18 @@
 /*          Contenido principal
 /* ---------------------------------------- */
 .bodyReto .contenidoTituloEnergy {
-    background-color: #ff7200 !important;
+    background-color: #100c2a;
+    border: 4px #FDDD60 solid;
 }
 
-.bodyReto .contenidoTituloEnergy h2 {
-    color: black;
+.bodyReto .contenidoTituloEnergy h2,
+.bodyReto .contenidoTituloAgua h2  {
+    color: white;
 }
 
 .bodyReto .contenidoTituloAgua {
-    background-color: #043f77 !important;
-}
-
-.bodyReto .contenidoTituloAgua h2 {
-    color: white;
+    background-color: #100c2a;
+    border: 4px #58D9F9 solid;
 }
 
 .bodyReto .contenidoConsumoEnergy h3,
