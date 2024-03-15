@@ -37,27 +37,38 @@ Las tecnologías de este proyecto son:
   <p>Accedemos a Intellij Community y en la esquina superior izquierda hacemos clic en File, Settings, Tools, External Tools y una vez lo seleccionemos, hacemos clic en el + dentro de la ventana de External Tools.</p>
 
 * Create tool
-  <p>En el recuadro del nombre, ponemos el nombre del Tomcat descargado, por ejemplo, "apache-tomcat-9.0.86".</p>
+  - <p>En el recuadro del nombre, ponemos el nombre del Tomcat descargado, por ejemplo, "apache-tomcat-9.0.86".</p>
 
-  <p>En Tool Settings, en donde pone Program, indicamos la ruta en donde tenemos nuestro "Catalina.bat": "Program Files\apache-tomcat-9.0.86\bin\catalina.bat"</p>
+  - <p>En Tool Settings, en donde pone Program, indicamos la ruta en donde tenemos nuestro "Catalina.bat": "Program Files\apache-tomcat-9.0.86\bin\catalina.bat"</p>
 
-  <p>En Arguments, incluimos este comando: jpda run.</p>
+  - <p>En Arguments, incluimos este comando: jpda run.</p>
 
-  <p>En Working Directory, indicamos la ruta en donde esta el "Bin" de Apache Tomcat "Program Files\apache-tomcat-9.0.86\bin"</p>
+  - <p>En Working Directory, indicamos la ruta en donde esta el "Bin" de Apache Tomcat "Program Files\apache-tomcat-9.0.86\bin"</p>
 
-  <p>Cuando terminemos éstos pasos, aplicamos los cambios y aceptamos.</p>
+  - <p>Cuando terminemos éstos pasos, aplicamos los cambios y aceptamos.</p>
+
+  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/8fcf5280-bd96-45bd-8c49-610584cbf40e" width="350"></h1>
 
 * Maven
-  <p>Si vamos al lateral derecho, podremos ver una Campana de Notificaciones y debajo, una M de Maven; accederemos a ésta última.</p>
+  - <p>Si vamos al lateral derecho, podremos ver una Campana de Notificaciones y debajo, una M de Maven; accederemos a ésta última.</p>
 
-  <p>Podremos ver que nos sale una ventana que pone "Maven" y debajo, vemos archivos de nuestro proyecto.</p>
+  - <p>Podremos ver que nos sale una ventana que pone "Maven" y debajo, vemos archivos de nuestro proyecto.</p>
 
-  <p>Accedemos a "web-1.0-SNAPSHOT", Lifecycle y luego en Clean, le damos a Run Maven Build (el botón de "Play" en donde se muestran las demás herramientas de Maven).</p>
+  - <p>Accedemos a "web-1.0-SNAPSHOT", Lifecycle y luego en Clean, le damos a Run Maven Build (el botón de "Play" en donde se muestran las demás herramientas de Maven).</p>
 
-  <p>Luego de hacer un Clean, vamos a donde pone Install y le damos de nuevo al botón de Run Maven Build.</p>
+  - <p>Luego de hacer un Clean, vamos a donde pone Install y le damos de nuevo al botón de Run Maven Build.</p>
 
-  <p>Una vez hecho esos pasos, se nos creará una carpeta en nuestro proyecto llamada "Target".</p>
+  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/8279e192-4ca8-4042-bf40-ec28b3d8f155" width="400"></h1>
 
+  - <p>Una vez hecho esos pasos, se nos creará una carpeta en nuestro proyecto llamada "Target".</p>
+
+  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/ddbd24c3-9041-4ea9-bde7-616256c2fea2" width="300"></h1>
+  
+* Settings, pluggins:
+
+  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/5334b7d4-01fa-44e7-ab7c-8db9d0036281" width="600"></h1>
+
+  - <p>Accedemos a Settings, Pluggins y descargamos Smart Tomcat como aparece en la imagen.</p>
 
 ## Smart Eco School - Contenido
 ***
