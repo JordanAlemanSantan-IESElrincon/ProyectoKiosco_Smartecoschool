@@ -68,3 +68,18 @@ Las tecnologías de este proyecto son:
 ### Smart Eco School - Refrescar datos
 ***
 <p>Escribe aqui contenido</p>
+
+### Autores
+***
+<p>Este proyecto ha sido realizado por:</p>
+
+* Introducir autor
+* Introducir autor
+* Introducir autor
+* Introducir autor
+* Introducir autor
+* Introducir autor
+* Introducir autor
+* Introducir autor
+* Introducir autor
+* Introducir autor
