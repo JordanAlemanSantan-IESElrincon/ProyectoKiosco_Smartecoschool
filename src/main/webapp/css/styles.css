@@ -56,14 +56,13 @@
 .contenidoHeader {
     display: flex;
     flex-direction: row;
-
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    margin: 2rem;
 }
 
 .imagenHeader {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Animacion Logos*/
@@ -75,18 +74,13 @@
 
 /* Tamaño máximo de las imágenes de la cabecera */
 .logo-img-header-SES > img {
-    max-width: 160px;
-    max-height: 120px;
-}
-
-.logo-img-header-QR > img {
-    max-width: 160px;
-    max-height: 120px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .logo-img-header-Rincon > img {
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .logo-img-header-zazume > img {
@@ -123,7 +117,6 @@
     align-items: center;
     justify-content: center;
 
-    margin: 2rem;
 
     width: var(--tam-column);
 }
