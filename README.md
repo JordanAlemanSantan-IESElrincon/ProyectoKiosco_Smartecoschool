@@ -8,7 +8,12 @@
 1. [Información general](#info-general)
 2. [Tecnologías](#tecnologias)
 3. [Instalación](#instalacion)
-4. [Smart Eco School - Contenido](#smart-eco-school-contenido)
+4. [Instalación en Intellij Community](#instalacion-intellij-community)
+5. [Smart Eco School - Contenido](#smart-eco-school-contenido)
+6. [Smart Eco School - Diseño](#smart-eco-school-diseño)
+7. [Smart Eco School - HTML](#smart-eco-school-html)
+8. [Smart Eco School - Graficas](#smart-eco-school-graficas)
+9. [Smart Eco School - Refrescar datos](#smart-eco-school-refrescar-datos)
 
 ### Información general
 ***
@@ -25,8 +30,24 @@ Las tecnologías de este proyecto son:
 
 ## Instalación
 ***
-<p>Escribe aqui contenido</p>
+<p>Para poder utilizar este proyecto, hay que asegurarse de poder utilizar Maven.</p>
 
+<p>Cuando hacemos un Git Clone en Github, necesitamos instalar en nuestro ordenador el comando NPM.</p>
+
+* Instalar NPM
+<p>Abre una terminal accede a la carpeta donde deseas crear tu proyecto y sigue estos pasos para poder tenerlo configurado:</p>
+  <p>- npm init</p>
+  <p>- npm install nombre-de-paquete</p>
+
+  Iniciar tu aplicación:
+  <p>- npm run start</p>
+
+## Instalación en Intellij Community
+***
+* Apache Tomcat en Intellij Community
+  <p>Si se instala Apache Tomcat en Intellij Community en lugar de Intellij Ultimate, hay que hacer unos pasos adicionales para que funcione Apache Tomcat.</p>
+  PDF of the document: [Instalacion_Apache_Tomcat_Intellij_Community.pdf](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/files/14614105/Instalacion_Apache_Tomcat_Intellij_Community.pdf)
+  
 ## Smart Eco School - Contenido
 ***
 <p>Escribe aqui contenido</p>
