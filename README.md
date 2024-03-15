@@ -1,8 +1,6 @@
-<h1 align="center"># 🌱Smart Eco School🌱</h1>
-<h4 align="center">:construction: Proyecto en curso :construction:</h4>
+<h1 align="center">🌱Smart Eco School🌱</h1>
 
-<h1 align="center"><img src="![isologo](https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/c5ae028c-34d4-4131-806b-99b8280ac45c)
-" width="100"></h1>
+<h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/c5ae028c-34d4-4131-806b-99b8280ac45c" width="100"></h1>
 
 ## Índice
 1. [Información general](#info-general)
