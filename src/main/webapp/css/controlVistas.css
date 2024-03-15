@@ -1,6 +1,6 @@
 
 #contenidoConsumoEnergyActual {
-    display: flex;
+    display: none;
 }
 
 #contenidoConsumoEnergyMensual {
@@ -8,12 +8,12 @@
 }
 
 #contenidoRetoEnergy {
-    display: none;
+    display: flex;
 }
 
 
 #contenidoConsumoAguaActual {
-    display: flex;
+    display: none;
 }
 
 #contenidoConsumoAguaMensual {
@@ -21,7 +21,7 @@
 }
 
 #contenidoRetoAgua {
-    display: none;
+    display: flex;
 }
 
 /*Contenido gráficas*/

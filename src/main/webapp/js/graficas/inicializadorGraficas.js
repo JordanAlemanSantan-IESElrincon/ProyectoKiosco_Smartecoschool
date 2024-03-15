@@ -11,11 +11,11 @@ import {implementarGraficaRetoAgua} from "./graficaRetoAgua.js";
 
 // Inicializar
 const initCharts = async () => {
-    await implementarGraficaSemanalEnergy();
-    await implementarGraficaSemanalAgua();
-
-    await implementarGraficaMensualEnergy();
-    await implementarGraficaMensualAgua();
+    // await implementarGraficaSemanalEnergy();
+    // await implementarGraficaSemanalAgua();
+    //
+    // await implementarGraficaMensualEnergy();
+    // await implementarGraficaMensualAgua();
 
     await implementarGraficaRetoEnergy();
     await implementarGraficaRetoAgua();

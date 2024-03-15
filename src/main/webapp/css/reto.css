@@ -67,8 +67,23 @@
     color: white;
 }
 
+.bodyReto .contenidoConsumoEnergy h3,
+.bodyReto .contenidoConsumoAgua h3{
+    color:white;
+}
+
 .bodyReto .contenidoConsumoEnergy span, .bodyReto .contenidoConsumoAgua span {
     color: red;
 }
+
+.bodyReto .contenidoConsumoAgua,
+.bodyReto .contenidoConsumoEnergy,
+.bodyReto .contenidoGraficaConsumoEnergy,
+.bodyReto .contenidoGraficaConsumoAgua
+{
+    background-color: #100c2a !important;
+}
+
+
 
 

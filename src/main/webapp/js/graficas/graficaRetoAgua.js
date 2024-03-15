@@ -19,6 +19,14 @@ export const implementarGraficaRetoAgua = async () => {
 
         // Calcula los cuatro valores equitativos
         const cantidadConsumoAguaDiaSemanaAnterior = datosGraficaSemanalAgua[0][datosGraficaSemanalAgua[1].length - 1].waterConsumption;
+        console.log("cantidadConsumoAguaDiaSemanaAnterior " + cantidadConsumoAguaDiaSemanaAnterior)
+        const cantidadConsumoAguaDiaSemanaActual = datosGraficaSemanalAgua[1][datosGraficaSemanalAgua[1].length - 1].waterConsumption;
+        console.log("cantidadConsumoEnergyDiaSemanaActual " + cantidadConsumoAguaDiaSemanaActual)
+
+        // Calcular el porcentaje de consumo de agua del día actual respecto al día anterior
+        const porcentajeConsumoAgua = (cantidadConsumoAguaDiaSemanaActual / cantidadConsumoAguaDiaSemanaAnterior) * 100;
+
+        console.log(`El porcentaje de consumo de energia del día actual respecto al día anterior es: ${porcentajeConsumoAgua.toFixed(2)}%`);
         const division = cantidadConsumoAguaDiaSemanaAnterior / 4;
         const valoresAguaDivididos =
             [
@@ -37,8 +45,8 @@ export const implementarGraficaRetoAgua = async () => {
                     type: 'gauge',
                     startAngle: 180,
                     endAngle: 0,
-                    center: ['50%', '75%'],
-                    radius: '90%',
+                    center: ['50%', '90%'],
+                    radius: '140%',
                     min: 0,
                     max: 1,
                     splitNumber: 8,
@@ -78,7 +86,7 @@ export const implementarGraficaRetoAgua = async () => {
                     },
                     axisLabel: {
                         color: '#464646',
-                        fontSize: 20,
+                        fontSize: 30,
                         distance: -60,
                         rotate: 'tangential',
                         formatter: function (value) {
@@ -96,9 +104,9 @@ export const implementarGraficaRetoAgua = async () => {
                     },
                     title: {
                         offsetCenter: [0, '-10%'],
-                        fontSize: 20,
+                        fontSize: 30,
                         // textStyle: {  // Ajusta el tamaño del texto aquí
-                        //     fontSize: 30  // Tamaño de texto deseado para "Retos"
+                        //   fontSize: 30  // Tamaño de texto deseado para "Retos"
                         // }
                     },
                     detail: {
@@ -106,14 +114,14 @@ export const implementarGraficaRetoAgua = async () => {
                         offsetCenter: [0, '-35%'],
                         valueAnimation: true,
                         formatter: function (value) {
-                            return Math.round(value * 100) + '';
+                            return Math.round(value * 100) + ' %'; // Agregar el símbolo "%" al valor
                         },
                         color: 'inherit'
                     },
                     data: [
                         {
-                            value: 0.7,
-                            name: 'Retos'
+                            value: porcentajeConsumoAgua / 100,
+                            name: cantidadConsumoAguaDiaSemanaActual + ' L'
                         }
                     ]
                 }

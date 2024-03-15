@@ -6,7 +6,7 @@ import {fetchWeeklyConsumption} from "../api-service.js";
  * @property {number} waterConsumption - Consumo de agua
  */
 // Inicializa la instancia de echarts en relación con el DOM preparado
-const myChartRetoEnergy = echarts.init(document.getElementById('graficaRetoEnergy'), 'dark');
+const myChartRetoEnergy = echarts.init(document.getElementById('graficaRetoEnergy'));
 
 // Obtiene el elemento HTML para mostrar el valor actual de consumo de agua mensual
 const myChartRetoConsumoEnergy = document.querySelector('#retoEnergy');
