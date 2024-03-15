@@ -57,13 +57,19 @@ Las tecnologías de este proyecto son:
   <p>La vista semanal va a mostrar primero el consumo diario actual de gasto de Agua y Luz.</p>
   <p>También, se va a poder ver mediante unas gráficas los datos de gasto de Agua y Luz que se realizan de la semana anterior a la semana actual, comparando los mismos días de la semana. Es decir, si un día tiene Lunes Martes Miércoles Jueves Viernes Sabado y Domingo, lo que se va a comparar es Lunes anterior con Lunes actual, y viceversa.</p>
 
+<h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/092af7cf-dbca-4d3b-a801-b9f257bb77e4" width="500"></h1>
+
   * <b>La Vista Mensual:</b>
   <p>La vista mensual va a mostrar primero el consumo mensual actual de gasto de Agua y Luz.</p>
   <p>A través de otras gráficas diferentes, se va a poder ver los datos de gasto de Agua y Luz que se realizan entre los distintos meses en el rango de un año.</p>
 
+<h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/de388457-9e08-4f35-88b7-8c74e8071786" width="500"></h1>
+
   * <b>La Vista de Retos:</b>
   <p>La vista de retos representa los retos representados durante el proyecto de Smart Eco School.</p>
   <p>Utilizando una gráfica con un rango del proceso realizado, se va a mostrar cuanto porcentaje de retos se han cumplido durante éste proyecto.</p>
+
+  [[Incluir Foto]]
 
 ### Smart Eco School - Diseño
 ***
