@@ -73,7 +73,15 @@ Las tecnologías de este proyecto son:
 
 ### Smart Eco School - Diseño
 ***
-<p>Escribe aqui contenido</p>
+<p>Aqui se van a mostrar los diseños que se realizaron antes de realizar el proyecto a pesar de los cambios posteriores que se han hecho.</p>
+
+  * <b>La Vista Semanal:</b>
+<h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/02f656c3-103e-499f-a73a-756eb2b4e392" width="500"></h1>
+
+  * <b>La Vista Mensual:</b>
+<h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/b1fc0845-9dbf-4fc3-959d-39bafa61af01" width="500"></h1>
+
+<p>La vista de Retos no está incluida en los diseños debido a que ha sido un añadido improvisado en el final del proyecto.</p>
 
 ### Smart Eco School - HTML
 ***
