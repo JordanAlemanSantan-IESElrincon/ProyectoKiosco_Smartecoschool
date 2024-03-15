@@ -65,10 +65,9 @@ Las tecnologías de este proyecto son:
   <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/ddbd24c3-9041-4ea9-bde7-616256c2fea2" width="300"></h1>
   
 * Settings, pluggins:
-
-  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/5334b7d4-01fa-44e7-ab7c-8db9d0036281" width="600"></h1>
-
   - <p>Accedemos a Settings, Pluggins y descargamos Smart Tomcat como aparece en la imagen.</p>
+  
+  <h1 align="center"><img src="https://github.com/JordanAlemanSantan-IESElrincon/ProyectoKiosco_Smartecoschool/assets/56256350/5334b7d4-01fa-44e7-ab7c-8db9d0036281" width="600"></h1>
 
 ## Smart Eco School - Contenido
 ***
