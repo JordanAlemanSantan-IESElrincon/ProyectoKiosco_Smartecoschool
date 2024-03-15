@@ -8,7 +8,8 @@
 1. [Información general](#info-general)
 2. [Tecnologías](#tecnologias)
 3. [Instalación](#instalacion)
-4. [Smart Eco School - Contenido](#smart-eco-school-contenido)
+4. [Instalación en Intellij Community](#instalacion-intellij-community)
+5. [Smart Eco School - Contenido](#smart-eco-school-contenido)
 
 ### Información general
 ***
@@ -25,7 +26,35 @@ Las tecnologías de este proyecto son:
 
 ## Instalación
 ***
-<p>Escribe aqui contenido</p>
+<p>El proyecto está creado con Maven.</p>
+
+## Instalación en Intellij Community
+***
+* Apache Tomcat en Intellij Community
+  <p>Si se instala Apache Tomcat en Intellij Community en lugar de Intellij Ultimate, hay que hacer unos pasos adicionales para que funcione Apache Tomcat.</p>
+
+* Primer paso
+  <p>Accedemos a Intellij Community y en la esquina superior izquierda hacemos clic en File, Settings, Tools, External Tools y una vez lo seleccionemos, hacemos clic en el + dentro de la ventana de External Tools.</p>
+
+* Create tool
+  <p>En el recuadro del nombre, ponemos el nombre del Tomcat descargado, por ejemplo, "apache-tomcat-9.0.86".</p>
+
+  <p>En Tool Settings, en donde pone Program, indicamos la ruta en donde tenemos nuestro "Catalina.bat": "Program Files\apache-tomcat-9.0.86\bin\catalina.bat"</p>
+
+  <p>En Arguments, incluimos este comando: jpda run.</p>
+
+  <p>En Working Directory, indicamos la ruta en donde esta el "Bin" de Apache Tomcat "Program Files\apache-tomcat-9.0.86\bin"</p>
+
+  <p>Cuando terminemos éstos pasos, aplicamos los cambios y aceptamos.</p>
+
+* Maven
+  <p>Si vamos al lateral derecho, podremos ver una Campana de Notificaciones y debajo, una M de Maven; accederemos a ésta última.</p>
+
+  <p>Podremos ver que nos sale una ventana que pone "Maven" y debajo, vemos archivos de nuestro proyecto.</p>
+
+  <p>Accedemos a "web-1.0-SNAPSHOT", Lifecycle y luego en Clean, le damos a Run Maven Build (el botón de "Play" en donde se muestran las demás herramientas de Maven).</p>
+
+  
 
 ## Smart Eco School - Contenido
 ***
