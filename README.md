@@ -93,7 +93,15 @@ Las tecnologías de este proyecto son:
 
 ### Smart Eco School - Refrescar datos
 ***
-<p>Escribe aqui contenido</p>
+<p>Dentro del proyecto, van a poder ver una carpeta llamada "refresh_datos_server".</p>
+
+<p>Este Script tiene una función y es poder "refrescar" (o dicho de otra forma, actualizar los datos) automáticamente en pantalla.</p>
+
+<p>Para realizar dicha función, compara la fecha de la última cabecera de la Web que se ha subido con la fecha de la actual, y si los datos son exactamente iguales, se muesta un mensaje en el que nos indica que no hay cambios nuevos.</p>
+
+<p>Si hay cambios entre la anterior fecha y la actual, se actualiza la cabecera y se añaden los nuevos cambios realizados.</p>
+
+<p>Los datos se verifican cada 5 segundos.</p>
 
 ### Autores
 ***
